@@ -1,7 +1,7 @@
 # government-data-fun
 Various tools to easily access public data from different government departments and services. 
 
-#FDA
+##FDA
 
 ## fda510scrape.py
 
@@ -16,16 +16,16 @@ Simple scraper to fetch and parse the most recent 100 FDA 510k actioned items fr
 - `pandas`
 - `requests`
 
-#SEC
-## sec8kscrape.py
+##SEC
+### sec8kscrape.py
 
 Simple scraper to fetch and parse the current 100 feed items from SEC EDGAR api and save to CSV file locally.
 
-### Requirements
+#### Requirements
 
 - **Python**
   
-### Pip Installs:
+#### Pip Installs:
 
 - `xmltodict`
 - `requests`
