@@ -6,7 +6,7 @@ from datetime import datetime
 def fetch_sec_filings():
     url = "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&type=8-K&count=100&output=atom"
     headers = {
-        'User-Agent': 'YourCompanyName Automated Tool v1.0 - contact@yourcompany.com'
+        'User-Agent': 'FDA 510k Automated Retrieval v1.0 - joshua@purplesec.us'
     }
 
     response = requests.get(url, headers=headers)
