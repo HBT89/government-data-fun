@@ -22,8 +22,6 @@ Simple scraper to fetch and parse the most recent 100 FDA 510k actioned items fr
 Simple scraper to fetch and parse the current 100 feed items from SEC EDGAR api and save to CSV file locally.
 
 #### Requirements
-
-- **Python**
   
 #### Pip Installs:
 
@@ -36,8 +34,6 @@ Simple scraper to fetch and parse the current 100 feed items from SEC EDGAR api 
 Simple scraper to fetch and parse the latest Federal Trade Commission legal library on case proceedings
 
 #### Requirements
-
-- **Python**
   
 #### Pip Installs:
 
