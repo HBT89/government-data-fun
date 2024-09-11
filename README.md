@@ -31,7 +31,7 @@ Simple scraper to fetch and parse the current 100 feed items from SEC EDGAR api 
 - `requests`
 
 ## FTC
-### ftc-datasec-scrape.py
+### ftccasescrape.py
 
 Simple scraper to fetch and parse the latest Federal Trade Commission legal library on case proceedings
 
