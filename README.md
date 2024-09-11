@@ -29,3 +29,18 @@ Simple scraper to fetch and parse the current 100 feed items from SEC EDGAR api 
 
 - `xmltodict`
 - `requests`
+
+## FTC
+### ftc-datasec-scrape.py
+
+Simple scraper to fetch and parse the latest Federal Trade Commission legal library on case proceedings
+
+#### Requirements
+
+- **Python**
+  
+#### Pip Installs:
+
+- `bs4``BeautifulSoup`
+- `requests`
+
