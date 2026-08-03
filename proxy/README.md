@@ -49,7 +49,40 @@ Where `<slug>` is one of:
 | `nara` | `https://catalog.archives.gov` |
 | `fcc_ecfs` | `https://publicapi.fcc.gov` |
 
-`GET /health` returns `{ok: true, upstreams: [...]}` for uptime probes.
+`GET /health` returns `{ok: true, upstreams: [...], dataApi: "/api/v1"}` for uptime probes.
+
+## Normalized Data API (`/api/v1`)
+
+A public, machine-readable API (in `api.js`) that lets other apps pull the **same normalized data** the OpenGovDash UI shows — the fetch + normalization happen server-side and return a stable JSON/CSV envelope. Unlike the `/p` relay (a dumb byte pass-through), this endpoint returns records already shaped into the OpenGovDash normal form.
+
+```
+GET /api/v1                                  → service index
+GET /api/v1/agencies                         → machine-readable catalog of agencies + subsections
+GET /api/v1/openapi.json                     → OpenAPI 3 spec (generated from the registry)
+GET /api/v1/data/{agency}/{subsection}?q=&limit=&from=&to=&format=json|csv
+```
+
+Every record shares the contract `{ title, description, date, link, ...rich fields }`. Response envelope:
+
+```json
+{
+  "ok": true,
+  "agency": "usgs", "subsection": "earthquakes",
+  "query": { "q": null, "limit": 20, "from": null, "to": null },
+  "count": 20,
+  "results": [ { "title": "M4.2 — …", "date": "…", "link": "…", "magnitude": 4.2 } ],
+  "source": { "upstream": "earthquake.usgs.gov", "fetched_at": "…" },
+  "attribution": "U.S. Geological Survey (public domain)"
+}
+```
+
+**Auth model — no baked-in secrets.** Agencies whose `auth` is not `none` (NASA, Congress, FEC) require the **caller's own** api.data.gov key, passed as `?api_key=` or the `X-Api-Key` header. The site's key is never spent on anonymous callers. Get a free key at https://api.data.gov/signup/.
+
+**CORS:** `Access-Control-Allow-Origin: *` (public-domain government data). This is separate from the origin-pinned `/p` relay.
+
+**Caching:** keyless responses are edge-cached (`caches.default`, TTL 300s); responses served from cache carry `X-Cache: HIT`.
+
+Coverage today (`/api/v1/agencies` is the source of truth): `usgs`, `fda`, `treasury`, `nist`, `fedreg`, `usaspending`, `fdic`, `fema`, `census`, `nih`, and the caller-key set `nasa` / `congress` / `fec`. Adding an agency = one entry in the `REGISTRY` in `api.js` (`build()` + `parse()`).
 
 ## Security notes
 

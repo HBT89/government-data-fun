@@ -186,6 +186,15 @@ proxy/worker.js            Cloudflare Worker: CORS relay + free AI
 docs/                      Changelog + archived design notes
 ```
 
+## Developer API
+
+Other apps can pull the same normalized data programmatically:
+
+- **Data API** — `https://opengov-proxy.psjs.workers.dev/api/v1/data/{agency}/{subsection}` returns normalized records (`{title, description, date, link, …}`). Discovery at `/api/v1/agencies`, spec at `/api/v1/openapi.json`.
+- **Cross-reference tables** — `/api/db/{table}` joins several agencies into one result set (e.g. `drug-safety`, `cyber-landscape`, `disaster-response`). List them at `/api/db`.
+
+Most agencies need no key; NASA/Congress/FEC/FBI take your own free [api.data.gov](https://api.data.gov/signup/) key. Full usage docs: **[`/docs/api`](https://selvidge.tech/government-data-fun/docs/api.html)**.
+
 ## License
 
 MIT.

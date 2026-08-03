@@ -2,6 +2,9 @@
 // Forwards browser requests to government APIs that don't send CORS headers.
 // Strips client auth/cookie headers; pins Access-Control-Allow-Origin to our known hosts.
 
+import { handleDataApi } from './api.js';
+import { handleDbApi } from './db.js';
+
 const UPSTREAMS = {
   sec:         'https://efts.sec.gov',         // EDGAR full-text search (used today)
   sec_data:    'https://data.sec.gov',         // documented APIs: submissions, XBRL facts, frames
@@ -108,7 +111,18 @@ export default {
     }
 
     if (url.pathname === '/' || url.pathname === '/health') {
-      return json({ ok: true, upstreams: Object.keys(UPSTREAMS), freeAI: !!(env && env.AI) }, 200, allowOrigin);
+      return json({ ok: true, upstreams: Object.keys(UPSTREAMS), freeAI: !!(env && env.AI), dataApi: '/api/v1' }, 200, allowOrigin);
+    }
+
+    // Normalized data API (v1) — public, machine-readable, edge-cached.
+    // Own CORS (Access-Control-Allow-Origin: *) since it serves public gov data.
+    if (url.pathname === '/api/v1' || url.pathname.startsWith('/api/v1/')) {
+      return handleDataApi(request, url, env);
+    }
+
+    // Cross-reference "DB" layer — named tables joining multiple agencies.
+    if (url.pathname === '/api/db' || url.pathname.startsWith('/api/db/')) {
+      return handleDbApi(request, url, env);
     }
 
     if (url.pathname === '/ai/chat' && request.method === 'POST') {

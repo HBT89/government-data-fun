@@ -1262,6 +1262,10 @@
                 <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6"/><path d="M6.3 6.2a1.8 1.8 0 1 1 2.4 1.7c-.5.2-.7.5-.7 1V9.4" stroke-linecap="round"/><circle cx="8" cy="11.4" r="0.4" fill="currentColor"/></svg>
                 Help &amp; Guide
             </div>
+            <div class="nav-item" onclick="window.open('docs/api.html','_blank','noopener')" title="Developer API docs — pull normalized data from this site" style="display:flex;align-items:center;gap:8px;">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 5 3 8l3 3m4-6 3 3-3 3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                API Docs
+            </div>
         </div>
     </div>
 
@@ -2254,7 +2258,7 @@ const DIRECT_API = {
             const lim = opts.limit || 20;
             const endpoints = {
                 national_debt: 'v2/accounting/od/debt_to_penny',
-                daily_statements: 'v1/accounting/dts/dts_table_1',
+                daily_statements: 'v1/accounting/dts/operating_cash_balance',
                 interest_rates: 'v2/accounting/od/avg_interest_rates',
                 exchange_rates: 'v1/accounting/od/rates_of_exchange'
             };
@@ -2337,12 +2341,22 @@ const DIRECT_API = {
                 }));
             }
             if (sub === 'mars') {
-                const r = await fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/latest_photos?api_key=${key}`);
+                // NASA's mars-photos service on api.nasa.gov was retired (all rovers 404).
+                // Use NASA's Image & Video Library instead (no key) for Mars imagery.
+                const q = query || 'mars rover';
+                const r = await fetch(`https://images-api.nasa.gov/search?q=${encodeURIComponent(q)}&media_type=image`);
                 const d = await r.json();
-                return (d.latest_photos || []).slice(0,lim).map(p => ({
-                    title: `Sol ${p.sol} - ${p.camera?.full_name || ''}`, description: `Rover: ${p.rover?.name || ''} | Camera: ${p.camera?.name || ''}`,
-                    date: p.earth_date || '', link: p.img_src || ''
-                }));
+                return (d.collection?.items || []).slice(0, lim).map(it => {
+                    const m = (it.data || [])[0] || {};
+                    return {
+                        title: m.title || 'Mars image',
+                        description: (m.description || '').substring(0, 300),
+                        date: (m.date_created || '').slice(0, 10),
+                        link: m.nasa_id ? `https://images.nasa.gov/details/${m.nasa_id}` : ((it.links || [])[0]?.href || ''),
+                        thumbnail_url: (it.links || [])[0]?.href || '',
+                        media_type: 'image'
+                    };
+                });
             }
             // Get APOD range — use date controls if set, else last 9 days
             const today = new Date();
@@ -2776,7 +2790,7 @@ const DIRECT_API = {
                     date: x.receipt_date || '', link: `https://www.fec.gov/data/committee/${x.committee_id||''}/`
                 }));
             }
-            const r = await fetch(`https://api.open.fec.gov/v1/candidates/?api_key=${key}&per_page=${lim}&election_year=2024&sort=-total_receipts`);
+            const r = await fetch(`https://api.open.fec.gov/v1/candidates/?api_key=${key}&per_page=${lim}&election_year=2024&sort=-first_file_date`);
             const d = await r.json();
             return (d.results || []).map(x => ({
                 title: x.name || '', description: `Party: ${x.party_full||''} | Office: ${x.office_full||''} | State: ${x.state||''}`,
@@ -2877,7 +2891,8 @@ const DIRECT_API = {
                 try {
                     const timePeriod = {start_date: opts.dateFrom || "2024-01-01", end_date: opts.dateTo || "2026-12-31"};
                     const payload = {
-                        filters:{keywords:[query],time_period:[timePeriod]},
+                        // spending_by_award REQUIRES award_type_codes; A/B/C/D = contracts (+ IDVs).
+                        filters:{keywords:[query],time_period:[timePeriod],award_type_codes:["A","B","C","D"]},
                         fields:["Award ID","Recipient Name","Award Amount","Description","Start Date","Awarding Agency"],
                         limit:lim, page:1, sort:"Award Amount", order:"desc"
                     };
@@ -3771,11 +3786,14 @@ const DIRECT_API = {
             }
             const now = new Date();
             const currentYear = now.getFullYear();
-            // FBI UCR data lags ~12 months — default to last 10 years up to last year.
-            const fromYear = opts.dateFrom ? parseInt(opts.dateFrom.split('-')[0], 10) : currentYear - 10;
+            // FBI UCR data lags ~12–18 months — default to a recent multi-year window.
+            const fromYear = opts.dateFrom ? parseInt(opts.dateFrom.split('-')[0], 10) : currentYear - 6;
             const toYear = opts.dateTo ? parseInt(opts.dateTo.split('-')[0], 10) : currentYear - 1;
             const apiKey = encodeURIComponent(datagovKey);
             const apiBase = 'https://api.usa.gov/crime/fbi/cde';
+            // CDE crime/arrest/hate-crime endpoints take month-scoped ranges (MM-YYYY);
+            // police-employment takes bare years.
+            const mFrom = `01-${fromYear}`, mTo = `12-${toYear}`;
 
             const tryFetch = async (directUrl) => {
                 try {
@@ -3791,136 +3809,137 @@ const DIRECT_API = {
                 return null;
             };
             const fail = (msg) => [{ title: msg, description: 'Try again shortly or check your data.gov key.', date: '', link: 'https://cde.ucr.cjis.gov/' }];
+            // Flatten a CDE time-series object {label:{"MM-YYYY"|"YYYY":value}} → newest-first rows.
+            const flattenSeries = (seriesObj, label, linkUrl, unit) => {
+                const series = (seriesObj && (seriesObj[label] || seriesObj[Object.keys(seriesObj)[0]])) || {};
+                return Object.entries(series)
+                    .filter(([, v]) => v != null)
+                    .map(([period, value]) => {
+                        const mm = /^\d{2}-\d{4}$/.test(period);
+                        const iso = mm ? `${period.slice(3)}-${period.slice(0, 2)}-01` : `${period}-12-31`;
+                        return {
+                            title: `${label}: ${typeof value === 'number' ? value.toLocaleString() : value}${unit ? ' ' + unit : ''}`,
+                            description: `Period ${period}`, date: iso, link: linkUrl,
+                            period, value, _iso: iso
+                        };
+                    })
+                    .sort((a, b) => b._iso.localeCompare(a._iso))
+                    .slice(0, lim);
+            };
+            const STATE_ABBR = {alabama:'AL',alaska:'AK',arizona:'AZ',arkansas:'AR',california:'CA',colorado:'CO',connecticut:'CT',delaware:'DE','district of columbia':'DC',florida:'FL',georgia:'GA',hawaii:'HI',idaho:'ID',illinois:'IL',indiana:'IN',iowa:'IA',kansas:'KS',kentucky:'KY',louisiana:'LA',maine:'ME',maryland:'MD',massachusetts:'MA',michigan:'MI',minnesota:'MN',mississippi:'MS',missouri:'MO',montana:'MT',nebraska:'NE',nevada:'NV','new hampshire':'NH','new jersey':'NJ','new mexico':'NM','new york':'NY','north carolina':'NC','north dakota':'ND',ohio:'OH',oklahoma:'OK',oregon:'OR',pennsylvania:'PA','rhode island':'RI','south carolina':'SC','south dakota':'SD',tennessee:'TN',texas:'TX',utah:'UT',vermont:'VT',virginia:'VA',washington:'WA','west virginia':'WV',wisconsin:'WI',wyoming:'WY'};
+            const US_STATES = new Set(Object.values(STATE_ABBR));
+            const resolveState = (q) => {
+                const s = (q || '').trim();
+                if (/^[A-Za-z]{2}$/.test(s) && US_STATES.has(s.toUpperCase())) return s.toUpperCase();
+                return STATE_ABBR[s.toLowerCase()] || '';
+            };
 
-            // --- Agencies list (searchable; supports state filter) -------------
+            // --- Agencies list (state-scoped: /agency/byStateAbbr/{ST}) ---------
             if (sub === 'agencies') {
-                let url = `${apiBase}/agencies?API_KEY=${apiKey}&page=0&pageSize=${lim}`;
-                if (query) url += `&search=${encodeURIComponent(query)}`;
-                const d = await tryFetch(url);
-                if (!d) return fail('FBI CDE Agencies endpoint unreachable');
-                const rows = d.results || d.agencies || d || [];
-                return (Array.isArray(rows) ? rows : []).slice(0, lim).map(a => ({
+                const state = resolveState(query) || 'CA';
+                const nameFilter = resolveState(query) ? '' : (query || '').trim().toLowerCase();
+                const d = await tryFetch(`${apiBase}/agency/byStateAbbr/${state}?API_KEY=${apiKey}`);
+                if (!d || typeof d !== 'object') return fail('FBI CDE Agencies endpoint unreachable');
+                // Response shape: { COUNTY_NAME: [ {ori, agency_name, ...}, ... ], ... }
+                let agencies = [];
+                for (const list of Object.values(d)) if (Array.isArray(list)) agencies = agencies.concat(list);
+                if (nameFilter) agencies = agencies.filter(a => (a.agency_name || '').toLowerCase().includes(nameFilter));
+                if (!agencies.length) return [{ title: `No agencies matched in ${state}`, description: 'Type a 2-letter state (e.g., CA, TX, NY) or a full state name to list its law-enforcement agencies.', date: '', link: 'https://cde.ucr.cjis.gov/' }];
+                return agencies.slice(0, lim).map(a => ({
                     title: a.agency_name || a.ori || 'Unnamed agency',
-                    description: [a.agency_type_name, a.county_name, a.state_name].filter(Boolean).join(' · '),
+                    description: [a.agency_type_name, a.counties || a.county_name, a.state_name || state].filter(Boolean).join(' · '),
                     date: a.nibrs_start_date || '',
                     link: a.ori ? `https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/agency-details?id=${a.ori}` : 'https://cde.ucr.cjis.gov/',
                     ori: a.ori || '',
                     agency_type: a.agency_type_name || '',
-                    county: a.county_name || '',
-                    state: a.state_name || '',
-                    state_abbr: a.state_abbr || '',
-                    population: a.population || '',
-                    nibrs_start_date: a.nibrs_start_date || '',
+                    county: a.counties || a.county_name || '',
+                    state: a.state_name || state,
+                    is_nibrs: a.is_nibrs != null ? a.is_nibrs : '',
                     latitude: a.latitude || '',
                     longitude: a.longitude || ''
                 }));
             }
 
-            // --- Hate crime national totals ------------------------------------
+            // --- Hate crime national bias breakdown (MM-YYYY range) ------------
             if (sub === 'hate_crime') {
-                const url = `${apiBase}/hate-crime/national/${fromYear}/${toYear}?API_KEY=${apiKey}`;
-                const d = await tryFetch(url);
+                const link = 'https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/explorer/crime/hate-crime';
+                const d = await tryFetch(`${apiBase}/hate-crime/national?from=${mFrom}&to=${mTo}&API_KEY=${apiKey}`);
                 if (!d) return fail('FBI Hate Crime endpoint unreachable');
-                const rows = (d.results || []).slice().sort((a, b) => (b.data_year || 0) - (a.data_year || 0));
-                return rows.slice(0, lim).map(x => ({
-                    title: `${x.data_year || ''} Hate Crime — ${Number(x.incident_count || 0).toLocaleString()} incidents`,
-                    description: `${Number(x.offense_count || 0).toLocaleString()} offenses · ${Number(x.victim_count || 0).toLocaleString()} victims · ${Number(x.known_offender_count || 0).toLocaleString()} known offenders`,
-                    date: x.data_year ? `${x.data_year}-12-31` : '',
-                    link: 'https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/explorer/crime/hate-crime',
-                    data_year: x.data_year || '',
-                    incident_count: x.incident_count || 0,
-                    offense_count: x.offense_count || 0,
-                    victim_count: x.victim_count || 0,
-                    known_offender_count: x.known_offender_count || 0,
-                    race_ethnicity_bias_count: x.race_ethnicity_bias_count || 0,
-                    religious_bias_count: x.religious_bias_count || 0,
-                    sexual_orientation_bias_count: x.sexual_orientation_bias_count || 0,
-                    disability_bias_count: x.disability_bias_count || 0,
-                    gender_bias_count: x.gender_bias_count || 0,
-                    gender_identity_bias_count: x.gender_identity_bias_count || 0
-                }));
+                // Response: { bias_section: { victim_type: {cat:count}, bias: {...}, ... }, ... }
+                const section = d.bias_section || d;
+                const rows = [];
+                for (const [dimension, breakdown] of Object.entries(section)) {
+                    if (breakdown && typeof breakdown === 'object' && !Array.isArray(breakdown)) {
+                        for (const [category, count] of Object.entries(breakdown)) {
+                            if (typeof count !== 'number') continue;
+                            rows.push({
+                                title: `${category}: ${Number(count).toLocaleString()}`,
+                                description: `Hate-crime ${dimension.replace(/_/g, ' ')} (${fromYear}–${toYear})`,
+                                date: `${toYear}-12-31`, link,
+                                dimension, category, count
+                            });
+                        }
+                    }
+                }
+                rows.sort((a, b) => b.count - a.count);
+                if (!rows.length) return fail('FBI Hate Crime returned no data for this range');
+                return rows.slice(0, lim);
             }
 
-            // --- LEOKA: officers killed and assaulted ---------------------------
+            // --- LEOKA: the CDE API exposes no public route for it (all 404).
+            // Degrade honestly rather than silently fail.
             if (sub === 'leoka') {
-                const url = `${apiBase}/le/leoka/national/${fromYear}/${toYear}?API_KEY=${apiKey}`;
-                const d = await tryFetch(url);
-                if (!d) return fail('FBI LEOKA endpoint unreachable');
-                const rows = (d.results || []).slice().sort((a, b) => (b.data_year || 0) - (a.data_year || 0));
-                return rows.slice(0, lim).map(x => ({
-                    title: `${x.data_year || ''} Officers Assaulted/Killed — ${Number(x.officers_assaulted || 0).toLocaleString()} assaults`,
-                    description: `Feloniously killed: ${x.felonious_killed || 0} · Accidentally killed: ${x.accidental_killed || 0} · Total killed: ${x.officers_killed || 0}`,
-                    date: x.data_year ? `${x.data_year}-12-31` : '',
-                    link: 'https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/le/leoka',
-                    data_year: x.data_year || '',
-                    officers_killed: x.officers_killed || 0,
-                    felonious_killed: x.felonious_killed || 0,
-                    accidental_killed: x.accidental_killed || 0,
-                    officers_assaulted: x.officers_assaulted || 0,
-                    agencies_reporting: x.agencies || x.agencies_reporting || ''
-                }));
+                return [{
+                    title: 'LEOKA — view on the Crime Data Explorer',
+                    description: 'The FBI CDE no longer exposes a public API route for Law Enforcement Officers Killed & Assaulted (LEOKA). Browse it directly on the Crime Data Explorer.',
+                    date: '', link: 'https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/le/leoka'
+                }];
             }
 
-            // --- Police employee staffing ---------------------------------------
+            // --- Police employment (national; /pe/national, bare-year range) ---
             if (sub === 'police_employees') {
-                const url = `${apiBase}/le/police-employees/national/${fromYear}/${toYear}?API_KEY=${apiKey}`;
-                const d = await tryFetch(url);
-                if (!d) return fail('FBI Police Employees endpoint unreachable');
-                const rows = (d.results || []).slice().sort((a, b) => (b.data_year || 0) - (a.data_year || 0));
-                return rows.slice(0, lim).map(x => ({
-                    title: `${x.data_year || ''} Police Employees — ${Number(x.total_employees || x.full_time_employees || 0).toLocaleString()} total`,
-                    description: `Officers: ${Number(x.officers || x.full_time_officers || 0).toLocaleString()} · Civilians: ${Number(x.civilians || x.full_time_civilians || 0).toLocaleString()} · Population covered: ${Number(x.population || 0).toLocaleString()}`,
-                    date: x.data_year ? `${x.data_year}-12-31` : '',
-                    link: 'https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/le/police-employees',
-                    data_year: x.data_year || '',
-                    full_time_employees: x.full_time_employees || x.total_employees || 0,
-                    full_time_officers: x.full_time_officers || x.officers || 0,
-                    full_time_civilians: x.full_time_civilians || x.civilians || 0,
-                    population: x.population || 0,
-                    agencies_reporting: x.agencies || x.agencies_reporting || ''
-                }));
+                const link = 'https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/le/pe';
+                const d = await tryFetch(`${apiBase}/pe/national?from=${fromYear}&to=${toYear}&API_KEY=${apiKey}`);
+                if (!d) return fail('FBI Police Employment endpoint unreachable');
+                // Response: { rates: {"Law Enforcement Employees per 1,000 People": {YYYY:val}},
+                //             actuals: {"Male Officers": {YYYY:val}, "Male Civilians": {...}, ...} }
+                const out = [];
+                const rateSeries = (d.rates && d.rates['Law Enforcement Employees per 1,000 People']) || {};
+                for (const [year, val] of Object.entries(rateSeries)) {
+                    if (val == null) continue;
+                    out.push({ title: `LE employees per 1,000 people (${year}): ${val}`, description: 'National rate', date: `${year}-12-31`, link, year, metric: 'employees_per_1000', value: val });
+                }
+                for (const [label, series] of Object.entries(d.actuals || {})) {
+                    for (const [year, val] of Object.entries(series || {})) {
+                        if (val == null) continue;
+                        out.push({ title: `${label} (${year}): ${Number(val).toLocaleString()}`, description: 'National police-employment count', date: `${year}-12-31`, link, year, metric: label, value: val });
+                    }
+                }
+                out.sort((a, b) => String(b.date).localeCompare(String(a.date)));
+                if (!out.length) return [{ title: 'FBI Police Employment — no data for this range', description: 'UCR police-employment data lags; try an earlier year range.', date: '', link }];
+                return out.slice(0, lim);
             }
 
-            // --- Arrests (national, by offense) ---------------------------------
+            // --- Arrests (national, by offense; /arrest/national/{offense}) -----
             if (sub === 'arrests') {
-                // Default to all-offense aggregate ("X" maps to all in CDE), but the API
-                // expects a specific code — use "V" (violent crime) as the safe default.
-                const offense = (query && /^[A-Z]{1,3}$/.test(query.trim())) ? query.trim().toUpperCase() : 'V';
-                const url = `${apiBase}/arrest/national/${offense}/${fromYear}/${toYear}?API_KEY=${apiKey}`;
-                const d = await tryFetch(url);
-                if (!d) return fail('FBI Arrests endpoint unreachable');
-                const rows = (d.results || []).slice().sort((a, b) => (b.data_year || 0) - (a.data_year || 0));
-                return rows.slice(0, lim).map(x => ({
-                    title: `${x.data_year || ''} Arrests — ${Number(x.value || x.estimate || x.arrest_count || 0).toLocaleString()} (${offense})`,
-                    description: `Offense code: ${offense} · Population: ${Number(x.population || 0).toLocaleString()}${x.rate ? ' · Rate: ' + x.rate + ' per 100k' : ''}`,
-                    date: x.data_year ? `${x.data_year}-12-31` : '',
-                    link: 'https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/explorer/crime/arrest',
-                    data_year: x.data_year || '',
-                    offense_code: offense,
-                    arrest_count: x.value || x.estimate || x.arrest_count || 0,
-                    rate: x.rate || '',
-                    population: x.population || 0
-                }));
+                // Offense codes here differ from the crime endpoint; "all" is the safe default.
+                const offense = (query || '').trim() || 'all';
+                const link = 'https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/explorer/crime/arrest';
+                const d = await tryFetch(`${apiBase}/arrest/national/${encodeURIComponent(offense)}?type=counts&from=${mFrom}&to=${mTo}&API_KEY=${apiKey}`);
+                if (!d) return fail(`FBI Arrests endpoint unreachable (offense "${offense}")`);
+                const rows = flattenSeries(d.rates, 'United States Arrests', link, 'per 100k');
+                if (!rows.length) return fail(`FBI Arrests returned no data for offense "${offense}"`);
+                return rows.map(r => ({ ...r, offense_code: offense, description: `Offense: ${offense} · Period ${r.period}` }));
             }
 
-            // --- Default: national crime estimates (violent crime) --------------
-            const offense = (query && /^[A-Z]{1,3}$/.test(query.trim())) ? query.trim().toUpperCase() : 'V';
-            const url = `${apiBase}/estimate/national/${offense}/${fromYear}/${toYear}?API_KEY=${apiKey}`;
-            const d = await tryFetch(url);
-            if (!d) return fail('FBI National Estimates endpoint unreachable');
-            const rows = (d.results || []).slice().sort((a, b) => (b.data_year || 0) - (a.data_year || 0));
-            return rows.slice(0, lim).map(x => ({
-                title: `${x.data_year || ''} ${offense === 'V' ? 'Violent Crime' : offense === 'P' ? 'Property Crime' : offense + ' Crime'} — ${Number(x.estimate || x.value || 0).toLocaleString()}`,
-                description: `Offense code: ${offense} · Rate per 100k: ${x.rate || 'n/a'} · Population: ${Number(x.population || 0).toLocaleString()}`,
-                date: x.data_year ? `${x.data_year}-12-31` : '',
-                link: 'https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/explorer/crime/crime-trend',
-                data_year: x.data_year || '',
-                offense_code: offense,
-                estimate: x.estimate || x.value || 0,
-                rate: x.rate || '',
-                population: x.population || 0,
-                agencies_reporting: x.agencies || x.agencies_reporting || ''
-            }));
+            // --- Default: national crime rate trends (/summarized/state/national/{offense}) ---
+            const offense = (query || '').trim() || 'violent-crime';
+            const link = 'https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/explorer/crime/crime-trend';
+            const d = await tryFetch(`${apiBase}/summarized/state/national/${encodeURIComponent(offense)}?from=${mFrom}&to=${mTo}&API_KEY=${apiKey}`);
+            if (!d) return fail(`FBI National Estimates endpoint unreachable (offense "${offense}")`);
+            const rows = flattenSeries(d.offenses && d.offenses.rates, 'United States Offenses', link, 'per 100k');
+            if (!rows.length) return fail(`FBI crime trends returned no data for offense "${offense}"`);
+            return rows.map(r => ({ ...r, offense_code: offense, description: `${offense} · Period ${r.period}` }));
         }
     }
 };
@@ -3934,15 +3953,15 @@ async function fccEquipmentSearch(query, opts = {}) {
     if (!query) {
         try {
             let dateFilter = '';
-            if (opts.dateFrom) dateFilter += ` AND grant_date >= '${opts.dateFrom}'`;
-            if (opts.dateTo) dateFilter += ` AND grant_date <= '${opts.dateTo}'`;
-            const r = await corsFetch(`https://opendata.fcc.gov/resource/3b3k-34jp.json?$limit=${lim}&$order=grant_date DESC${dateFilter ? '&$where=1=1' + encodeURIComponent(dateFilter) : ''}`);
+            if (opts.dateFrom) dateFilter += ` AND date_received >= '${opts.dateFrom}'`;
+            if (opts.dateTo) dateFilter += ` AND date_received <= '${opts.dateTo}'`;
+            const r = await corsFetch(`https://opendata.fcc.gov/resource/3b3k-34jp.json?$limit=${lim}&$order=date_received DESC${dateFilter ? '&$where=1=1' + encodeURIComponent(dateFilter) : ''}`);
             const d = await r.json();
             if (Array.isArray(d) && d.length > 0) {
                 return d.map(x => ({
-                    title: x.equipment_product_description || x.product_description || x.applicant_name || 'Unknown Device',
+                    title: x.grantee_name || x.applicant_name || 'Equipment Grantee',
                     description: `Applicant: ${x.applicant_name || x.grantee_name || 'N/A'} | FCC ID: ${(x.grantee_code||'') + (x.product_code||'')}`,
-                    date: x.grant_date || x.date_of_grant || '',
+                    date: x.date_received || '',
                     link: `https://apps.fcc.gov/oetcf/eas/reports/ViewExhibitReport.cfm?mode=Exhibits&RequestTimeout=500&calledFromFrame=N&fcc_id=${(x.grantee_code||'') + (x.product_code||'')}`,
                     fcc_id: (x.grantee_code||'') + (x.product_code||''),
                     applicant: x.applicant_name || x.grantee_name || '',
@@ -4305,7 +4324,9 @@ async function fccBroadband(opts = {}) {
         }
     } catch(e) { /* fall through */ }
 
-    return [{ title: 'Broadband Providers', description: 'Unable to load broadband data. The FCC Broadband Map API may require updated endpoints. Visit the link directly.', date: '', link: 'https://broadbandmap.fcc.gov/' }];
+    // Both the public Broadband Map API (405) and the legacy opendata Socrata set
+    // (sgz3-kiqt, now dataset.missing) have been retired. Degrade honestly.
+    return [{ title: 'FCC Broadband data — view on the National Broadband Map', description: 'The FCC retired the public broadband-provider API endpoints this app used. Browse mobile/fixed coverage and provider lists directly on the National Broadband Map.', date: '', link: 'https://broadbandmap.fcc.gov/' }];
 }
 
 // Fallback agency metadata for client-side mode
@@ -4486,7 +4507,7 @@ const CLIENT_AGENCIES = [
      ],
      endpoints:['Full-Text Search','Agencies']},
     {id:'fbi',name:'FBI Crime Data Explorer',acronym:'FBI',description:'National crime statistics, hate crime, arrests, line-of-duty officer casualties (LEOKA), police staffing, and 18,000+ reporting law-enforcement agencies. Annual aggregates from the FBI UCR program.',
-     base_url:'https://api.usa.gov/crime/fbi/cde',auth_required:true,has_search:true,search_placeholder:'Search agency names or offense code (V/P/H/R/B)...',
+     base_url:'https://api.usa.gov/crime/fbi/cde',auth_required:true,has_search:true,search_placeholder:'Agencies: state (e.g. CA, Texas) · Trends/Arrests: offense (e.g. violent-crime, aggravated-assault, all)...',
      data_categories:['Law Enforcement','Crime','Statistics','Public Safety'],
      sub_sections:[
         {id:'national_trends',name:'National Crime Trends'},

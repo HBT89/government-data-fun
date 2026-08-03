@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenGovDash API — Developer Docs</title>
+<meta name="description" content="Pull normalized US federal government data from OpenGovDash: the /api/v1 data API and the /api/db cross-reference layer.">
+<style>
+  :root{
+    --bg:#0b0f17; --panel:#121826; --panel2:#0e1420; --border:#233047;
+    --text:#e6ecf5; --muted:#9fb0c9; --accent:#4c9cff; --accent2:#37d39b;
+    --code-bg:#0a0e16; --chip:#1b2740; --warn:#ffcc66; --pill-key:#3a2a12; --pill-key-tx:#ffcf8a;
+    --pill-free:#12301f; --pill-free-tx:#7ee2b0;
+  }
+  @media (prefers-color-scheme: light){
+    :root{ --bg:#f6f8fc; --panel:#ffffff; --panel2:#f0f4fa; --border:#d8e0ee; --text:#121a2b;
+      --muted:#51617d; --accent:#1f6fd6; --accent2:#0f9d68; --code-bg:#0f1420;
+      --chip:#e7eefb; --pill-key:#fbeecd; --pill-key-tx:#8a5a10; --pill-free:#d9f5e6; --pill-free-tx:#0f7a4d; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:960px;margin:0 auto;padding:32px 20px 96px}
+  header.hero{border-bottom:1px solid var(--border);padding-bottom:24px;margin-bottom:8px}
+  .kicker{color:var(--accent2);font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:12px}
+  h1{font-size:30px;margin:.3em 0 .2em;line-height:1.15}
+  h2{font-size:22px;margin:2.2em 0 .5em;padding-top:.4em;border-top:1px solid var(--border)}
+  h3{font-size:16px;margin:1.6em 0 .4em}
+  p{color:var(--text)} .lead{color:var(--muted);font-size:16px;max-width:70ch}
+  a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.92em;background:var(--chip);padding:.12em .4em;border-radius:5px}
+  pre{background:var(--code-bg);color:#dbe6f5;border:1px solid var(--border);border-radius:10px;padding:14px 16px;overflow-x:auto;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;line-height:1.55}
+  pre code{background:none;padding:0}
+  .muted{color:var(--muted)}
+  .grid{display:grid;gap:14px}
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:16px 18px}
+  table{width:100%;border-collapse:collapse;margin:.6em 0;font-size:14px;display:block;overflow-x:auto}
+  th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--border);vertical-align:top;white-space:nowrap}
+  th{color:var(--muted);font-weight:600;font-size:12.5px;text-transform:uppercase;letter-spacing:.03em}
+  td.wrap-cell,th.wrap-cell{white-space:normal;min-width:220px}
+  .pill{display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:999px;white-space:nowrap}
+  .pill.free{background:var(--pill-free);color:var(--pill-free-tx)}
+  .pill.key{background:var(--pill-key);color:var(--pill-key-tx)}
+  .method{display:inline-block;font:600 11px ui-monospace,monospace;color:#0b0f17;background:var(--accent2);border-radius:5px;padding:2px 7px;margin-right:8px}
+  .endpoint{font-family:ui-monospace,monospace;font-size:14px;word-break:break-all}
+  .toc{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 4px}
+  .toc a{background:var(--chip);border:1px solid var(--border);border-radius:999px;padding:5px 12px;font-size:13px;color:var(--text)}
+  .note{border-left:3px solid var(--accent2);background:var(--panel2);padding:10px 14px;border-radius:0 8px 8px 0;margin:12px 0}
+  .warn{border-left-color:var(--warn)}
+  footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--border);color:var(--muted);font-size:13px}
+  .small{font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="kicker">OpenGovDash · Developer API</div>
+    <h1>Pull normalized federal data from OpenGovDash</h1>
+    <p class="lead">A public, machine-readable API that returns the same normalized US government data the dashboard shows — you fetch, we do the upstream calls, quirk-handling, and normalization. Two layers: <a href="#data">the data API</a> (one agency at a time) and <a href="#db">the cross-reference layer</a> (named tables that join several agencies).</p>
+    <div class="toc">
+      <a href="#start">Quick start</a>
+      <a href="#auth">Auth</a>
+      <a href="#data">/api/v1 data</a>
+      <a href="#agencies">Agencies</a>
+      <a href="#db">/api/db tables</a>
+      <a href="#errors">Errors</a>
+      <a href="#notes">CORS · caching</a>
+    </div>
+  </header>
+
+  <h2 id="start">Quick start</h2>
+  <p>Base URL:</p>
+  <pre><code>https://opengov-proxy.psjs.workers.dev</code></pre>
+  <p>Every record is normalized to a stable shape — <code>title</code>, <code>description</code>, <code>date</code>, <code>link</code>, plus agency-specific rich fields. No key needed for most agencies.</p>
+  <pre><code># Recent M2.5+ earthquakes (no key)
+curl "https://opengov-proxy.psjs.workers.dev/api/v1/data/usgs/earthquakes?limit=3"
+
+# Federal contract awards mentioning "quantum" (no key)
+curl "https://opengov-proxy.psjs.workers.dev/api/v1/data/usaspending/award_search?q=quantum&limit=5"</code></pre>
+  <pre><code>// Browser / Node fetch
+const r = await fetch(
+  "https://opengov-proxy.psjs.workers.dev/api/v1/data/fda/drug_recalls?q=insulin&limit=10"
+);
+const { results } = await r.json();
+results.forEach(x =&gt; console.log(x.date, x.title));</code></pre>
+
+  <h2 id="auth">Authentication</h2>
+  <p>Most agencies need <strong>no key</strong>. A few (NASA, Congress, FEC, FBI) proxy an <a href="https://api.data.gov/signup/" target="_blank" rel="noopener">api.data.gov</a> service — for those you supply <strong>your own</strong> free key. We never spend a shared key on your behalf.</p>
+  <pre><code># Pass your own api.data.gov key as a query param…
+curl "https://opengov-proxy.psjs.workers.dev/api/v1/data/nasa/apod?limit=3&api_key=YOUR_KEY"
+# …or as a header
+curl -H "X-Api-Key: YOUR_KEY" \
+  "https://opengov-proxy.psjs.workers.dev/api/v1/data/congress/bills?limit=5"</code></pre>
+  <div class="note small">Agencies marked <span class="pill key">key</span> below require your own api.data.gov key. Those marked <span class="pill free">free</span> need nothing.</div>
+
+  <h2 id="data">The data API — <code>/api/v1</code></h2>
+  <table>
+    <tr><th>Endpoint</th><th class="wrap-cell">Returns</th></tr>
+    <tr><td class="endpoint"><span class="method">GET</span>/api/v1</td><td class="wrap-cell">Service index.</td></tr>
+    <tr><td class="endpoint"><span class="method">GET</span>/api/v1/agencies</td><td class="wrap-cell">Machine-readable catalog of agencies, subsections, params, and auth. The source of truth.</td></tr>
+    <tr><td class="endpoint"><span class="method">GET</span>/api/v1/openapi.json</td><td class="wrap-cell">OpenAPI 3 spec, generated from the registry.</td></tr>
+    <tr><td class="endpoint"><span class="method">GET</span>/api/v1/data/{agency}/{subsection}</td><td class="wrap-cell">Normalized records for one agency dataset.</td></tr>
+  </table>
+
+  <h3>Query parameters</h3>
+  <table>
+    <tr><th>Param</th><th class="wrap-cell">Meaning</th></tr>
+    <tr><td><code>q</code></td><td class="wrap-cell">Search term / filter. Some subsections require it (see catalog).</td></tr>
+    <tr><td><code>limit</code></td><td class="wrap-cell">Max records (default 20, max 100).</td></tr>
+    <tr><td><code>from</code>, <code>to</code></td><td class="wrap-cell">Date range, <code>YYYY-MM-DD</code>, where the upstream supports it.</td></tr>
+    <tr><td><code>format</code></td><td class="wrap-cell"><code>json</code> (default) or <code>csv</code>.</td></tr>
+    <tr><td><code>api_key</code></td><td class="wrap-cell">Your api.data.gov key, for key-gated agencies (or use the <code>X-Api-Key</code> header).</td></tr>
+  </table>
+
+  <h3>Response envelope</h3>
+  <pre><code>{
+  "ok": true,
+  "agency": "usgs",
+  "subsection": "earthquakes",
+  "query": { "q": null, "limit": 3, "from": null, "to": null },
+  "count": 3,
+  "results": [
+    {
+      "title": "M4.2 — 12km NNE of Ridgecrest, CA",
+      "description": "earthquake · reviewed",
+      "date": "2026-08-02T18:41:00.000Z",
+      "link": "https://earthquake.usgs.gov/earthquakes/eventpage/...",
+      "magnitude": 4.2, "place": "12km NNE of Ridgecrest, CA"
+    }
+  ],
+  "source": { "upstream": "earthquake.usgs.gov", "fetched_at": "2026-08-03T00:00:00.000Z" },
+  "attribution": "U.S. Geological Survey (public domain)"
+}</code></pre>
+
+  <h2 id="agencies">Agencies &amp; subsections</h2>
+  <p class="small muted">Live source of truth: <code>GET /api/v1/agencies</code>. <span class="pill free">free</span> = no key · <span class="pill key">key</span> = your api.data.gov key.</p>
+  <table>
+    <tr><th>Agency</th><th>Auth</th><th class="wrap-cell">Subsections</th></tr>
+    <tr><td>usgs</td><td><span class="pill free">free</span></td><td class="wrap-cell"><code>earthquakes</code></td></tr>
+    <tr><td>fda</td><td><span class="pill free">free</span></td><td class="wrap-cell"><code>drug_events</code>, <code>drug_recalls</code>, <code>device_recalls</code>, <code>food_recalls</code>, <code>device_510k</code></td></tr>
+    <tr><td>treasury</td><td><span class="pill free">free</span></td><td class="wrap-cell"><code>national_debt</code>, <code>daily_statements</code>, <code>interest_rates</code>, <code>exchange_rates</code></td></tr>
+    <tr><td>nist</td><td><span class="pill free">free</span></td><td class="wrap-cell"><code>cve</code></td></tr>
+    <tr><td>fedreg</td><td><span class="pill free">free</span></td><td class="wrap-cell"><code>documents</code>, <code>executive_orders</code></td></tr>
+    <tr><td>usaspending</td><td><span class="pill free">free</span></td><td class="wrap-cell"><code>top_agencies</code>, <code>award_search</code> <span class="muted small">(q required)</span></td></tr>
+    <tr><td>fdic</td><td><span class="pill free">free</span></td><td class="wrap-cell"><code>institutions</code>, <code>failures</code></td></tr>
+    <tr><td>fema</td><td><span class="pill free">free</span></td><td class="wrap-cell"><code>disasters</code></td></tr>
+    <tr><td>census</td><td><span class="pill free">free</span></td><td class="wrap-cell"><code>population</code></td></tr>
+    <tr><td>nih</td><td><span class="pill free">free</span></td><td class="wrap-cell"><code>pubmed</code>, <code>clinical_trials</code></td></tr>
+    <tr><td>nasa</td><td><span class="pill key">key</span></td><td class="wrap-cell"><code>apod</code></td></tr>
+    <tr><td>congress</td><td><span class="pill key">key</span></td><td class="wrap-cell"><code>bills</code></td></tr>
+    <tr><td>fec</td><td><span class="pill key">key</span></td><td class="wrap-cell"><code>candidates</code>, <code>filings</code></td></tr>
+    <tr><td>fbi</td><td><span class="pill key">key</span></td><td class="wrap-cell"><code>crime</code> <span class="muted small">(q=offense)</span>, <code>arrests</code> <span class="muted small">(q=offense)</span>, <code>agencies</code> <span class="muted small">(q=state abbr)</span></td></tr>
+  </table>
+
+  <h3>CSV export</h3>
+  <pre><code>curl "https://opengov-proxy.psjs.workers.dev/api/v1/data/fdic/failures?limit=50&format=csv" -o failures.csv</code></pre>
+
+  <h2 id="db">Cross-reference layer — <code>/api/db</code></h2>
+  <p>Named <strong>tables</strong> that fan out across several agencies and return one unified, normalized result set. Every row keeps the normal shape plus a <code>_source</code> tag (<code>"agency:kind"</code>) so you can tell where it came from. This is the layer meant to grow — new joins get added as named tables.</p>
+  <table>
+    <tr><th>Endpoint</th><th class="wrap-cell">Returns</th></tr>
+    <tr><td class="endpoint"><span class="method">GET</span>/api/db</td><td class="wrap-cell">List of tables with their params, sources, and whether a key is needed.</td></tr>
+    <tr><td class="endpoint"><span class="method">GET</span>/api/db/{table}</td><td class="wrap-cell">Run a table. Same params as the data API (<code>q</code>, <code>limit</code>, <code>from</code>, <code>to</code>, <code>format</code>, <code>api_key</code>).</td></tr>
+  </table>
+
+  <h3>Available tables</h3>
+  <table>
+    <tr><th>Table</th><th class="wrap-cell">What it joins</th><th class="wrap-cell">Sources</th></tr>
+    <tr><td><code>drug-safety</code></td><td class="wrap-cell">One drug across adverse events, recalls, and clinical trials. <span class="muted small">(q required)</span></td><td class="wrap-cell">fda/drug_events · fda/drug_recalls · nih/clinical_trials</td></tr>
+    <tr><td><code>cyber-landscape</code></td><td class="wrap-cell">CVEs + federal cyber contract awards + Federal Register cyber rules.</td><td class="wrap-cell">nist/cve · usaspending/award_search · fedreg/documents</td></tr>
+    <tr><td><code>disaster-response</code></td><td class="wrap-cell">FEMA declarations + federal spending for the same area/keyword. <span class="muted small">(q required)</span></td><td class="wrap-cell">fema/disasters · usaspending/award_search</td></tr>
+  </table>
+  <pre><code># Everything about a drug, across three agencies
+curl "https://opengov-proxy.psjs.workers.dev/api/db/drug-safety?q=metformin&limit=10"</code></pre>
+  <pre><code>{
+  "ok": true,
+  "table": "drug-safety",
+  "sources": ["fda/drug_events","fda/drug_recalls","nih/clinical_trials"],
+  "count": 24,
+  "rows": [
+    { "_source": "fda:recall", "title": "METFORMIN HCL ...", "date": "2026-06-01", "link": "..." },
+    { "_source": "nih:clinical_trial", "title": "Metformin in ...", "date": "2026-05-20", "link": "..." }
+  ],
+  "generated_at": "2026-08-03T00:00:00.000Z"
+}</code></pre>
+  <div class="note small">If one source fails, the table still returns the others and lists the failure under <code>partial_errors</code> — a table never fails whole because one upstream hiccuped.</div>
+
+  <h2 id="errors">Errors</h2>
+  <p>Errors return <code>{ "ok": false, "error": { "type", "message" } }</code> with a matching HTTP status.</p>
+  <table>
+    <tr><th>Status</th><th>type</th><th class="wrap-cell">When</th></tr>
+    <tr><td>400</td><td><code>query_required</code></td><td class="wrap-cell">Subsection/table needs <code>?q=</code>.</td></tr>
+    <tr><td>401</td><td><code>api_key_required</code></td><td class="wrap-cell">Key-gated source, no key supplied.</td></tr>
+    <tr><td>404</td><td><code>unknown_agency</code> / <code>unknown_subsection</code> / <code>unknown_table</code></td><td class="wrap-cell">No such route — check <code>/api/v1/agencies</code> or <code>/api/db</code>.</td></tr>
+    <tr><td>502</td><td><code>upstream_error</code></td><td class="wrap-cell">The government upstream errored or timed out.</td></tr>
+  </table>
+
+  <h2 id="notes">CORS, caching &amp; limits</h2>
+  <ul>
+    <li><strong>CORS:</strong> <code>Access-Control-Allow-Origin: *</code> — call it directly from any web app. It serves public-domain government data.</li>
+    <li><strong>Caching:</strong> keyless responses are edge-cached ~5&nbsp;min; a cache hit returns <code>X-Cache: HIT</code>. Key-bearing requests are never cached.</li>
+    <li><strong>Attribution:</strong> each response carries an <code>attribution</code> string — please keep it with the data.</li>
+    <li><strong>Fair use:</strong> this runs on a small shared Worker. Cache on your side and keep <code>limit</code> reasonable. Key-gated agencies count against <em>your</em> api.data.gov quota, not ours.</li>
+  </ul>
+
+  <footer>
+    <p>OpenGovDash · <a href="/government-data-fun/">dashboard</a> · normalized data from ~27 US federal agencies. This API is a thin, cache-friendly layer over public government APIs; it holds no secrets and stores no personal data.</p>
+  </footer>
+
+</div>
+</body>
+</html>
