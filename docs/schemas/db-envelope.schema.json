@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://opengov-proxy.psjs.workers.dev/schemas/db-envelope.schema.json",
+  "title": "DbEnvelope",
+  "description": "Cross-reference response envelope for /api/db/{table}.",
+  "type": "object",
+  "required": ["ok", "table", "query", "sources", "count", "rows", "generated_at"],
+  "properties": {
+    "ok": { "const": true },
+    "table": { "type": "string" },
+    "query": {
+      "type": "object",
+      "required": ["q", "limit", "from", "to"],
+      "properties": {
+        "q": { "type": ["string", "null"] },
+        "limit": { "type": "integer", "minimum": 1, "maximum": 100 },
+        "from": { "type": ["string", "null"] },
+        "to": { "type": ["string", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "sources": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "count": { "type": "integer", "minimum": 0 },
+    "partial_errors": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "rows": {
+      "type": "array",
+      "items": {
+        "allOf": [
+          { "$ref": "./normalized-record.schema.json" },
+          {
+            "type": "object",
+            "required": ["_source"],
+            "properties": {
+              "_source": { "type": "string" }
+            },
+            "additionalProperties": true
+          }
+        ]
+      }
+    },
+    "generated_at": { "type": "string", "format": "date-time" }
+  },
+  "additionalProperties": false
+}

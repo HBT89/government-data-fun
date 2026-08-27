@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://opengov-proxy.psjs.workers.dev/schemas/normalized-record.schema.json",
+  "title": "NormalizedRecord",
+  "description": "Base normalized record returned by /api/v1 and used by /api/db rows.",
+  "type": "object",
+  "required": ["title", "description", "date", "link"],
+  "properties": {
+    "title": { "type": "string" },
+    "description": { "type": "string" },
+    "date": { "type": "string" },
+    "link": { "type": "string" }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://opengov-proxy.psjs.workers.dev/schemas/error-envelope.schema.json",
+  "title": "ErrorEnvelope",
+  "description": "Error envelope shared by /api/v1 and /api/db.",
+  "type": "object",
+  "required": ["ok", "error"],
+  "properties": {
+    "ok": { "const": false },
+    "error": {
+      "type": "object",
+      "required": ["type", "message"],
+      "properties": {
+        "type": { "type": "string" },
+        "message": { "type": "string" },
+        "upstream_status": { "type": ["integer", "null"] }
+      },
+      "additionalProperties": true
+    },
+    "agency": { "type": "string" },
+    "subsection": { "type": "string" },
+    "table": { "type": "string" },
+    "available": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": true
+}

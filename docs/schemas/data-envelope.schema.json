@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://opengov-proxy.psjs.workers.dev/schemas/data-envelope.schema.json",
+  "title": "DataEnvelope",
+  "description": "Normalized response envelope for /api/v1/data/{agency}/{subsection}.",
+  "type": "object",
+  "required": ["ok", "agency", "subsection", "query", "count", "results", "source", "attribution"],
+  "properties": {
+    "ok": { "const": true },
+    "agency": { "type": "string" },
+    "subsection": { "type": "string" },
+    "query": {
+      "type": "object",
+      "required": ["q", "limit", "from", "to"],
+      "properties": {
+        "q": { "type": ["string", "null"] },
+        "limit": { "type": "integer", "minimum": 1, "maximum": 100 },
+        "from": { "type": ["string", "null"] },
+        "to": { "type": ["string", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "count": { "type": "integer", "minimum": 0 },
+    "results": {
+      "type": "array",
+      "items": { "$ref": "./normalized-record.schema.json" }
+    },
+    "source": {
+      "type": "object",
+      "required": ["upstream", "fetched_at"],
+      "properties": {
+        "upstream": { "type": "string" },
+        "fetched_at": { "type": "string", "format": "date-time" }
+      },
+      "additionalProperties": false
+    },
+    "attribution": { "type": "string" }
+  },
+  "additionalProperties": false
+}

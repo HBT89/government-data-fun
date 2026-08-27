@@ -1,0 +1,358 @@
+openapi: 3.0.3
+info:
+  title: OpenGovDash Connected App Contract
+  version: 1.0.0
+  description: |
+    Machine-consumable contract for connected applications using OpenGovDash.
+    Covers normalized single-source data (/api/v1/data/{agency}/{subsection})
+    and cross-referenced table data (/api/db/{table}).
+servers:
+  - url: https://opengov-proxy.psjs.workers.dev
+tags:
+  - name: Discovery
+  - name: Normalized Data
+  - name: Cross Reference
+paths:
+  /api/v1:
+    get:
+      tags: [Discovery]
+      summary: API index
+      responses:
+        '200':
+          description: Service index
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean }
+                  service: { type: string }
+                  version: { type: string }
+                  endpoints:
+                    type: object
+                    additionalProperties: { type: string }
+  /api/v1/agencies:
+    get:
+      tags: [Discovery]
+      summary: List agencies and subsections
+      responses:
+        '200':
+          description: Agency registry
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AgenciesResponse'
+  /api/v1/openapi.json:
+    get:
+      tags: [Discovery]
+      summary: Runtime-generated OpenAPI spec
+      responses:
+        '200':
+          description: OpenAPI JSON
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+  /api/v1/data/{agency}/{subsection}:
+    get:
+      tags: [Normalized Data]
+      summary: Get normalized data for one agency subsection
+      parameters:
+        - $ref: '#/components/parameters/Agency'
+        - $ref: '#/components/parameters/Subsection'
+        - $ref: '#/components/parameters/Q'
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/From'
+        - $ref: '#/components/parameters/To'
+        - $ref: '#/components/parameters/Format'
+        - $ref: '#/components/parameters/ApiKey'
+      responses:
+        '200':
+          description: Normalized records
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataEnvelope'
+            text/csv:
+              schema:
+                type: string
+        '400': { $ref: '#/components/responses/QueryRequired' }
+        '401': { $ref: '#/components/responses/ApiKeyRequired' }
+        '404': { $ref: '#/components/responses/UnknownPath' }
+        '502': { $ref: '#/components/responses/UpstreamError' }
+  /api/db:
+    get:
+      tags: [Cross Reference]
+      summary: List named cross-reference tables
+      responses:
+        '200':
+          description: Table registry
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DbIndexResponse'
+  /api/db/{table}:
+    get:
+      tags: [Cross Reference]
+      summary: Execute one cross-reference table
+      parameters:
+        - $ref: '#/components/parameters/Table'
+        - $ref: '#/components/parameters/Q'
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/From'
+        - $ref: '#/components/parameters/To'
+        - $ref: '#/components/parameters/Format'
+        - $ref: '#/components/parameters/ApiKey'
+      responses:
+        '200':
+          description: Cross-referenced rows
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DbEnvelope'
+            text/csv:
+              schema:
+                type: string
+        '400': { $ref: '#/components/responses/QueryRequired' }
+        '401': { $ref: '#/components/responses/ApiKeyRequired' }
+        '404': { $ref: '#/components/responses/UnknownPath' }
+        '502': { $ref: '#/components/responses/TableError' }
+components:
+  parameters:
+    Agency:
+      name: agency
+      in: path
+      required: true
+      schema:
+        type: string
+        enum: [usgs, fda, treasury, nist, fedreg, usaspending, fdic, fema, census, nih, nasa, congress, fec, fbi]
+    Subsection:
+      name: subsection
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Use /api/v1/agencies for live source of truth for agency/subsection combinations.
+    Table:
+      name: table
+      in: path
+      required: true
+      schema:
+        type: string
+        enum: [drug-safety, cyber-landscape, disaster-response]
+    Q:
+      name: q
+      in: query
+      schema: { type: string }
+      description: Search term. Required by specific subsections/tables.
+    Limit:
+      name: limit
+      in: query
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 100
+        default: 20
+    From:
+      name: from
+      in: query
+      schema:
+        type: string
+        format: date
+    To:
+      name: to
+      in: query
+      schema:
+        type: string
+        format: date
+    Format:
+      name: format
+      in: query
+      schema:
+        type: string
+        enum: [json, csv]
+        default: json
+    ApiKey:
+      name: api_key
+      in: query
+      schema: { type: string }
+      description: Caller-supplied api.data.gov key when required.
+  responses:
+    QueryRequired:
+      description: Missing required q parameter
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/ErrorEnvelope' }
+    ApiKeyRequired:
+      description: Missing required api_key/X-Api-Key
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/ErrorEnvelope' }
+    UnknownPath:
+      description: Unknown agency/subsection/table/path
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/ErrorEnvelope' }
+    UpstreamError:
+      description: Upstream API failed
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/ErrorEnvelope' }
+    TableError:
+      description: Cross-reference table execution failed
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/ErrorEnvelope' }
+  schemas:
+    ErrorEnvelope:
+      type: object
+      required: [ok, error]
+      properties:
+        ok:
+          type: boolean
+          enum: [false]
+        error:
+          type: object
+          required: [type, message]
+          properties:
+            type: { type: string }
+            message: { type: string }
+            upstream_status:
+              type: [integer, 'null']
+        agency: { type: string }
+        subsection: { type: string }
+        table: { type: string }
+        available:
+          type: array
+          items: { type: string }
+    NormalizedRecord:
+      type: object
+      required: [title, description, date, link]
+      properties:
+        title: { type: string }
+        description: { type: string }
+        date: { type: string }
+        link: { type: string }
+      additionalProperties: true
+    DbRow:
+      allOf:
+        - $ref: '#/components/schemas/NormalizedRecord'
+        - type: object
+          required: [_source]
+          properties:
+            _source: { type: string }
+          additionalProperties: true
+    DataEnvelope:
+      type: object
+      required: [ok, agency, subsection, query, count, results, source, attribution]
+      properties:
+        ok:
+          type: boolean
+          enum: [true]
+        agency: { type: string }
+        subsection: { type: string }
+        query:
+          type: object
+          required: [q, limit, from, to]
+          properties:
+            q: { type: [string, 'null'] }
+            limit: { type: integer }
+            from: { type: [string, 'null'] }
+            to: { type: [string, 'null'] }
+        count: { type: integer }
+        results:
+          type: array
+          items: { $ref: '#/components/schemas/NormalizedRecord' }
+        source:
+          type: object
+          required: [upstream, fetched_at]
+          properties:
+            upstream: { type: string }
+            fetched_at: { type: string, format: date-time }
+        attribution: { type: string }
+    DbEnvelope:
+      type: object
+      required: [ok, table, query, sources, count, rows, generated_at]
+      properties:
+        ok:
+          type: boolean
+          enum: [true]
+        table: { type: string }
+        query:
+          type: object
+          required: [q, limit, from, to]
+          properties:
+            q: { type: [string, 'null'] }
+            limit: { type: integer }
+            from: { type: [string, 'null'] }
+            to: { type: [string, 'null'] }
+        sources:
+          type: array
+          items: { type: string }
+        count: { type: integer }
+        partial_errors:
+          type: array
+          items: { type: string }
+        rows:
+          type: array
+          items: { $ref: '#/components/schemas/DbRow' }
+        generated_at:
+          type: string
+          format: date-time
+    AgenciesResponse:
+      type: object
+      required: [ok, count, agencies]
+      properties:
+        ok:
+          type: boolean
+          enum: [true]
+        count: { type: integer }
+        agencies:
+          type: array
+          items:
+            type: object
+            required: [id, label, auth, attribution, subsections]
+            properties:
+              id: { type: string }
+              label: { type: string }
+              auth: { type: string }
+              attribution: { type: string }
+              subsections:
+                type: array
+                items:
+                  type: object
+                  required: [id, description, requires_query, path]
+                  properties:
+                    id: { type: string }
+                    description: { type: string }
+                    requires_query: { type: boolean }
+                    path: { type: string }
+    DbIndexResponse:
+      type: object
+      required: [ok, service, version, count, tables]
+      properties:
+        ok:
+          type: boolean
+          enum: [true]
+        service: { type: string }
+        version: { type: string }
+        note: { type: string }
+        count: { type: integer }
+        tables:
+          type: array
+          items:
+            type: object
+            required: [id, description, params, sources, requires_query, api_key_required, path]
+            properties:
+              id: { type: string }
+              description: { type: string }
+              params:
+                type: object
+                additionalProperties: { type: string }
+              sources:
+                type: array
+                items: { type: string }
+              requires_query: { type: boolean }
+              api_key_required: { type: boolean }
+              path: { type: string }
