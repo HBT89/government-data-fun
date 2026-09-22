@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "generated_at": "2026-09-22T17:38:17.125Z",
+  "generated_at": "2026-09-22T20:43:21.339Z",
   "sources": {
     "congress": {
       "label": "Congress.gov (Library of Congress)",
@@ -74,6 +74,15 @@
       "via": null,
       "key": null,
       "attribution": "SEC company_tickers.json"
+    },
+    "house_doc": {
+      "label": "U.S. House Clerk, financial disclosure document",
+      "idName": "doc_id",
+      "api": null,
+      "web": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/{id}.pdf",
+      "via": null,
+      "key": null,
+      "attribution": "Clerk of the U.S. House of Representatives"
     },
     "icpsr": {
       "label": "ICPSR / Voteview",

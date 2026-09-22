@@ -93,6 +93,17 @@ export const SOURCES = {
     key: null,
     attribution: 'SEC company_tickers.json',
   },
+  house_doc: {
+    label: 'U.S. House Clerk, financial disclosure document',
+    idName: 'doc_id',
+    // The path differs by filing kind, so the entity carries the full url and
+    // this template covers the PTR case only. Prefer the entity's own `url`.
+    api: null,
+    web: 'https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/{id}.pdf',
+    via: null,
+    key: null,
+    attribution: 'Clerk of the U.S. House of Representatives',
+  },
   icpsr: {
     label: 'ICPSR / Voteview',
     idName: 'icpsr',

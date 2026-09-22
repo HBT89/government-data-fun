@@ -20,12 +20,15 @@ and fetches exactly one known record.
 ## Files
 
 ```
-data/
+data/                     public tier, committed here
   entities/person.json    sitting members of Congress
   entities/org.json       SEC registrants with a listed ticker
+  entities/filing.json    House disclosure documents, addressable
   index/xref.json         any known foreign id -> entity ref
   index/sources.json      per-agency dereference templates
   manifest.json           what was built, from what, when
+
+curated/                  not committed; see Tiers
 ```
 
 Files are pretty-printed rather than minified. They are committed artifacts that
@@ -97,6 +100,49 @@ Coverage is SEC registrants with a listed ticker. Private companies, non-filers
 and foreign issuers without a US listing are absent by construction, not by
 oversight.
 
+## Filing
+
+`data/entities/filing.json`, keyed by chamber and document id.
+
+```json
+"h:20034201": {
+  "k": "ptr",
+  "ch": "house",
+  "b": { "house_doc": "20034201" },
+  "f": "p:A000377",
+  "fn": "Alford, Mark",
+  "inc": true,
+  "st": "MO", "d": 4,
+  "y": 2026,
+  "dt": "3/31/2026",
+  "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034201.pdf",
+  "text": true,
+  "basis": "match:name+statedst"
+}
+```
+
+**Metadata only.** This records that a filing exists, who filed it and where the
+document is. It does not contain the contents of any filing.
+
+`f` is the filer, resolved to a person entity. `inc` is true when the Clerk's
+index marks the filer `Hon.`, meaning they filed as a sitting member rather than
+a candidate. `text` says whether the PDF carries a text layer, predicted from the
+document id shape, so a consumer knows what is machine-readable without fetching
+every file.
+
+The filer match is inferred rather than asserted by the source, so it carries a
+`match:` basis rather than `authority:`:
+
+| basis | Count | |
+|---|---|---|
+| `match:name+statedst` | 405 | district seat plus surname |
+| `match:name+state` | 17 | member changed districts; state plus surname, and only when exactly one member in the state matches |
+| `unmatched` | 1,262 | candidates and departed members, who correctly resolve to no sitting legislator |
+
+Measured on the 2026 index: **381 of 381 PTRs filed by sitting members matched**,
+and 96.8% of all `Hon.` filings. The large unmatched count is the 823 candidate
+filings and former members, which is the correct outcome rather than a miss.
+
 ## Reverse lookup
 
 `data/index/xref.json` maps `"<agency>:<native id>"` to an entity ref:
@@ -159,6 +205,16 @@ from unitedstates/congress-legislators.
 | icpsr | 319 | web only |
 | lis | 100 | web only |
 
+**Filing** — 1,684 House disclosure documents for 2026, of which 397 are PTRs,
+from the Clerk's annual XML index.
+
+| Namespace | Bound | Machine endpoint |
+|---|---|---|
+| house_doc | 1,684 | PDF, use the entity's own `url` |
+
+1,012 carry a text layer, 186 are scans, 486 have a document id shape this build
+does not classify.
+
 **Organization** — 8,046 companies from 10,459 ticker rows, from SEC
 company_tickers.json.
 
@@ -167,14 +223,49 @@ company_tickers.json.
 | sec (CIK) | 8,046 | yes, keyless, contact UA required |
 | ticker | 10,459 | none, reverse lookup only |
 
-21,690 reverse-lookup keys across 9 namespaces, no collisions.
+23,374 reverse-lookup keys across 10 namespaces, no collisions.
+
+## Tiers
+
+The index is split in two, and the line is between addressable and queryable.
+
+**Public**, in `data/`: the identity crosswalks. Person, organization and filing
+entities, plus the reverse lookup. This tells you who exists, what identifiers
+they carry in each system, that a filing exists and where to fetch it. Anyone can
+take this and do their own analysis.
+
+**Curated**, built to `curated/` and not committed here: the contents of filings.
+Parsed transactions, resolved asset-to-organization joins, and anything linking a
+person to holdings. That is original selection and arrangement over public facts,
+and it is a separate product.
+
+The builders take `--out`, so the curated stage can be pointed at a private
+location.
+
+### Use restriction
+
+Filing records derive from financial disclosure reports. Title 1 of the Ethics in
+Government Act of 1978, 5 U.S.C. app. section 105(c), makes it unlawful to obtain
+or use such a report for an unlawful purpose, for a commercial purpose other than
+by news and communications media for dissemination to the general public, to
+establish any individual's credit rating, or in the solicitation of money.
+
+That provision binds each person who obtains or uses a report, independently.
+Redistributing this index does not transfer the obligation and does not discharge
+it. `filing.json` carries the restriction in a `use_restriction` field so it
+travels with the data rather than living only in a README.
 
 ## Not built yet
 
-**Person-to-organization.** The two entity types exist but nothing joins them.
-That hop depends on STOCK Act disclosures, which no source in this repo provides.
-Until it lands, a person resolves to their campaign finance and legislative
-record, and an organization to its SEC filings, but not to each other.
+**Person-to-organization.** Filings are now addressable and attributed to a
+filer, but their contents are not parsed, so nothing yet links a person to a
+holding. That is the curated tier, scoped in
+[DISCLOSURE_INGESTION_SCOPE.md](DISCLOSURE_INGESTION_SCOPE.md). Ticker coverage
+measured 90% on sampled asset rows, and the index already resolves tickers to
+CIKs, so the join is key-based once the parsing lands.
+
+**Senate filings.** House only so far. The Senate requires accepting an agreement
+before searching; see the scope document.
 
 **FCC and USAspending bindings.** Neither can be key-joined to an org. `fcc.py`
 returns a licensee name with no FRN, and USAspending matches on recipient name.

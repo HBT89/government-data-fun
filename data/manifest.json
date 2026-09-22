@@ -1,7 +1,19 @@
 {
   "v": 1,
-  "generated_at": "2026-09-22T17:38:17.125Z",
+  "generated_at": "2026-09-22T20:43:21.339Z",
   "builds": {
+    "filing": {
+      "file": "entities/filing.json",
+      "upstream": [
+        "https://disclosures-clerk.house.gov/public_disc/financial-pdfs/2026FD.zip"
+      ],
+      "ref_prefix": "f",
+      "entities": 1684,
+      "bindings_by_agency": {
+        "house_doc": 1684
+      },
+      "generated_at": "2026-09-22T20:43:21.213Z"
+    },
     "org": {
       "file": "entities/org.json",
       "upstream": "https://www.sec.gov/files/company_tickers.json",
@@ -31,8 +43,9 @@
     }
   },
   "xref": {
-    "keys": 21690,
+    "keys": 23374,
     "by_namespace": {
+      "house_doc": 1684,
       "sec": 8046,
       "ticker": 10459,
       "congress": 539,

@@ -42,3 +42,8 @@ _site/
 
 # Logs
 *.log
+
+# Curated tier. Built from the public index but not part of it: parsed
+# transaction contents and person-to-holdings joins. Point the curated builders
+# at a private location with --out.
+/curated/
