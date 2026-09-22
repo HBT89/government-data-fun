@@ -1,0 +1,24 @@
+{
+  "v": 1,
+  "generated_at": "2026-09-22T17:28:40.594Z",
+  "builds": {
+    "person": {
+      "upstream": "https://unitedstates.github.io/congress-legislators/legislators-current.json",
+      "entities": 539,
+      "senators": 100,
+      "representatives": 439,
+      "bindings_by_agency": {
+        "congress": 539,
+        "fec": 537,
+        "govtrack": 539,
+        "opensecrets": 523,
+        "wikidata": 538,
+        "lis": 100,
+        "icpsr": 319
+      },
+      "xref_keys": 3185,
+      "id_collisions": 0,
+      "basis": "authority:congress-legislators"
+    }
+  }
+}

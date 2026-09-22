@@ -1,0 +1,69 @@
+{
+  "v": 1,
+  "generated_at": "2026-09-22T17:28:40.594Z",
+  "sources": {
+    "congress": {
+      "label": "Congress.gov (Library of Congress)",
+      "idName": "bioguide",
+      "api": "https://api.congress.gov/v3/member/{id}?format=json&api_key={key}",
+      "web": "https://bioguide.congress.gov/search/bio/{id}",
+      "via": null,
+      "key": "congress_gov",
+      "attribution": "Library of Congress / Congress.gov"
+    },
+    "fec": {
+      "label": "Federal Election Commission (openFEC)",
+      "idName": "candidate_id",
+      "api": "https://api.open.fec.gov/v1/candidate/{id}/?api_key={key}",
+      "web": "https://www.fec.gov/data/candidate/{id}/",
+      "via": "/api/v1/data/fec/candidates",
+      "key": "datagov",
+      "attribution": "Federal Election Commission"
+    },
+    "govtrack": {
+      "label": "GovTrack",
+      "idName": "govtrack_id",
+      "api": "https://www.govtrack.us/api/v2/person/{id}",
+      "web": "https://www.govtrack.us/congress/members/{id}",
+      "via": null,
+      "key": null,
+      "attribution": "GovTrack.us"
+    },
+    "opensecrets": {
+      "label": "OpenSecrets (Center for Responsive Politics)",
+      "idName": "cid",
+      "api": null,
+      "web": "https://www.opensecrets.org/members-of-congress/summary?cid={id}",
+      "via": null,
+      "key": null,
+      "attribution": "OpenSecrets.org"
+    },
+    "wikidata": {
+      "label": "Wikidata",
+      "idName": "qid",
+      "api": "https://www.wikidata.org/wiki/Special:EntityData/{id}.json",
+      "web": "https://www.wikidata.org/wiki/{id}",
+      "via": null,
+      "key": null,
+      "attribution": "Wikidata (CC0)"
+    },
+    "lis": {
+      "label": "U.S. Senate LIS",
+      "idName": "lis_id",
+      "api": null,
+      "web": "https://www.senate.gov/senators/",
+      "via": null,
+      "key": null,
+      "attribution": "U.S. Senate"
+    },
+    "icpsr": {
+      "label": "ICPSR / Voteview",
+      "idName": "icpsr",
+      "api": null,
+      "web": "https://voteview.com/person/{id}",
+      "via": null,
+      "key": null,
+      "attribution": "Voteview (UCLA)"
+    }
+  }
+}
