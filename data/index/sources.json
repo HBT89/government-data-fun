@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "generated_at": "2026-09-22T17:28:40.594Z",
+  "generated_at": "2026-09-22T17:38:17.125Z",
   "sources": {
     "congress": {
       "label": "Congress.gov (Library of Congress)",
@@ -55,6 +55,25 @@
       "via": null,
       "key": null,
       "attribution": "U.S. Senate"
+    },
+    "sec": {
+      "label": "SEC EDGAR",
+      "idName": "cik",
+      "api": "https://data.sec.gov/submissions/CIK{id}.json",
+      "web": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK={id}&type=&dateb=&owner=include&count=40",
+      "via": null,
+      "key": null,
+      "ua": "contact",
+      "attribution": "U.S. Securities and Exchange Commission, EDGAR"
+    },
+    "ticker": {
+      "label": "Exchange ticker symbol",
+      "idName": "ticker",
+      "api": null,
+      "web": null,
+      "via": null,
+      "key": null,
+      "attribution": "SEC company_tickers.json"
     },
     "icpsr": {
       "label": "ICPSR / Voteview",

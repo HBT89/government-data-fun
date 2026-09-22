@@ -7,19 +7,16 @@
 //
 //   node tools/build-person-index.mjs [--out data]
 //
-// Writes:
-//   data/entities/person.json   entities + their per-agency bindings
-//   data/index/xref.json        any known foreign id -> entity ref
-//   data/manifest.json          what was built, from what, when
+// Writes data/entities/person.json. Run tools/build-xref.mjs afterwards to
+// regenerate the reverse-lookup index.
 
 import { writeFile, mkdir } from 'node:fs/promises';
 import { join } from 'node:path';
-import { SOURCES } from './sources.mjs';
 
 const UPSTREAM =
   'https://unitedstates.github.io/congress-legislators/legislators-current.json';
 
-// congress-legislators key -> our agency id in SOURCES.
+// congress-legislators key -> our agency id in sources.mjs.
 // Left out on purpose: ballotpedia, votesmart, cspan, maplight, pictorial,
 // house_history, thomas, google_entity_id, wikipedia. They are real ids but
 // nothing in this project dereferences them yet, and an index that lists
@@ -43,17 +40,15 @@ function argOut() {
 
 async function main() {
   const out = argOut();
-
   process.stdout.write(`fetching ${UPSTREAM}\n`);
+
   const res = await fetch(UPSTREAM);
   if (!res.ok) throw new Error(`upstream ${res.status} ${res.statusText}`);
   const people = await res.json();
   if (!Array.isArray(people) || !people.length) throw new Error('upstream returned no legislators');
 
   const entities = {};
-  const xref = {};
   const bindingCounts = {};
-  let collisions = 0;
 
   for (const p of people) {
     const ids = p.id || {};
@@ -68,18 +63,12 @@ async function main() {
     for (const [srcKey, agency] of Object.entries(ID_MAP)) {
       const raw = ids[srcKey];
       if (raw === undefined || raw === null || raw === '') continue;
-      // fec is an array: a legislator carries every candidate id they have
-      // ever filed under, including prior House runs.
+      // fec is an array: a legislator carries every candidate id they have ever
+      // filed under, including prior runs for a different office.
       const list = Array.isArray(raw) ? raw : [raw];
       if (!list.length) continue;
       bindings[agency] = Array.isArray(raw) ? list.map(String) : String(raw);
       bindingCounts[agency] = (bindingCounts[agency] || 0) + 1;
-
-      for (const v of list) {
-        const foreign = `${agency}:${v}`;
-        if (xref[foreign] && xref[foreign] !== `p:${bioguide}`) collisions++;
-        xref[foreign] = `p:${bioguide}`;
-      }
     }
 
     entities[bioguide] = {
@@ -93,60 +82,26 @@ async function main() {
     };
   }
 
-  const personDoc = {
+  const doc = {
     v: 1,
     kind: 'person',
     generated_at: new Date().toISOString(),
     upstream: UPSTREAM,
     ref_prefix: 'p',
-    note: 'Bindings are identifiers assigned by each listed source to the same person. Resolve one with the matching template in sources.json.',
+    note: 'Sitting members of Congress. Bindings are identifiers assigned by each listed source to the same person.',
     count: Object.keys(entities).length,
     entities,
   };
 
-  const xrefDoc = {
-    v: 1,
-    generated_at: new Date().toISOString(),
-    note: 'Flat reverse lookup. Key is "<agency>:<native id>", value is an entity ref. One object lookup, no search.',
-    count: Object.keys(xref).length,
-    xref,
-  };
-
-  const sourcesDoc = { v: 1, generated_at: new Date().toISOString(), sources: SOURCES };
-
-  const manifest = {
-    v: 1,
-    generated_at: new Date().toISOString(),
-    builds: {
-      person: {
-        upstream: UPSTREAM,
-        entities: personDoc.count,
-        senators: Object.values(entities).filter((e) => e.t === 'sen').length,
-        representatives: Object.values(entities).filter((e) => e.t === 'rep').length,
-        bindings_by_agency: bindingCounts,
-        xref_keys: xrefDoc.count,
-        id_collisions: collisions,
-        basis: 'authority:congress-legislators',
-      },
-    },
-  };
-
   await mkdir(join(out, 'entities'), { recursive: true });
-  await mkdir(join(out, 'index'), { recursive: true });
-  const w = (p, o) => writeFile(p, JSON.stringify(o, null, 2) + '\n', 'utf8');
-  await w(join(out, 'entities', 'person.json'), personDoc);
-  await w(join(out, 'index', 'xref.json'), xrefDoc);
-  await w(join(out, 'index', 'sources.json'), sourcesDoc);
-  await w(join(out, 'manifest.json'), manifest);
+  await writeFile(join(out, 'entities', 'person.json'), JSON.stringify(doc, null, 2) + '\n', 'utf8');
 
+  const sen = Object.values(entities).filter((e) => e.t === 'sen').length;
   process.stdout.write(
-    `\n${personDoc.count} people (${manifest.builds.person.senators} sen, ` +
-    `${manifest.builds.person.representatives} rep)\n` +
-    `${xrefDoc.count} xref keys, ${collisions} collisions\n` +
+    `\n${doc.count} people (${sen} sen, ${doc.count - sen} rep)\n` +
     Object.entries(bindingCounts).sort((a, b) => b[1] - a[1])
       .map(([a, c]) => `  ${a.padEnd(12)} ${c}`).join('\n') + '\n'
   );
-  if (collisions) process.stdout.write(`\nWARNING: ${collisions} foreign ids map to more than one person\n`);
 }
 
 main().catch((e) => { process.stderr.write(`build failed: ${e.message}\n`); process.exit(1); });

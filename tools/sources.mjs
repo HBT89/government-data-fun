@@ -67,6 +67,32 @@ export const SOURCES = {
     key: null,
     attribution: 'U.S. Senate',
   },
+  sec: {
+    label: 'SEC EDGAR',
+    idName: 'cik',
+    // Verified 2026-09-22: the id MUST be the 10-digit zero-padded CIK.
+    // data.sec.gov/submissions/CIK320193.json returns 404;
+    // data.sec.gov/submissions/CIK0000320193.json returns 200. Bindings store
+    // the padded form so the template is a straight substitution.
+    // SEC rejects requests whose User-Agent carries no contact address.
+    api: 'https://data.sec.gov/submissions/CIK{id}.json',
+    web: 'https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK={id}&type=&dateb=&owner=include&count=40',
+    via: null,
+    key: null,
+    ua: 'contact',
+    attribution: 'U.S. Securities and Exchange Commission, EDGAR',
+  },
+  ticker: {
+    label: 'Exchange ticker symbol',
+    idName: 'ticker',
+    // Not an agency. A namespace a caller may arrive holding, so it earns a
+    // reverse-lookup entry even though there is nothing to dereference.
+    api: null,
+    web: null,
+    via: null,
+    key: null,
+    attribution: 'SEC company_tickers.json',
+  },
   icpsr: {
     label: 'ICPSR / Voteview',
     idName: 'icpsr',

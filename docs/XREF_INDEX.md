@@ -21,11 +21,16 @@ and fetches exactly one known record.
 
 ```
 data/
-  entities/person.json    entities and their per-agency bindings
+  entities/person.json    sitting members of Congress
+  entities/org.json       SEC registrants with a listed ticker
   index/xref.json         any known foreign id -> entity ref
   index/sources.json      per-agency dereference templates
   manifest.json           what was built, from what, when
 ```
+
+Files are pretty-printed rather than minified. They are committed artifacts that
+get regenerated, so a readable diff between refreshes is worth more than the
+bytes; serve them gzipped.
 
 ## Entity
 
@@ -63,6 +68,35 @@ carry a different basis, so a consumer can filter on it.
 
 The entity ref is `p:` plus the key, e.g. `p:C000127`.
 
+## Organization
+
+`data/entities/org.json`, keyed by the zero-padded CIK.
+
+```json
+"0001652044": {
+  "n": "Alphabet Inc.",
+  "b": {
+    "sec":    "0001652044",
+    "ticker": ["GOOGL", "GOOG", "GOOGM", "GOOGN"]
+  },
+  "basis": "authority:sec-company-tickers"
+}
+```
+
+`ticker` is an array for the same reason `fec` is on the person side: one entity,
+several identifiers. Alphabet has four share classes, Berkshire two. 1,448 of the
+8,046 companies carry more than one.
+
+The CIK is stored zero-padded to ten digits because that is what EDGAR accepts.
+`data.sec.gov/submissions/CIK0000320193.json` returns 200;
+`CIK320193.json` returns 404.
+
+The entity ref is `o:` plus the key, e.g. `o:0000320193`.
+
+Coverage is SEC registrants with a listed ticker. Private companies, non-filers
+and foreign issuers without a US listing are absent by construction, not by
+oversight.
+
 ## Reverse lookup
 
 `data/index/xref.json` maps `"<agency>:<native id>"` to an entity ref:
@@ -90,19 +124,32 @@ the gap. Templates are verified against the live endpoint before they are added.
 
 ## Building
 
+Three stages. Entity builders write their own file; the xref stage merges them.
+
 ```
 node tools/build-person-index.mjs
+node tools/build-org-index.mjs
+node tools/build-xref.mjs
 ```
 
-No dependencies, Node 18+. Fetches
-[unitedstates/congress-legislators](https://github.com/unitedstates/congress-legislators)
-and writes all four files. Re-run to refresh.
+No dependencies, Node 18+. Re-run to refresh.
+
+The xref stage fails the build on a collision, meaning one foreign identifier
+resolved to two entities. That makes a lookup ambiguous, so it is treated as a
+data error rather than reported and passed over.
+
+SEC rejects requests whose User-Agent carries no contact address. The org builder
+defaults to the string already declared in `webapp/api/agency_modules/sec.py`;
+override it with `SEC_USER_AGENT` to name yourself.
 
 ## Coverage
 
-Built, all authority-based:
+Built, all authority-based. No name matching anywhere in the current index.
 
-| Agency | Bound | Machine endpoint |
+**Person** — 539 sitting legislators, 100 senators and 439 representatives,
+from unitedstates/congress-legislators.
+
+| Namespace | Bound | Machine endpoint |
 |---|---|---|
 | congress (bioguide) | 539 | yes, needs congress.gov key |
 | govtrack | 539 | yes, keyless |
@@ -112,18 +159,25 @@ Built, all authority-based:
 | icpsr | 319 | web only |
 | lis | 100 | web only |
 
-539 current legislators, 100 senators and 439 representatives. 3,185 reverse-lookup
-keys, no collisions.
+**Organization** — 8,046 companies from 10,459 ticker rows, from SEC
+company_tickers.json.
+
+| Namespace | Bound | Machine endpoint |
+|---|---|---|
+| sec (CIK) | 8,046 | yes, keyless, contact UA required |
+| ticker | 10,459 | none, reverse lookup only |
+
+21,690 reverse-lookup keys across 9 namespaces, no collisions.
 
 ## Not built yet
 
-**Organizations.** The org entity type is the bridge from a person to SEC, FCC and
-USAspending records. It is not built, and it is harder than the person side: SEC
-carries CIK, but FCC exposes only a licensee name with no FRN, so SEC-to-FCC
-sameness has to be established by name resolution rather than a shared key. Those
-entities will carry a non-authority `basis`.
+**Person-to-organization.** The two entity types exist but nothing joins them.
+That hop depends on STOCK Act disclosures, which no source in this repo provides.
+Until it lands, a person resolves to their campaign finance and legislative
+record, and an organization to its SEC filings, but not to each other.
 
-**Financial disclosures.** The person-to-organization hop depends on STOCK Act
-filings, which no source in this repo currently provides. Until that lands, a
-person resolves to their campaign finance and legislative record, not to company
-holdings.
+**FCC and USAspending bindings.** Neither can be key-joined to an org. `fcc.py`
+returns a licensee name with no FRN, and USAspending matches on recipient name.
+Both need name resolution, so those bindings will carry a non-authority `basis`
+and consumers will be able to filter them out. Nothing in the current index
+depends on a name match.

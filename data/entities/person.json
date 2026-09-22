@@ -1,10 +1,10 @@
 {
   "v": 1,
   "kind": "person",
-  "generated_at": "2026-09-22T17:28:40.593Z",
+  "generated_at": "2026-09-22T17:38:16.753Z",
   "upstream": "https://unitedstates.github.io/congress-legislators/legislators-current.json",
   "ref_prefix": "p",
-  "note": "Bindings are identifiers assigned by each listed source to the same person. Resolve one with the matching template in sources.json.",
+  "note": "Sitting members of Congress. Bindings are identifiers assigned by each listed source to the same person.",
   "count": 539,
   "entities": {
     "C000127": {

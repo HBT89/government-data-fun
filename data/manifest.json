@@ -1,12 +1,23 @@
 {
   "v": 1,
-  "generated_at": "2026-09-22T17:28:40.594Z",
+  "generated_at": "2026-09-22T17:38:17.125Z",
   "builds": {
+    "org": {
+      "file": "entities/org.json",
+      "upstream": "https://www.sec.gov/files/company_tickers.json",
+      "ref_prefix": "o",
+      "entities": 8046,
+      "bindings_by_agency": {
+        "sec": 8046,
+        "ticker": 8046
+      },
+      "generated_at": "2026-09-22T17:38:16.986Z"
+    },
     "person": {
+      "file": "entities/person.json",
       "upstream": "https://unitedstates.github.io/congress-legislators/legislators-current.json",
+      "ref_prefix": "p",
       "entities": 539,
-      "senators": 100,
-      "representatives": 439,
       "bindings_by_agency": {
         "congress": 539,
         "fec": 537,
@@ -16,9 +27,22 @@
         "lis": 100,
         "icpsr": 319
       },
-      "xref_keys": 3185,
-      "id_collisions": 0,
-      "basis": "authority:congress-legislators"
+      "generated_at": "2026-09-22T17:38:16.753Z"
     }
+  },
+  "xref": {
+    "keys": 21690,
+    "by_namespace": {
+      "sec": 8046,
+      "ticker": 10459,
+      "congress": 539,
+      "fec": 627,
+      "govtrack": 539,
+      "opensecrets": 523,
+      "wikidata": 538,
+      "lis": 100,
+      "icpsr": 319
+    },
+    "collisions": 0
   }
 }
