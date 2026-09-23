@@ -164,7 +164,7 @@ async function main() {
   const match = buildMatcher(people);
 
   const entities = {};
-  const stats = { byYear: {}, byKind: {}, matched: 0, unmatched: 0, byBasis: {}, textTrue: 0, textFalse: 0, textUnknown: 0 };
+  const stats = { byYear: {}, byKind: {}, matched: 0, unmatched: 0, byBasis: {}, textTrue: 0, textFalse: 0, textUnknown: 0, textByKind: {} };
   const unmatchedSample = [];
 
   for (const year of years) {
@@ -185,6 +185,12 @@ async function main() {
       else { stats.unmatched++; if (unmatchedSample.length < 8 && r.prefix === 'Hon.') unmatchedSample.push(`${r.last}, ${r.first} ${r.stateDst} ${kind}`); }
       stats.byKind[kind] = (stats.byKind[kind] || 0) + 1;
       if (text === true) stats.textTrue++; else if (text === false) stats.textFalse++; else stats.textUnknown++;
+      // Also per kind. The totals alone are misleading about what is actually
+      // parseable: the curated build reads PTRs and nothing else, so an
+      // unclassified extension or withdrawal costs it nothing, and a headline
+      // "486 unclassified" reads as a much larger backlog than it is.
+      const tk = (stats.textByKind[kind] ||= { text: 0, scan: 0, unknown: 0 });
+      tk[text === true ? 'text' : text === false ? 'scan' : 'unknown']++;
 
       entities[`h:${r.docId}`] = {
         k: kind,
@@ -227,7 +233,13 @@ async function main() {
     Object.entries(stats.byKind).sort((a, b) => b[1] - a[1]).map(([k, v]) => `    ${k.padEnd(12)} ${v}`).join('\n') +
     `\n  filer matched   ${stats.matched} (${pct(stats.matched)})\n` +
     `  unmatched       ${stats.unmatched} (${pct(stats.unmatched)})\n` +
-    `  text layer      true ${stats.textTrue} / false ${stats.textFalse} / unknown ${stats.textUnknown}\n`
+    `  text layer      true ${stats.textTrue} / false ${stats.textFalse} / unknown ${stats.textUnknown}\n` +
+    `\n  text layer by kind (the curated build reads ptr only):\n` +
+    `    ${'kind'.padEnd(12)}${'text'.padStart(7)}${'scan'.padStart(7)}${'unknown'.padStart(9)}\n` +
+    Object.entries(stats.textByKind)
+      .sort((a, b) => (b[1].text + b[1].scan + b[1].unknown) - (a[1].text + a[1].scan + a[1].unknown))
+      .map(([k, c]) => `    ${k.padEnd(12)}${String(c.text).padStart(7)}${String(c.scan).padStart(7)}${String(c.unknown).padStart(9)}`)
+      .join('\n') + '\n'
   );
   if (unmatchedSample.length) {
     process.stdout.write(`\n  unmatched despite filing as a sitting member:\n` +

@@ -259,7 +259,29 @@ from the Clerk's annual XML index.
 | house_doc | 1,684 | PDF, use the entity's own `url` |
 
 1,012 carry a text layer, 186 are scans, 486 have a document id shape this build
-does not classify.
+does not classify. Those totals describe every kind of filing at once, which
+overstates the gap that matters: the curated build reads PTRs and nothing else.
+
+| kind | text | scan | unclassified |
+|---|---|---|---|
+| candidate | 634 | 34 | 155 |
+| **ptr** | **348** | **46** | **3** |
+| extension | 0 | 47 | 200 |
+| withdrawal | 0 | 35 | 67 |
+| blind_trust | 0 | 24 | 49 |
+| amendment | 26 | 0 | 12 |
+| other | 2 | 0 | 0 |
+| termination | 2 | 0 | 0 |
+
+Of the 397 PTRs, 348 are parseable today, 46 are scans awaiting OCR and 3 carry
+an id shape this build will not guess at. The unclassified backlog is
+overwhelmingly extensions, withdrawals, blind trusts and candidate filings,
+none of which the curated build reads. Classifying them is a completeness
+question for the metadata, not a blocker on transaction coverage.
+
+Extending the shape rule to those prefixes means sampling the documents
+themselves, the same way the current rule was established. Guessing from the id
+alone is what `null` exists to avoid.
 
 **Organization** — 8,046 companies from 10,459 ticker rows, from SEC
 company_tickers.json.
