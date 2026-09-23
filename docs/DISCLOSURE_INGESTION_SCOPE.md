@@ -64,9 +64,17 @@ needs OCR:
 | other 8-digit | 0.8% | mixed |
 
 Sampling eight member PTRs: seven extracted cleanly, one 30-page scan yielded
-zero characters. Across 164 asset rows, **147 carried a ticker, 90% coverage**.
-The remainder are assets with no ticker by nature: real estate, private
-partnerships, some bonds and trusts.
+zero characters.
+
+**Ticker coverage, corrected.** An initial reading of those eight documents gave
+147 of 164 asset rows carrying a ticker, 90%. That figure was sample-biased: one
+filing contributed 151 of the 164 rows and was an all-equity portfolio. Running
+the parser across 30 filings gives **47 of 135 transactions with a ticker, 35%**.
+Use 35%. The rest are assets with no ticker by nature: mutual funds, bonds, real
+estate, private partnerships and trusts, none of which resolve to a listed CIK.
+
+Of the transactions that do carry a ticker, roughly 87% resolve to an org entity;
+the misses are ADRs and OTC symbols absent from SEC's listed-registrant file.
 
 ### Work involved
 
