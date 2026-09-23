@@ -26,8 +26,8 @@ from datetime import datetime, timezone
 
 try:
     from pypdf import PdfReader
-except ImportError:
-    sys.exit("pypdf is required: pip install pypdf")
+except ImportError:                    # only the PDF reader needs it; the text
+    PdfReader = None                   # logic is importable and testable without
 
 UA = os.environ.get("HOUSE_USER_AGENT", "OpenGovDash XrefIndex/1.0 (contact@opengov.dev)")
 
@@ -48,6 +48,28 @@ TXN = re.compile(
 # line break, which whitespace normalisation collapses to a single space.
 TICKER = re.compile(r"\(([A-Z][A-Z0-9.\-]{0,5})\)\s*\[([A-Z]{2})\]")
 BARE_TYPE = re.compile(r"\[([A-Z]{2})\]")
+
+# The same symbol written without the parentheses the form asks for, e.g.
+# "Apple Inc AAPL [ST]". The bracket is the anchor: the symbol is the token
+# immediately before the asset-type code.
+#
+# This shape cannot be trusted on its own the way the parenthesised one can.
+# "COMMON STOCK [ST]" and "CLASS A [ST]" both present a plausible symbol in the
+# same position, so a candidate found here is only promoted to a ticker once it
+# resolves against the SEC ticker list. An unresolvable candidate is dropped
+# rather than recorded: a miss stays a miss rather than becoming a wrong company.
+BARE_TICKER = re.compile(r"(?:^|\s)([A-Z][A-Z0-9.\-]{0,5})\s*\[([A-Z]{2})\]")
+
+# All-caps words that occupy the symbol position but never are one. Checked
+# before the xref, so a company that genuinely trades as one of these is still
+# not read out of a bare token.
+NOT_A_SYMBOL = {
+    "A", "B", "C", "I", "II", "III", "AND", "OR", "THE", "OF",
+    "INC", "LLC", "LLP", "LP", "LTD", "PLC", "CO", "CORP", "SA", "AG", "NV",
+    "COMMON", "STOCK", "SHARES", "SHARE", "CLASS", "SERIES", "UNITS", "UNIT",
+    "FUND", "FUNDS", "TRUST", "ETF", "REIT", "ADR", "IRA", "US", "USA", "NA",
+    "BOND", "BONDS", "NOTE", "NOTES", "CD", "MUTUAL", "INDEX", "GROWTH",
+}
 
 HEADER_NAME = re.compile(r"Name:\s*(.+)")
 HEADER_STATUS = re.compile(r"Status:\s*(.+)")
@@ -86,6 +108,29 @@ FURNITURE_PREFIX = re.compile(
 # Only used to decide whether a line inside a description is prose or the start
 # of the next asset.
 ASSET_HINT = re.compile(r"\([A-Z][A-Z0-9.\-]{0,5}\)|\[[A-Z]{2}\]")
+# Marks a line as description prose rather than the start of the next asset
+# name. A description has no terminator, so the run after "D :" is only closed
+# by the next line carrying an asset hint. When the asset name wraps, its first
+# line has no hint and would be swallowed by that run, which is what turns
+# "Berkshire Hathaway Inc. Class B / Common Stock (BRK.B) [ST]" into a bare
+# "Common Stock". These are the signals that a line is prose: a figure, a rate,
+# a share count, a transaction verb, or a lowercase start, which only happens
+# mid-sentence. A line carrying none of them, sitting directly above the hint
+# line, is read back as part of the name.
+PROSE = re.compile(
+    r"[$@%]|/\s*share|\bshares?\b|\bper\b"
+    r"|\b(?:sold|bought|purchased|acquired|exchanged|held|owned|gifted"
+    r"|transferred|received|matured|redeemed|reinvest\w*|distribut\w*)\b",
+    re.I,
+)
+# The lowercase-start test has to stay case-sensitive, so it is applied apart
+# from the case-insensitive body above.
+PROSE_LOWER_START = re.compile(r"^[a-z]")
+
+
+def is_prose(line):
+    """True when a line inside a description run reads as continuing prose."""
+    return bool(PROSE_LOWER_START.match(line) or PROSE.search(line))
 
 
 def clean_lines(text):
@@ -100,6 +145,12 @@ def clean_lines(text):
     out = []
     for line in text.split("\n"):
         line = re.sub(r"[ \t]+", " ", line).strip()
+        # FURNITURE lists the column header in the fragments extraction usually
+        # breaks it into. When it survives as one line instead, none of those
+        # fullmatch, and the whole header is walked back into the first asset
+        # name of the filing. NOISE already has the pattern for the intact
+        # header, so strip it here before the fullmatch tests.
+        line = NOISE[0].sub(" ", line).strip()
         if not line or FURNITURE.fullmatch(line) or FURNITURE_PREFIX.match(line):
             continue
         out.append(line)
@@ -120,8 +171,17 @@ def amount_band(low, high):
 
 
 def parse_pdf(path):
+    if PdfReader is None:
+        sys.exit("pypdf is required: pip install pypdf")
     reader = PdfReader(path)
     raw = "\n".join((p.extract_text() or "") for p in reader.pages)
+    return parse_text(raw, pages=len(reader.pages))
+
+
+def parse_text(raw, pages=None):
+    """Parse already-extracted PDF text. Split out from parse_pdf so the line
+    handling, which is where the accuracy lives, can be tested against fixtures
+    without a PDF and without network access to the Clerk."""
     flat = clean(raw)
 
     header = {
@@ -131,7 +191,7 @@ def parse_pdf(path):
                    if HEADER_STATUS.search(flat) else None),
         "district": (HEADER_DISTRICT.search(flat).group(1) if HEADER_DISTRICT.search(flat) else None),
         "filing_id": (FILING_ID.search(raw).group(1) if FILING_ID.search(raw) else None),
-        "pages": len(reader.pages),
+        "pages": pages,
         "chars": len(flat),
     }
 
@@ -155,16 +215,28 @@ def parse_pdf(path):
     is_meta = [bool(META_LABEL.match(l)) for l in lines]
     in_desc = [False] * len(lines)
     desc = False
+    run = []                             # lines provisionally taken as prose
     for i, l in enumerate(lines):
         if is_meta[i]:
             desc = l.lstrip().startswith("D")
             in_desc[i] = True
+            run = []
         elif desc:
-            # Prose continues until a line that looks like the next asset.
+            # Prose continues until a line that looks like the next asset. That
+            # line is not where the name begins, though: a wrapped asset name
+            # puts its first line above the one carrying the ticker, with no
+            # hint of its own, and the forward pass has just marked it prose.
+            # Give back the trailing lines of the run that carry no prose
+            # signal, which is what keeps "Berkshire Hathaway Inc. Class B"
+            # attached to the "Common Stock (BRK.B) [ST]" line beneath it.
             if ASSET_HINT.search(l):
                 desc = False
+                while run and not is_prose(lines[run[-1]]):
+                    in_desc[run.pop()] = False
+                run = []
             else:
                 in_desc[i] = True
+                run.append(i)
 
     txns = []
     consumed_to = -1                     # last line already absorbed into a name
@@ -191,21 +263,43 @@ def parse_pdf(path):
         tick = TICKER.search(name)
         bare = BARE_TYPE.search(name)
         ticker = tick.group(1) if tick else None
+        # Parentheses missing: take the token in front of the asset-type code as
+        # a candidate only. It stays a candidate until it resolves in main().
+        cand = None if tick else BARE_TICKER.search(name)
+        candidate = cand.group(1) if cand and cand.group(1) not in NOT_A_SYMBOL else None
         asset_type = tick.group(2) if tick else (bare.group(1) if bare else None)
-        display = (TICKER.sub("", name) if tick else BARE_TYPE.sub("", name))
+        if tick:
+            display = TICKER.sub("", name)
+        elif candidate:
+            display = BARE_TICKER.sub("", name)
+        else:
+            display = BARE_TYPE.sub("", name)
         # The owner code sits in the Owner column, which extraction places ahead
         # of the asset name rather than beside the row. Captured separately, so
         # strip it here instead of leaving it in the display name.
+        # The Owner column is printed to the left of the asset, so extraction can
+        # place the code at the head of the name rather than beside the row,
+        # where TXN would have captured it. It was already being stripped off
+        # the display name; read it before discarding it, otherwise a spouse or
+        # dependent-child holding is silently recorded as the filer's own. The
+        # code beside the row wins when both are present.
         owner_prefix = re.match(r"^(SP|DC|JT)\b\s*", display)
         if owner_prefix:
             display = display[owner_prefix.end():]
+        owner = m.group("owner") or (owner_prefix.group(1) if owner_prefix else None)
         display = re.sub(r"\s+", " ", display).strip(" .,-")
 
         txns.append({
             "a": display or None,
             "tk": ticker,
+            # How the symbol was established, in the same vocabulary the index
+            # uses: the document printed it in the slot the form reserves for
+            # it, or it was inferred from a bare token and confirmed against
+            # SEC's ticker list. Set for a candidate once it resolves.
+            "tkb": "authority:document" if ticker else None,
+            "tkc": candidate,
             "ty": asset_type,
-            "own": m.group("owner") or "self",
+            "own": owner or "self",
             "act": m.group("action") + ("p" if m.group("partial") else ""),
             "d": m.group("date"),
             "nd": m.group("notified"),
@@ -271,6 +365,7 @@ def main():
         "transactions": 0, "with_ticker": 0, "resolved_org": 0,
         "unresolved_ticker": 0, "id_mismatch": 0, "skipped_scanned": skipped_scan,
         "cached": 0, "downloaded": 0,
+        "bare_symbol_promoted": 0, "bare_symbol_dropped": 0,
     }
     unresolved = {}
 
@@ -294,6 +389,16 @@ def main():
 
         for t in txns:
             stats["transactions"] += 1
+            cand = t.pop("tkc", None)
+            # A bare token is a ticker only if SEC knows it. Promote before the
+            # counting below, so a promoted symbol is counted exactly like a
+            # parenthesised one and the coverage figure keeps one meaning.
+            if not t["tk"] and cand:
+                if resolve_ticker(cand, xref):
+                    t["tk"], t["tkb"] = cand, "match:bare-symbol"
+                    stats["bare_symbol_promoted"] += 1
+                else:
+                    stats["bare_symbol_dropped"] += 1
             if t["tk"]:
                 stats["with_ticker"] += 1
                 org = resolve_ticker(t["tk"], xref)
@@ -336,7 +441,9 @@ def main():
     print(f"{stats['transactions']} transactions")
     print(f"  with ticker      {stats['with_ticker']} ({pct(stats['with_ticker'], stats['transactions'])})")
     print(f"  resolved to org  {stats['resolved_org']} ({pct(stats['resolved_org'], stats['transactions'])})")
+    print(f"    of which from a bare symbol {stats['bare_symbol_promoted']}")
     print(f"  ticker unresolved {stats['unresolved_ticker']}")
+    print(f"  bare symbols dropped as unrecognised {stats['bare_symbol_dropped']}")
     print(f"  scanned PTRs skipped {stats['skipped_scanned']}")
     if stats["id_mismatch"]:
         print(f"  FILING ID MISMATCHES {stats['id_mismatch']}")
