@@ -1,0 +1,82 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:V000139",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Matt Van Epps",
+    "t": "rep",
+    "st": "TN",
+    "d": 7,
+    "pt": "R",
+    "b": {
+      "congress": "V000139",
+      "fec": [
+        "H6TN07161"
+      ],
+      "govtrack": "457038",
+      "wikidata": "Q136749822"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 3,
+    "ptr": 1
+  },
+  "filings": {
+    "h:10079856": {
+      "k": "other",
+      "ch": "house",
+      "b": {
+        "house_doc": "10079856"
+      },
+      "f": "p:V000139",
+      "fn": "Van Epps, Matthew Robert",
+      "inc": true,
+      "st": "TN",
+      "d": 7,
+      "y": 2026,
+      "dt": "6/15/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/financial-pdfs/2026/10079856.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034807": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034807"
+      },
+      "f": "p:V000139",
+      "fn": "Van Epps, Matthew Robert",
+      "inc": true,
+      "st": "TN",
+      "d": 7,
+      "y": 2026,
+      "dt": "6/17/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034807.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:9116123": {
+      "k": "extension",
+      "ch": "house",
+      "b": {
+        "house_doc": "9116123"
+      },
+      "f": "p:V000139",
+      "fn": "Van Epps, Matthew Robert",
+      "inc": true,
+      "st": "TN",
+      "d": 7,
+      "y": 2026,
+      "dt": "6/10/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/financial-pdfs/2026/9116123.pdf",
+      "text": false,
+      "basis": "match:name+statedst"
+    }
+  },
+  "use_restriction": "Sourced from financial disclosure reports. Title 1 of the Ethics in Government Act of 1978, 5 U.S.C. app. 105(c), makes it unlawful to obtain or use such a report for an unlawful purpose, for a commercial purpose other than by news and communications media for dissemination to the general public, to establish any individual credit rating, or in the solicitation of money. Each person who obtains or uses these records is bound by that provision independently."
+}

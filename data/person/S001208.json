@@ -1,0 +1,33 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:S001208",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Elissa Slotkin",
+    "t": "sen",
+    "st": "MI",
+    "d": null,
+    "pt": "D",
+    "b": {
+      "congress": "S001208",
+      "fec": [
+        "H8MI08102",
+        "S4MI00470"
+      ],
+      "govtrack": "412784",
+      "opensecrets": "N00041357",
+      "wikidata": "Q30323721",
+      "lis": "S436",
+      "icpsr": "21965"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

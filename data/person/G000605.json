@@ -1,0 +1,30 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:G000605",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Adam Gray",
+    "t": "rep",
+    "st": "CA",
+    "d": 13,
+    "pt": "D",
+    "b": {
+      "congress": "G000605",
+      "fec": [
+        "H2CA13115"
+      ],
+      "govtrack": "456975",
+      "opensecrets": "N00050061",
+      "wikidata": "Q3000097"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

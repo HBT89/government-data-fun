@@ -1,0 +1,31 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:B001324",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Wesley Bell",
+    "t": "rep",
+    "st": "MO",
+    "d": 1,
+    "pt": "D",
+    "b": {
+      "congress": "B001324",
+      "fec": [
+        "H4MO01134",
+        "S4MO00250"
+      ],
+      "govtrack": "456997",
+      "opensecrets": "N00053042",
+      "wikidata": "Q23806350"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

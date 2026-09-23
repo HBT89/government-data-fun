@@ -1,0 +1,31 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:B001309",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Tim Burchett",
+    "t": "rep",
+    "st": "TN",
+    "d": 2,
+    "pt": "R",
+    "b": {
+      "congress": "B001309",
+      "fec": [
+        "H8TN02119"
+      ],
+      "govtrack": "412817",
+      "opensecrets": "N00041594",
+      "wikidata": "Q7803244",
+      "icpsr": "21905"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

@@ -1,0 +1,31 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:A000370",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Alma S. Adams",
+    "t": "rep",
+    "st": "NC",
+    "d": 12,
+    "pt": "D",
+    "b": {
+      "congress": "A000370",
+      "fec": [
+        "H4NC12100"
+      ],
+      "govtrack": "412607",
+      "opensecrets": "N00035451",
+      "wikidata": "Q4733597",
+      "icpsr": "21545"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

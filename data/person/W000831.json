@@ -1,0 +1,29 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:W000831",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "James R. Walkinshaw",
+    "t": "rep",
+    "st": "VA",
+    "d": 11,
+    "pt": "D",
+    "b": {
+      "congress": "W000831",
+      "fec": [
+        "H6VA11066"
+      ],
+      "govtrack": "457036",
+      "wikidata": "Q135132001"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

@@ -1,0 +1,30 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:M001226",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Robert Menendez",
+    "t": "rep",
+    "st": "NJ",
+    "d": 8,
+    "pt": "D",
+    "b": {
+      "congress": "M001226",
+      "fec": [
+        "H2NJ08232"
+      ],
+      "govtrack": "456918",
+      "opensecrets": "N00049686",
+      "wikidata": "Q115137457"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

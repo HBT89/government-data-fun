@@ -1,0 +1,31 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:B001260",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Vern Buchanan",
+    "t": "rep",
+    "st": "FL",
+    "d": 16,
+    "pt": "R",
+    "b": {
+      "congress": "B001260",
+      "fec": [
+        "H6FL13148"
+      ],
+      "govtrack": "412196",
+      "opensecrets": "N00027626",
+      "wikidata": "Q2517229",
+      "icpsr": "20709"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

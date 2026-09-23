@@ -1,0 +1,50 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:F000468",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Lizzie Fletcher",
+    "t": "rep",
+    "st": "TX",
+    "d": 7,
+    "pt": "D",
+    "b": {
+      "congress": "F000468",
+      "fec": [
+        "H8TX07140"
+      ],
+      "govtrack": "412824",
+      "opensecrets": "N00041194",
+      "wikidata": "Q58324313",
+      "icpsr": "21919"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 1,
+    "ptr": 1
+  },
+  "filings": {
+    "h:20034413": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034413"
+      },
+      "f": "p:F000468",
+      "fn": "Fletcher, Elizabeth",
+      "inc": true,
+      "st": "TX",
+      "d": 7,
+      "y": 2026,
+      "dt": "5/1/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034413.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    }
+  },
+  "use_restriction": "Sourced from financial disclosure reports. Title 1 of the Ethics in Government Act of 1978, 5 U.S.C. app. 105(c), makes it unlawful to obtain or use such a report for an unlawful purpose, for a commercial purpose other than by news and communications media for dissemination to the general public, to establish any individual credit rating, or in the solicitation of money. Each person who obtains or uses these records is bound by that provision independently."
+}

@@ -1,0 +1,220 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:F000110",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Cleo Fields",
+    "t": "rep",
+    "st": "LA",
+    "d": 6,
+    "pt": "D",
+    "b": {
+      "congress": "F000110",
+      "fec": [
+        "H4LA06211"
+      ],
+      "govtrack": "404067",
+      "opensecrets": "N00005398",
+      "wikidata": "Q1100451",
+      "icpsr": "29354"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 11,
+    "ptr": 11
+  },
+  "filings": {
+    "h:20033732": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20033732"
+      },
+      "f": "p:F000110",
+      "fn": "Fields, Cleo",
+      "inc": false,
+      "st": "LA",
+      "d": 6,
+      "y": 2026,
+      "dt": "1/16/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033732.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20033858": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20033858"
+      },
+      "f": "p:F000110",
+      "fn": "Fields, Cleo",
+      "inc": false,
+      "st": "LA",
+      "d": 6,
+      "y": 2026,
+      "dt": "2/3/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033858.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034018": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034018"
+      },
+      "f": "p:F000110",
+      "fn": "Fields, Cleo",
+      "inc": false,
+      "st": "LA",
+      "d": 6,
+      "y": 2026,
+      "dt": "2/24/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034018.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034179": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034179"
+      },
+      "f": "p:F000110",
+      "fn": "Fields, Cleo",
+      "inc": false,
+      "st": "LA",
+      "d": 6,
+      "y": 2026,
+      "dt": "3/17/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034179.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034295": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034295"
+      },
+      "f": "p:F000110",
+      "fn": "Fields, Cleo",
+      "inc": false,
+      "st": "LA",
+      "d": 6,
+      "y": 2026,
+      "dt": "4/7/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034295.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034357": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034357"
+      },
+      "f": "p:F000110",
+      "fn": "Fields, Cleo",
+      "inc": false,
+      "st": "LA",
+      "d": 6,
+      "y": 2026,
+      "dt": "4/20/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034357.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034591": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034591"
+      },
+      "f": "p:F000110",
+      "fn": "Fields, Cleo",
+      "inc": false,
+      "st": "LA",
+      "d": 6,
+      "y": 2026,
+      "dt": "6/3/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034591.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034800": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034800"
+      },
+      "f": "p:F000110",
+      "fn": "Fields, Cleo",
+      "inc": false,
+      "st": "LA",
+      "d": 6,
+      "y": 2026,
+      "dt": "6/26/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034800.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034894": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034894"
+      },
+      "f": "p:F000110",
+      "fn": "Fields, Cleo",
+      "inc": false,
+      "st": "LA",
+      "d": 6,
+      "y": 2026,
+      "dt": "7/16/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034894.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20035023": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20035023"
+      },
+      "f": "p:F000110",
+      "fn": "Fields, Cleo",
+      "inc": false,
+      "st": "LA",
+      "d": 6,
+      "y": 2026,
+      "dt": "7/30/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035023.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20035345": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20035345"
+      },
+      "f": "p:F000110",
+      "fn": "Fields, Cleo",
+      "inc": false,
+      "st": "LA",
+      "d": 6,
+      "y": 2026,
+      "dt": "9/2/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035345.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    }
+  },
+  "use_restriction": "Sourced from financial disclosure reports. Title 1 of the Ethics in Government Act of 1978, 5 U.S.C. app. 105(c), makes it unlawful to obtain or use such a report for an unlawful purpose, for a commercial purpose other than by news and communications media for dissemination to the general public, to establish any individual credit rating, or in the solicitation of money. Each person who obtains or uses these records is bound by that provision independently."
+}

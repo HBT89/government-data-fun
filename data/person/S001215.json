@@ -1,0 +1,32 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:S001215",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Haley M. Stevens",
+    "t": "rep",
+    "st": "MI",
+    "d": 11,
+    "pt": "D",
+    "b": {
+      "congress": "S001215",
+      "fec": [
+        "H8MI11254",
+        "S6MI00426"
+      ],
+      "govtrack": "412786",
+      "opensecrets": "N00040915",
+      "wikidata": "Q58322563",
+      "icpsr": "21972"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

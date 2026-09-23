@@ -1,0 +1,186 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:G000583",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Josh Gottheimer",
+    "t": "rep",
+    "st": "NJ",
+    "d": 5,
+    "pt": "D",
+    "b": {
+      "congress": "G000583",
+      "fec": [
+        "H6NJ05171"
+      ],
+      "govtrack": "412714",
+      "opensecrets": "N00036944",
+      "wikidata": "Q6288908",
+      "icpsr": "21723"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 9,
+    "ptr": 9
+  },
+  "filings": {
+    "h:20033756": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20033756"
+      },
+      "f": "p:G000583",
+      "fn": "Gottheimer, Josh",
+      "inc": true,
+      "st": "NJ",
+      "d": 5,
+      "y": 2026,
+      "dt": "1/14/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033756.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20033930": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20033930"
+      },
+      "f": "p:G000583",
+      "fn": "Gottheimer, Josh",
+      "inc": true,
+      "st": "NJ",
+      "d": 5,
+      "y": 2026,
+      "dt": "2/26/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033930.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034130": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034130"
+      },
+      "f": "p:G000583",
+      "fn": "Gottheimer, Josh",
+      "inc": true,
+      "st": "NJ",
+      "d": 5,
+      "y": 2026,
+      "dt": "3/16/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034130.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034305": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034305"
+      },
+      "f": "p:G000583",
+      "fn": "Gottheimer, Josh",
+      "inc": true,
+      "st": "NJ",
+      "d": 5,
+      "y": 2026,
+      "dt": "4/8/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034305.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034585": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034585"
+      },
+      "f": "p:G000583",
+      "fn": "Gottheimer, Josh",
+      "inc": true,
+      "st": "NJ",
+      "d": 5,
+      "y": 2026,
+      "dt": "5/19/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034585.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034693": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034693"
+      },
+      "f": "p:G000583",
+      "fn": "Gottheimer, Josh",
+      "inc": true,
+      "st": "NJ",
+      "d": 5,
+      "y": 2026,
+      "dt": "6/3/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034693.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034938": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034938"
+      },
+      "f": "p:G000583",
+      "fn": "Gottheimer, Josh",
+      "inc": true,
+      "st": "NJ",
+      "d": 5,
+      "y": 2026,
+      "dt": "7/7/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034938.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20035186": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20035186"
+      },
+      "f": "p:G000583",
+      "fn": "Gottheimer, Josh",
+      "inc": true,
+      "st": "NJ",
+      "d": 5,
+      "y": 2026,
+      "dt": "8/10/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035186.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20035455": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20035455"
+      },
+      "f": "p:G000583",
+      "fn": "Gottheimer, Josh",
+      "inc": true,
+      "st": "NJ",
+      "d": 5,
+      "y": 2026,
+      "dt": "9/14/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035455.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    }
+  },
+  "use_restriction": "Sourced from financial disclosure reports. Title 1 of the Ethics in Government Act of 1978, 5 U.S.C. app. 105(c), makes it unlawful to obtain or use such a report for an unlawful purpose, for a commercial purpose other than by news and communications media for dissemination to the general public, to establish any individual credit rating, or in the solicitation of money. Each person who obtains or uses these records is bound by that provision independently."
+}

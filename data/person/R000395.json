@@ -1,0 +1,152 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:R000395",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Harold Rogers",
+    "t": "rep",
+    "st": "KY",
+    "d": 5,
+    "pt": "R",
+    "b": {
+      "congress": "R000395",
+      "fec": [
+        "H0KY05015"
+      ],
+      "govtrack": "400340",
+      "opensecrets": "N00003473",
+      "wikidata": "Q547153",
+      "icpsr": "14854"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 7,
+    "ptr": 7
+  },
+  "filings": {
+    "h:8221332": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "8221332"
+      },
+      "f": "p:R000395",
+      "fn": "Rogers, Harold Dallas",
+      "inc": true,
+      "st": "KY",
+      "d": 5,
+      "y": 2026,
+      "dt": "2/13/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/8221332.pdf",
+      "text": false,
+      "basis": "match:name+statedst"
+    },
+    "h:9115711": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "9115711"
+      },
+      "f": "p:R000395",
+      "fn": "Rogers, Harold Dallas",
+      "inc": true,
+      "st": "KY",
+      "d": 5,
+      "y": 2026,
+      "dt": "3/20/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/9115711.pdf",
+      "text": false,
+      "basis": "match:name+statedst"
+    },
+    "h:9115762": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "9115762"
+      },
+      "f": "p:R000395",
+      "fn": "Rogers, Harold Dallas",
+      "inc": true,
+      "st": "KY",
+      "d": 5,
+      "y": 2026,
+      "dt": "4/21/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/9115762.pdf",
+      "text": false,
+      "basis": "match:name+statedst"
+    },
+    "h:9115808": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "9115808"
+      },
+      "f": "p:R000395",
+      "fn": "Rogers, Harold Dallas",
+      "inc": true,
+      "st": "KY",
+      "d": 5,
+      "y": 2026,
+      "dt": "5/8/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/9115808.pdf",
+      "text": false,
+      "basis": "match:name+statedst"
+    },
+    "h:9116146": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "9116146"
+      },
+      "f": "p:R000395",
+      "fn": "Rogers, Harold Dallas",
+      "inc": true,
+      "st": "KY",
+      "d": 5,
+      "y": 2026,
+      "dt": "6/10/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/9116146.pdf",
+      "text": false,
+      "basis": "match:name+statedst"
+    },
+    "h:9116218": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "9116218"
+      },
+      "f": "p:R000395",
+      "fn": "Rogers, Harold Dallas",
+      "inc": true,
+      "st": "KY",
+      "d": 5,
+      "y": 2026,
+      "dt": "7/14/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/9116218.pdf",
+      "text": false,
+      "basis": "match:name+statedst"
+    },
+    "h:9116311": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "9116311"
+      },
+      "f": "p:R000395",
+      "fn": "Rogers, Harold Dallas",
+      "inc": true,
+      "st": "KY",
+      "d": 5,
+      "y": 2026,
+      "dt": "8/20/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/9116311.pdf",
+      "text": false,
+      "basis": "match:name+statedst"
+    }
+  },
+  "use_restriction": "Sourced from financial disclosure reports. Title 1 of the Ethics in Government Act of 1978, 5 U.S.C. app. 105(c), makes it unlawful to obtain or use such a report for an unlawful purpose, for a commercial purpose other than by news and communications media for dissemination to the general public, to establish any individual credit rating, or in the solicitation of money. Each person who obtains or uses these records is bound by that provision independently."
+}

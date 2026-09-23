@@ -1,0 +1,30 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:F000471",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Scott Fitzgerald",
+    "t": "rep",
+    "st": "WI",
+    "d": 5,
+    "pt": "R",
+    "b": {
+      "congress": "F000471",
+      "fec": [
+        "H0WI05113"
+      ],
+      "govtrack": "456855",
+      "opensecrets": "N00045434",
+      "wikidata": "Q7436650"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

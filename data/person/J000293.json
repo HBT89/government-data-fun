@@ -1,0 +1,32 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:J000293",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Ron Johnson",
+    "t": "sen",
+    "st": "WI",
+    "d": null,
+    "pt": "R",
+    "b": {
+      "congress": "J000293",
+      "fec": [
+        "S0WI00197"
+      ],
+      "govtrack": "412496",
+      "opensecrets": "N00032546",
+      "wikidata": "Q970272",
+      "lis": "S345",
+      "icpsr": "41111"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

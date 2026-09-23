@@ -1,0 +1,84 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:S000250",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Pete Sessions",
+    "t": "rep",
+    "st": "TX",
+    "d": 17,
+    "pt": "R",
+    "b": {
+      "congress": "S000250",
+      "fec": [
+        "H2TX03126"
+      ],
+      "govtrack": "400367",
+      "opensecrets": "N00005681",
+      "wikidata": "Q437852",
+      "icpsr": "29759"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 3,
+    "ptr": 3
+  },
+  "filings": {
+    "h:20033500": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20033500"
+      },
+      "f": "p:S000250",
+      "fn": "Sessions, Pete",
+      "inc": true,
+      "st": "TX",
+      "d": 17,
+      "y": 2026,
+      "dt": "3/9/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033500.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20035068": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20035068"
+      },
+      "f": "p:S000250",
+      "fn": "Sessions, Pete",
+      "inc": true,
+      "st": "TX",
+      "d": 17,
+      "y": 2026,
+      "dt": "7/24/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035068.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20035480": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20035480"
+      },
+      "f": "p:S000250",
+      "fn": "Sessions, Pete",
+      "inc": true,
+      "st": "TX",
+      "d": 17,
+      "y": 2026,
+      "dt": "9/18/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035480.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    }
+  },
+  "use_restriction": "Sourced from financial disclosure reports. Title 1 of the Ethics in Government Act of 1978, 5 U.S.C. app. 105(c), makes it unlawful to obtain or use such a report for an unlawful purpose, for a commercial purpose other than by news and communications media for dissemination to the general public, to establish any individual credit rating, or in the solicitation of money. Each person who obtains or uses these records is bound by that provision independently."
+}

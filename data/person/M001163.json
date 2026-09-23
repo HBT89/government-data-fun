@@ -1,0 +1,50 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:M001163",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Doris O. Matsui",
+    "t": "rep",
+    "st": "CA",
+    "d": 7,
+    "pt": "D",
+    "b": {
+      "congress": "M001163",
+      "fec": [
+        "H6CA05195"
+      ],
+      "govtrack": "400663",
+      "opensecrets": "N00027459",
+      "wikidata": "Q399561",
+      "icpsr": "20538"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 1,
+    "ptr": 1
+  },
+  "filings": {
+    "h:20033695": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20033695"
+      },
+      "f": "p:M001163",
+      "fn": "Matsui, Doris O.",
+      "inc": true,
+      "st": "CA",
+      "d": 7,
+      "y": 2026,
+      "dt": "1/9/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033695.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    }
+  },
+  "use_restriction": "Sourced from financial disclosure reports. Title 1 of the Ethics in Government Act of 1978, 5 U.S.C. app. 105(c), makes it unlawful to obtain or use such a report for an unlawful purpose, for a commercial purpose other than by news and communications media for dissemination to the general public, to establish any individual credit rating, or in the solicitation of money. Each person who obtains or uses these records is bound by that provision independently."
+}

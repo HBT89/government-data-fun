@@ -1,0 +1,33 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:M001198",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Roger Marshall",
+    "t": "sen",
+    "st": "KS",
+    "d": null,
+    "pt": "R",
+    "b": {
+      "congress": "M001198",
+      "fec": [
+        "H6KS01179",
+        "S0KS00315"
+      ],
+      "govtrack": "412704",
+      "opensecrets": "N00037034",
+      "wikidata": "Q27923290",
+      "lis": "S411",
+      "icpsr": "21734"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

@@ -1,0 +1,32 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:K000385",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Robin L. Kelly",
+    "t": "rep",
+    "st": "IL",
+    "d": 2,
+    "pt": "D",
+    "b": {
+      "congress": "K000385",
+      "fec": [
+        "H2IL02172",
+        "S6IL00474"
+      ],
+      "govtrack": "412595",
+      "opensecrets": "N00035215",
+      "wikidata": "Q3437091",
+      "icpsr": "21371"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

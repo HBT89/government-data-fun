@@ -1,0 +1,32 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:L000562",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Stephen F. Lynch",
+    "t": "rep",
+    "st": "MA",
+    "d": 8,
+    "pt": "D",
+    "b": {
+      "congress": "L000562",
+      "fec": [
+        "H2MA09072",
+        "S0MA00083"
+      ],
+      "govtrack": "400249",
+      "opensecrets": "N00013855",
+      "wikidata": "Q2344921",
+      "icpsr": "20119"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

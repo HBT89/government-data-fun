@@ -1,0 +1,33 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:G000555",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Kirsten E. Gillibrand",
+    "t": "sen",
+    "st": "NY",
+    "d": null,
+    "pt": "D",
+    "b": {
+      "congress": "G000555",
+      "fec": [
+        "H6NY20167",
+        "S0NY00410"
+      ],
+      "govtrack": "412223",
+      "opensecrets": "N00027658",
+      "wikidata": "Q22222",
+      "lis": "S331",
+      "icpsr": "20735"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

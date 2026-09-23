@@ -1,0 +1,31 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:R000606",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Jamie Raskin",
+    "t": "rep",
+    "st": "MD",
+    "d": 8,
+    "pt": "D",
+    "b": {
+      "congress": "R000606",
+      "fec": [
+        "H6MD08457"
+      ],
+      "govtrack": "412708",
+      "opensecrets": "N00037036",
+      "wikidata": "Q640835",
+      "icpsr": "21741"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

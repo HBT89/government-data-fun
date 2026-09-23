@@ -1,0 +1,33 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:S001150",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Adam B. Schiff",
+    "t": "sen",
+    "st": "CA",
+    "d": null,
+    "pt": "D",
+    "b": {
+      "congress": "S001150",
+      "fec": [
+        "H0CA27085",
+        "S4CA00555"
+      ],
+      "govtrack": "400361",
+      "opensecrets": "N00009585",
+      "wikidata": "Q350843",
+      "lis": "S427",
+      "icpsr": "20104"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

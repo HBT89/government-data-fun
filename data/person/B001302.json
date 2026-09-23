@@ -1,0 +1,31 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:B001302",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Andy Biggs",
+    "t": "rep",
+    "st": "AZ",
+    "d": 5,
+    "pt": "R",
+    "b": {
+      "congress": "B001302",
+      "fec": [
+        "H6AZ05083"
+      ],
+      "govtrack": "412683",
+      "opensecrets": "N00039293",
+      "wikidata": "Q16199304",
+      "icpsr": "21705"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

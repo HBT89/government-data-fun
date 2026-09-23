@@ -1,0 +1,68 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:W000816",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Roger Williams",
+    "t": "rep",
+    "st": "TX",
+    "d": 25,
+    "pt": "R",
+    "b": {
+      "congress": "W000816",
+      "fec": [
+        "H2TX33040",
+        "S2TX00270"
+      ],
+      "govtrack": "412578",
+      "opensecrets": "N00030602",
+      "wikidata": "Q4014560",
+      "icpsr": "21364"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 2,
+    "ptr": 1
+  },
+  "filings": {
+    "h:20033783": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20033783"
+      },
+      "f": "p:W000816",
+      "fn": "Williams, Roger",
+      "inc": true,
+      "st": "TX",
+      "d": 25,
+      "y": 2026,
+      "dt": "1/15/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033783.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:10077028": {
+      "k": "candidate",
+      "ch": "house",
+      "b": {
+        "house_doc": "10077028"
+      },
+      "f": "p:W000816",
+      "fn": "Williams, Veronica",
+      "inc": false,
+      "st": "TX",
+      "d": 23,
+      "y": 2026,
+      "dt": "5/7/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/financial-pdfs/2026/10077028.pdf",
+      "text": true,
+      "basis": "match:name+state"
+    }
+  },
+  "use_restriction": "Sourced from financial disclosure reports. Title 1 of the Ethics in Government Act of 1978, 5 U.S.C. app. 105(c), makes it unlawful to obtain or use such a report for an unlawful purpose, for a commercial purpose other than by news and communications media for dissemination to the general public, to establish any individual credit rating, or in the solicitation of money. Each person who obtains or uses these records is bound by that provision independently."
+}

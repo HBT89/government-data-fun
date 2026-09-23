@@ -1,0 +1,33 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:L000571",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Cynthia M. Lummis",
+    "t": "sen",
+    "st": "WY",
+    "d": null,
+    "pt": "R",
+    "b": {
+      "congress": "L000571",
+      "fec": [
+        "H8WY00148",
+        "S0WY00137"
+      ],
+      "govtrack": "412294",
+      "opensecrets": "N00029788",
+      "wikidata": "Q456064",
+      "lis": "S410",
+      "icpsr": "20953"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

@@ -1,0 +1,32 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:P000597",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Chellie Pingree",
+    "t": "rep",
+    "st": "ME",
+    "d": 1,
+    "pt": "D",
+    "b": {
+      "congress": "P000597",
+      "fec": [
+        "H8ME01120",
+        "S0ME00038"
+      ],
+      "govtrack": "412307",
+      "opensecrets": "N00013817",
+      "wikidata": "Q457243",
+      "icpsr": "20920"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

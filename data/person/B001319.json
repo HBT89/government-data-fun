@@ -1,0 +1,31 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:B001319",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Katie Boyd Britt",
+    "t": "sen",
+    "st": "AL",
+    "d": null,
+    "pt": "R",
+    "b": {
+      "congress": "B001319",
+      "fec": [
+        "S2AL00145"
+      ],
+      "govtrack": "456874",
+      "opensecrets": "N00048812",
+      "wikidata": "Q111285444",
+      "lis": "S416"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

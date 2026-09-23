@@ -1,0 +1,134 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:S000168",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Maria Elvira Salazar",
+    "t": "rep",
+    "st": "FL",
+    "d": 27,
+    "pt": "R",
+    "b": {
+      "congress": "S000168",
+      "fec": [
+        "H8FL27185"
+      ],
+      "govtrack": "456810",
+      "opensecrets": "N00042810",
+      "wikidata": "Q6003715"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 6,
+    "ptr": 6
+  },
+  "filings": {
+    "h:20033993": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20033993"
+      },
+      "f": "p:S000168",
+      "fn": "Salazar, Maria Elvira",
+      "inc": true,
+      "st": "FL",
+      "d": 27,
+      "y": 2026,
+      "dt": "4/21/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033993.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034479": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034479"
+      },
+      "f": "p:S000168",
+      "fn": "Salazar, Maria Elvira",
+      "inc": true,
+      "st": "FL",
+      "d": 27,
+      "y": 2026,
+      "dt": "5/8/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034479.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034709": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034709"
+      },
+      "f": "p:S000168",
+      "fn": "Salazar, Maria Elvira",
+      "inc": true,
+      "st": "FL",
+      "d": 27,
+      "y": 2026,
+      "dt": "6/8/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034709.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034928": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034928"
+      },
+      "f": "p:S000168",
+      "fn": "Salazar, Maria Elvira",
+      "inc": true,
+      "st": "FL",
+      "d": 27,
+      "y": 2026,
+      "dt": "7/7/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034928.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20035138": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20035138"
+      },
+      "f": "p:S000168",
+      "fn": "Salazar, Maria Elvira",
+      "inc": true,
+      "st": "FL",
+      "d": 27,
+      "y": 2026,
+      "dt": "8/7/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035138.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20035411": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20035411"
+      },
+      "f": "p:S000168",
+      "fn": "Salazar, Maria Elvira",
+      "inc": true,
+      "st": "FL",
+      "d": 27,
+      "y": 2026,
+      "dt": "9/9/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035411.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    }
+  },
+  "use_restriction": "Sourced from financial disclosure reports. Title 1 of the Ethics in Government Act of 1978, 5 U.S.C. app. 105(c), makes it unlawful to obtain or use such a report for an unlawful purpose, for a commercial purpose other than by news and communications media for dissemination to the general public, to establish any individual credit rating, or in the solicitation of money. Each person who obtains or uses these records is bound by that provision independently."
+}

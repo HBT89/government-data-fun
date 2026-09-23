@@ -1,0 +1,31 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:S001212",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Pete Stauber",
+    "t": "rep",
+    "st": "MN",
+    "d": 8,
+    "pt": "R",
+    "b": {
+      "congress": "S001212",
+      "fec": [
+        "H8MN08043"
+      ],
+      "govtrack": "412792",
+      "opensecrets": "N00041511",
+      "wikidata": "Q55955746",
+      "icpsr": "21969"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

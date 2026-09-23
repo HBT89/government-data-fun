@@ -1,0 +1,169 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:D000399",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Lloyd Doggett",
+    "t": "rep",
+    "st": "TX",
+    "d": 37,
+    "pt": "D",
+    "b": {
+      "congress": "D000399",
+      "fec": [
+        "H4TX10028"
+      ],
+      "govtrack": "400111",
+      "opensecrets": "N00006023",
+      "wikidata": "Q363817",
+      "icpsr": "29571"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 8,
+    "ptr": 8
+  },
+  "filings": {
+    "h:20033713": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20033713"
+      },
+      "f": "p:D000399",
+      "fn": "Doggett, Lloyd",
+      "inc": true,
+      "st": "TX",
+      "d": 37,
+      "y": 2026,
+      "dt": "1/2/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033713.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034132": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034132"
+      },
+      "f": "p:D000399",
+      "fn": "Doggett, Lloyd",
+      "inc": true,
+      "st": "TX",
+      "d": 37,
+      "y": 2026,
+      "dt": "3/5/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034132.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034292": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034292"
+      },
+      "f": "p:D000399",
+      "fn": "Doggett, Lloyd",
+      "inc": true,
+      "st": "TX",
+      "d": 37,
+      "y": 2026,
+      "dt": "4/6/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034292.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034486": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034486"
+      },
+      "f": "p:D000399",
+      "fn": "Doggett, Lloyd",
+      "inc": true,
+      "st": "TX",
+      "d": 37,
+      "y": 2026,
+      "dt": "5/6/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034486.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034712": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034712"
+      },
+      "f": "p:D000399",
+      "fn": "Doggett, Lloyd",
+      "inc": true,
+      "st": "TX",
+      "d": 37,
+      "y": 2026,
+      "dt": "6/4/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034712.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034923": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034923"
+      },
+      "f": "p:D000399",
+      "fn": "Doggett, Lloyd",
+      "inc": true,
+      "st": "TX",
+      "d": 37,
+      "y": 2026,
+      "dt": "7/6/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034923.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20035136": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20035136"
+      },
+      "f": "p:D000399",
+      "fn": "Doggett, Lloyd",
+      "inc": true,
+      "st": "TX",
+      "d": 37,
+      "y": 2026,
+      "dt": "8/5/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035136.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20035401": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20035401"
+      },
+      "f": "p:D000399",
+      "fn": "Doggett, Lloyd",
+      "inc": true,
+      "st": "TX",
+      "d": 37,
+      "y": 2026,
+      "dt": "9/8/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035401.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    }
+  },
+  "use_restriction": "Sourced from financial disclosure reports. Title 1 of the Ethics in Government Act of 1978, 5 U.S.C. app. 105(c), makes it unlawful to obtain or use such a report for an unlawful purpose, for a commercial purpose other than by news and communications media for dissemination to the general public, to establish any individual credit rating, or in the solicitation of money. Each person who obtains or uses these records is bound by that provision independently."
+}

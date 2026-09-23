@@ -1,0 +1,30 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:L000606",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "George Latimer",
+    "t": "rep",
+    "st": "NY",
+    "d": 16,
+    "pt": "D",
+    "b": {
+      "congress": "L000606",
+      "fec": [
+        "H4NY16087"
+      ],
+      "govtrack": "457011",
+      "opensecrets": "N00054136",
+      "wikidata": "Q5544169"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

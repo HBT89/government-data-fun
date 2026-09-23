@@ -26,6 +26,7 @@ data/                     public tier, committed here
   entities/filing.json    House disclosure documents, addressable
   index/xref.json         any known foreign id -> entity ref
   index/sources.json      per-agency dereference templates
+  person/<bioguide>.json  one person and their filings, addressable alone
   manifest.json           what was built, from what, when
 
 curated/                  not committed; see Tiers
@@ -109,7 +110,7 @@ oversight.
   "k": "ptr",
   "ch": "house",
   "b": { "house_doc": "20034201" },
-  "f": "p:A000377",
+  "f": "p:A000379",
   "fn": "Alford, Mark",
   "inc": true,
   "st": "MO", "d": 4,
@@ -143,6 +144,45 @@ Measured on the 2026 index: **381 of 381 PTRs filed by sitting members matched**
 and 96.8% of all `Hon.` filings. The large unmatched count is the 823 candidate
 filings and former members, which is the correct outcome rather than a miss.
 
+## Shards
+
+`data/person/<bioguide>.json` is one person and the filings attributed to them.
+
+```json
+{
+  "kind": "person-shard",
+  "ref": "p:A000379",
+  "person": { "n": "Mark Alford", "t": "rep", "st": "MO", "d": 4, "b": { ... } },
+  "counts": { "filings": 1, "ptr": 1 },
+  "filings": { "h:20034201": { ... } },
+  "use_restriction": "..."
+}
+```
+
+Nothing here is new. It is the same person entity and the same filing entities
+carrying the same bases, addressed per entity rather than per file. A consumer
+that wants one member had to fetch `person.json` and `filing.json` whole, 888KB
+between them, to read about 7KB. Resolving through `xref.json` to a `p:` ref and
+fetching that one shard is 7.3KB at worst and 1.1KB on average.
+
+| | Whole files | Largest shard |
+|---|---|---|
+| Bytes for one person | 888.1KB | 7.3KB |
+
+539 shards, 119 of which carry at least one filing. The 422 attributed filings
+are exactly the ones `filing.json` resolves to a sitting member; the remaining
+1,262 belong to candidates and departed members, so they have no person to hang
+under and stay reachable through `filing.json` alone.
+
+A shard that carries filings also carries `use_restriction`, for the same reason
+`filing.json` does: the restriction should travel with the data, and a shard is
+where a consumer actually arrives.
+
+This adds an address rather than replacing one. Fetching 539 shards to read
+every person is worse than fetching `person.json`, which stays where it is.
+
+    node tools/build-shards.mjs [--out data]
+
 ## Reverse lookup
 
 `data/index/xref.json` maps `"<agency>:<native id>"` to an entity ref:
@@ -175,8 +215,14 @@ Three stages. Entity builders write their own file; the xref stage merges them.
 ```
 node tools/build-person-index.mjs
 node tools/build-org-index.mjs
+node tools/build-filing-index.mjs --years 2026
 node tools/build-xref.mjs
+node tools/build-shards.mjs
 ```
+
+The shard stage is a reprojection of the entity files and reads nothing
+upstream, so it can run any time after the entity builders. It folds its own
+summary into `manifest.json` when that file already exists.
 
 No dependencies, Node 18+. Re-run to refresh.
 

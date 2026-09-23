@@ -1,0 +1,34 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:C001096",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Kevin Cramer",
+    "t": "sen",
+    "st": "ND",
+    "d": null,
+    "pt": "R",
+    "b": {
+      "congress": "C001096",
+      "fec": [
+        "H0ND01026",
+        "H6ND00074",
+        "S8ND00120"
+      ],
+      "govtrack": "412555",
+      "opensecrets": "N00004614",
+      "wikidata": "Q3957020",
+      "lis": "S398",
+      "icpsr": "21350"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

@@ -1,0 +1,30 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:L000601",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Greg Landsman",
+    "t": "rep",
+    "st": "OH",
+    "d": 1,
+    "pt": "D",
+    "b": {
+      "congress": "L000601",
+      "fec": [
+        "H2OH01194"
+      ],
+      "govtrack": "456928",
+      "opensecrets": "N00049718",
+      "wikidata": "Q115180677"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

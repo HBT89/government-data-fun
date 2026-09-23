@@ -1,0 +1,33 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:L000570",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Ben Ray Luján",
+    "t": "sen",
+    "st": "NM",
+    "d": null,
+    "pt": "D",
+    "b": {
+      "congress": "L000570",
+      "fec": [
+        "H8NM03196",
+        "S0NM00058"
+      ],
+      "govtrack": "412293",
+      "opensecrets": "N00029562",
+      "wikidata": "Q324256",
+      "lis": "S409",
+      "icpsr": "20932"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

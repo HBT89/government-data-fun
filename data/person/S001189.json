@@ -1,0 +1,50 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:S001189",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Austin Scott",
+    "t": "rep",
+    "st": "GA",
+    "d": 8,
+    "pt": "R",
+    "b": {
+      "congress": "S001189",
+      "fec": [
+        "H0GA08099"
+      ],
+      "govtrack": "412417",
+      "opensecrets": "N00032457",
+      "wikidata": "Q781167",
+      "icpsr": "21123"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 1,
+    "ptr": 1
+  },
+  "filings": {
+    "h:20032279": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20032279"
+      },
+      "f": "p:S001189",
+      "fn": "Scott, Austin",
+      "inc": true,
+      "st": "GA",
+      "d": 8,
+      "y": 2026,
+      "dt": "3/12/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20032279.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    }
+  },
+  "use_restriction": "Sourced from financial disclosure reports. Title 1 of the Ethics in Government Act of 1978, 5 U.S.C. app. 105(c), makes it unlawful to obtain or use such a report for an unlawful purpose, for a commercial purpose other than by news and communications media for dissemination to the general public, to establish any individual credit rating, or in the solicitation of money. Each person who obtains or uses these records is bound by that provision independently."
+}

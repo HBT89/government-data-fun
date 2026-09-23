@@ -1,0 +1,31 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:B000490",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Sanford D. Bishop, Jr.",
+    "t": "rep",
+    "st": "GA",
+    "d": 2,
+    "pt": "D",
+    "b": {
+      "congress": "B000490",
+      "fec": [
+        "H2GA02031"
+      ],
+      "govtrack": "400030",
+      "opensecrets": "N00002674",
+      "wikidata": "Q983428",
+      "icpsr": "29339"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

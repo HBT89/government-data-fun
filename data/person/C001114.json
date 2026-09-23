@@ -1,0 +1,33 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:C001114",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "John R. Curtis",
+    "t": "sen",
+    "st": "UT",
+    "d": null,
+    "pt": "R",
+    "b": {
+      "congress": "C001114",
+      "fec": [
+        "H8UT03238",
+        "S4UT00282"
+      ],
+      "govtrack": "412740",
+      "opensecrets": "N00041221",
+      "wikidata": "Q6253810",
+      "lis": "S431",
+      "icpsr": "21755"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

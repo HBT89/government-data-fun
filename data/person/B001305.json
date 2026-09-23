@@ -1,0 +1,33 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:B001305",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Ted Budd",
+    "t": "sen",
+    "st": "NC",
+    "d": null,
+    "pt": "R",
+    "b": {
+      "congress": "B001305",
+      "fec": [
+        "H6NC13129",
+        "S2NC00505"
+      ],
+      "govtrack": "412712",
+      "opensecrets": "N00039551",
+      "wikidata": "Q27733792",
+      "lis": "S417",
+      "icpsr": "21708"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

@@ -1,0 +1,66 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:B001323",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Nicholas J. Begich III",
+    "t": "rep",
+    "st": "AK",
+    "d": 0,
+    "pt": "R",
+    "b": {
+      "congress": "B001323",
+      "fec": [
+        "H2AK01083"
+      ],
+      "govtrack": "456970",
+      "opensecrets": "N00049408",
+      "wikidata": "Q113676482"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 2,
+    "ptr": 2
+  },
+  "filings": {
+    "h:20020055": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20020055"
+      },
+      "f": "p:B001323",
+      "fn": "Begich, Nicholas",
+      "inc": true,
+      "st": "AK",
+      "d": 0,
+      "y": 2026,
+      "dt": "6/12/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20020055.pdf",
+      "text": null,
+      "basis": "match:name+statedst"
+    },
+    "h:20034920": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034920"
+      },
+      "f": "p:B001323",
+      "fn": "Begich, Nicholas",
+      "inc": true,
+      "st": "AK",
+      "d": 0,
+      "y": 2026,
+      "dt": "7/7/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034920.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    }
+  },
+  "use_restriction": "Sourced from financial disclosure reports. Title 1 of the Ethics in Government Act of 1978, 5 U.S.C. app. 105(c), makes it unlawful to obtain or use such a report for an unlawful purpose, for a commercial purpose other than by news and communications media for dissemination to the general public, to establish any individual credit rating, or in the solicitation of money. Each person who obtains or uses these records is bound by that provision independently."
+}

@@ -1,0 +1,31 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:V000129",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "David G. Valadao",
+    "t": "rep",
+    "st": "CA",
+    "d": 22,
+    "pt": "R",
+    "b": {
+      "congress": "V000129",
+      "fec": [
+        "H2CA20094"
+      ],
+      "govtrack": "412515",
+      "opensecrets": "N00033367",
+      "wikidata": "Q3528567",
+      "icpsr": "21307"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

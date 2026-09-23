@@ -1,0 +1,31 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:D000600",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Mario Diaz-Balart",
+    "t": "rep",
+    "st": "FL",
+    "d": 26,
+    "pt": "R",
+    "b": {
+      "congress": "D000600",
+      "fec": [
+        "H2FL25018"
+      ],
+      "govtrack": "400108",
+      "opensecrets": "N00025337",
+      "wikidata": "Q767270",
+      "icpsr": "20316"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

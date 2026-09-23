@@ -1,0 +1,33 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:B001236",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "John Boozman",
+    "t": "sen",
+    "st": "AR",
+    "d": null,
+    "pt": "R",
+    "b": {
+      "congress": "B001236",
+      "fec": [
+        "H2AR03176",
+        "S0AR00150"
+      ],
+      "govtrack": "400040",
+      "opensecrets": "N00013873",
+      "wikidata": "Q1344707",
+      "lis": "S343",
+      "icpsr": "20101"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

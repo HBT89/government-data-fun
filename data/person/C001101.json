@@ -1,0 +1,67 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:C001101",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Katherine M. Clark",
+    "t": "rep",
+    "st": "MA",
+    "d": 5,
+    "pt": "D",
+    "b": {
+      "congress": "C001101",
+      "fec": [
+        "H4MA05084"
+      ],
+      "govtrack": "412600",
+      "opensecrets": "N00035278",
+      "wikidata": "Q6376330",
+      "icpsr": "21375"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 2,
+    "ptr": 1
+  },
+  "filings": {
+    "h:8078": {
+      "k": "withdrawal",
+      "ch": "house",
+      "b": {
+        "house_doc": "8078"
+      },
+      "f": "p:C001101",
+      "fn": "Clark, Gaige",
+      "inc": false,
+      "st": "MA",
+      "d": 3,
+      "y": 2026,
+      "dt": "4/21/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/financial-pdfs/2026/8078.pdf",
+      "text": null,
+      "basis": "match:name+state"
+    },
+    "h:20034892": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034892"
+      },
+      "f": "p:C001101",
+      "fn": "Clark, Katherine M.",
+      "inc": true,
+      "st": "MA",
+      "d": 5,
+      "y": 2026,
+      "dt": "7/14/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034892.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    }
+  },
+  "use_restriction": "Sourced from financial disclosure reports. Title 1 of the Ethics in Government Act of 1978, 5 U.S.C. app. 105(c), makes it unlawful to obtain or use such a report for an unlawful purpose, for a commercial purpose other than by news and communications media for dissemination to the general public, to establish any individual credit rating, or in the solicitation of money. Each person who obtains or uses these records is bound by that provision independently."
+}

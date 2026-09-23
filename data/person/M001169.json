@@ -1,0 +1,33 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:M001169",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Christopher Murphy",
+    "t": "sen",
+    "st": "CT",
+    "d": null,
+    "pt": "D",
+    "b": {
+      "congress": "M001169",
+      "fec": [
+        "H6CT05124",
+        "S2CT00132"
+      ],
+      "govtrack": "412194",
+      "opensecrets": "N00027566",
+      "wikidata": "Q1077594",
+      "lis": "S364",
+      "icpsr": "20707"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

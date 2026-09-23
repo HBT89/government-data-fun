@@ -1,0 +1,33 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:C000127",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Maria Cantwell",
+    "t": "sen",
+    "st": "WA",
+    "d": null,
+    "pt": "D",
+    "b": {
+      "congress": "C000127",
+      "fec": [
+        "S8WA00194",
+        "H2WA01054"
+      ],
+      "govtrack": "300018",
+      "opensecrets": "N00007836",
+      "wikidata": "Q22250",
+      "lis": "S275",
+      "icpsr": "39310"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

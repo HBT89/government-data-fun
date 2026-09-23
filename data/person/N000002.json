@@ -1,0 +1,31 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:N000002",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Jerrold Nadler",
+    "t": "rep",
+    "st": "NY",
+    "d": 12,
+    "pt": "D",
+    "b": {
+      "congress": "N000002",
+      "fec": [
+        "H2NY17071"
+      ],
+      "govtrack": "400289",
+      "opensecrets": "N00000939",
+      "wikidata": "Q505598",
+      "icpsr": "29377"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

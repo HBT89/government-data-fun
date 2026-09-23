@@ -1,0 +1,30 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:M001241",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Dave Min",
+    "t": "rep",
+    "st": "CA",
+    "d": 47,
+    "pt": "D",
+    "b": {
+      "congress": "M001241",
+      "fec": [
+        "H4CA47085"
+      ],
+      "govtrack": "456981",
+      "opensecrets": "N00040866",
+      "wikidata": "Q31213321"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

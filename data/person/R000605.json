@@ -1,0 +1,32 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:R000605",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Mike Rounds",
+    "t": "sen",
+    "st": "SD",
+    "d": null,
+    "pt": "R",
+    "b": {
+      "congress": "R000605",
+      "fec": [
+        "S4SD00049"
+      ],
+      "govtrack": "412669",
+      "opensecrets": "N00035187",
+      "wikidata": "Q722503",
+      "lis": "S381",
+      "icpsr": "41505"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

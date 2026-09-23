@@ -1,0 +1,30 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:E000246",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Chuck Edwards",
+    "t": "rep",
+    "st": "NC",
+    "d": 11,
+    "pt": "R",
+    "b": {
+      "congress": "E000246",
+      "fec": [
+        "H2NC14050"
+      ],
+      "govtrack": "456914",
+      "opensecrets": "N00049670",
+      "wikidata": "Q55065043"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

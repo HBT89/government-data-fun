@@ -1,0 +1,31 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:W000795",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Joe Wilson",
+    "t": "rep",
+    "st": "SC",
+    "d": 2,
+    "pt": "R",
+    "b": {
+      "congress": "W000795",
+      "fec": [
+        "H2SC02059"
+      ],
+      "govtrack": "400433",
+      "opensecrets": "N00024809",
+      "wikidata": "Q928855",
+      "icpsr": "20138"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

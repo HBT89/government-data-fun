@@ -1,0 +1,31 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:E000299",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Veronica Escobar",
+    "t": "rep",
+    "st": "TX",
+    "d": 16,
+    "pt": "D",
+    "b": {
+      "congress": "E000299",
+      "fec": [
+        "H8TX16109"
+      ],
+      "govtrack": "412825",
+      "opensecrets": "N00041702",
+      "wikidata": "Q52274267",
+      "icpsr": "21917"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

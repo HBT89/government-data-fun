@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "generated_at": "2026-09-22T20:43:21.339Z",
+  "generated_at": "2026-09-23T18:21:22.368Z",
   "builds": {
     "filing": {
       "file": "entities/filing.json",
@@ -57,5 +57,18 @@
       "icpsr": 319
     },
     "collisions": 0
+  },
+  "shards": {
+    "person": {
+      "dir": "person/",
+      "template": "person/{id}.json",
+      "keyed_by": "congress",
+      "entities": 539,
+      "with_filings": 119,
+      "filings_attached": 422,
+      "bytes_total": 617687,
+      "bytes_max": 7430,
+      "generated_at": "2026-09-23T18:21:22.520Z"
+    }
   }
 }

@@ -1,0 +1,31 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:D000216",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Rosa L. DeLauro",
+    "t": "rep",
+    "st": "CT",
+    "d": 3,
+    "pt": "D",
+    "b": {
+      "congress": "D000216",
+      "fec": [
+        "H0CT03072"
+      ],
+      "govtrack": "400103",
+      "opensecrets": "N00000615",
+      "wikidata": "Q434952",
+      "icpsr": "29109"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

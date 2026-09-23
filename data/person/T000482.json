@@ -1,0 +1,50 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:T000482",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Lori Trahan",
+    "t": "rep",
+    "st": "MA",
+    "d": 3,
+    "pt": "D",
+    "b": {
+      "congress": "T000482",
+      "fec": [
+        "H8MA03106"
+      ],
+      "govtrack": "412781",
+      "opensecrets": "N00041808",
+      "wikidata": "Q56486676",
+      "icpsr": "21977"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 1,
+    "ptr": 1
+  },
+  "filings": {
+    "h:20034414": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034414"
+      },
+      "f": "p:T000482",
+      "fn": "Trahan, Lori",
+      "inc": true,
+      "st": "MA",
+      "d": 3,
+      "y": 2026,
+      "dt": "4/30/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034414.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    }
+  },
+  "use_restriction": "Sourced from financial disclosure reports. Title 1 of the Ethics in Government Act of 1978, 5 U.S.C. app. 105(c), makes it unlawful to obtain or use such a report for an unlawful purpose, for a commercial purpose other than by news and communications media for dissemination to the general public, to establish any individual credit rating, or in the solicitation of money. Each person who obtains or uses these records is bound by that provision independently."
+}

@@ -1,0 +1,33 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:C001047",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Shelley Moore Capito",
+    "t": "sen",
+    "st": "WV",
+    "d": null,
+    "pt": "R",
+    "b": {
+      "congress": "C001047",
+      "fec": [
+        "H0WV02138",
+        "S4WV00159"
+      ],
+      "govtrack": "400061",
+      "opensecrets": "N00009771",
+      "wikidata": "Q459618",
+      "lis": "S372",
+      "icpsr": "20146"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

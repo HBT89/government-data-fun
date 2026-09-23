@@ -1,0 +1,185 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:K000398",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Thomas H. Kean, Jr.",
+    "t": "rep",
+    "st": "NJ",
+    "d": 7,
+    "pt": "R",
+    "b": {
+      "congress": "K000398",
+      "fec": [
+        "H0NJ07261"
+      ],
+      "govtrack": "456917",
+      "opensecrets": "N00027502",
+      "wikidata": "Q7791445"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 9,
+    "ptr": 9
+  },
+  "filings": {
+    "h:20033821": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20033821"
+      },
+      "f": "p:K000398",
+      "fn": "Kean, Thomas H.",
+      "inc": true,
+      "st": "NJ",
+      "d": 7,
+      "y": 2026,
+      "dt": "1/16/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033821.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034025": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034025"
+      },
+      "f": "p:K000398",
+      "fn": "Kean, Thomas H.",
+      "inc": true,
+      "st": "NJ",
+      "d": 7,
+      "y": 2026,
+      "dt": "2/19/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034025.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034190": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034190"
+      },
+      "f": "p:K000398",
+      "fn": "Kean, Thomas H.",
+      "inc": true,
+      "st": "NJ",
+      "d": 7,
+      "y": 2026,
+      "dt": "3/18/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034190.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034327": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034327"
+      },
+      "f": "p:K000398",
+      "fn": "Kean, Thomas H.",
+      "inc": true,
+      "st": "NJ",
+      "d": 7,
+      "y": 2026,
+      "dt": "4/13/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034327.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034616": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034616"
+      },
+      "f": "p:K000398",
+      "fn": "Kean, Thomas H.",
+      "inc": true,
+      "st": "NJ",
+      "d": 7,
+      "y": 2026,
+      "dt": "5/22/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034616.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034783": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034783"
+      },
+      "f": "p:K000398",
+      "fn": "Kean, Thomas H.",
+      "inc": true,
+      "st": "NJ",
+      "d": 7,
+      "y": 2026,
+      "dt": "6/18/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034783.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20035003": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20035003"
+      },
+      "f": "p:K000398",
+      "fn": "Kean, Thomas H.",
+      "inc": true,
+      "st": "NJ",
+      "d": 7,
+      "y": 2026,
+      "dt": "7/15/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035003.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20035273": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20035273"
+      },
+      "f": "p:K000398",
+      "fn": "Kean, Thomas H.",
+      "inc": true,
+      "st": "NJ",
+      "d": 7,
+      "y": 2026,
+      "dt": "8/18/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035273.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20035431": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20035431"
+      },
+      "f": "p:K000398",
+      "fn": "Kean, Thomas H.",
+      "inc": true,
+      "st": "NJ",
+      "d": 7,
+      "y": 2026,
+      "dt": "9/12/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035431.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    }
+  },
+  "use_restriction": "Sourced from financial disclosure reports. Title 1 of the Ethics in Government Act of 1978, 5 U.S.C. app. 105(c), makes it unlawful to obtain or use such a report for an unlawful purpose, for a commercial purpose other than by news and communications media for dissemination to the general public, to establish any individual credit rating, or in the solicitation of money. Each person who obtains or uses these records is bound by that provision independently."
+}

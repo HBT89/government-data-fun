@@ -1,0 +1,30 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:F000470",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Michelle Fischbach",
+    "t": "rep",
+    "st": "MN",
+    "d": 7,
+    "pt": "R",
+    "b": {
+      "congress": "F000470",
+      "fec": [
+        "H0MN07091"
+      ],
+      "govtrack": "456828",
+      "opensecrets": "N00045251",
+      "wikidata": "Q6837025"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

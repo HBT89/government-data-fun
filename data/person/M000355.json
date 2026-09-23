@@ -1,0 +1,32 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:M000355",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Mitch McConnell",
+    "t": "sen",
+    "st": "KY",
+    "d": null,
+    "pt": "R",
+    "b": {
+      "congress": "M000355",
+      "fec": [
+        "S2KY00012"
+      ],
+      "govtrack": "300072",
+      "opensecrets": "N00003389",
+      "wikidata": "Q355522",
+      "lis": "S174",
+      "icpsr": "14921"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

@@ -1,0 +1,100 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:S001229",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Jefferson Shreve",
+    "t": "rep",
+    "st": "IN",
+    "d": 6,
+    "pt": "R",
+    "b": {
+      "congress": "S001229",
+      "fec": [
+        "H4IN06185"
+      ],
+      "govtrack": "456988",
+      "opensecrets": "N00054651",
+      "wikidata": "Q130979817"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 4,
+    "ptr": 4
+  },
+  "filings": {
+    "h:20033705": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20033705"
+      },
+      "f": "p:S001229",
+      "fn": "Shreve, Jefferson",
+      "inc": true,
+      "st": "IN",
+      "d": 6,
+      "y": 2026,
+      "dt": "1/1/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033705.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20033709": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20033709"
+      },
+      "f": "p:S001229",
+      "fn": "Shreve, Jefferson",
+      "inc": true,
+      "st": "IN",
+      "d": 6,
+      "y": 2026,
+      "dt": "1/2/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033709.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034084": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034084"
+      },
+      "f": "p:S001229",
+      "fn": "Shreve, Jefferson",
+      "inc": true,
+      "st": "IN",
+      "d": 6,
+      "y": 2026,
+      "dt": "3/14/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034084.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034653": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034653"
+      },
+      "f": "p:S001229",
+      "fn": "Shreve, Jefferson",
+      "inc": true,
+      "st": "IN",
+      "d": 6,
+      "y": 2026,
+      "dt": "6/6/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034653.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    }
+  },
+  "use_restriction": "Sourced from financial disclosure reports. Title 1 of the Ethics in Government Act of 1978, 5 U.S.C. app. 105(c), makes it unlawful to obtain or use such a report for an unlawful purpose, for a commercial purpose other than by news and communications media for dissemination to the general public, to establish any individual credit rating, or in the solicitation of money. Each person who obtains or uses these records is bound by that provision independently."
+}

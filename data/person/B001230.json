@@ -1,0 +1,33 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:B001230",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Tammy Baldwin",
+    "t": "sen",
+    "st": "WI",
+    "d": null,
+    "pt": "D",
+    "b": {
+      "congress": "B001230",
+      "fec": [
+        "H8WI00018",
+        "S2WI00219"
+      ],
+      "govtrack": "400013",
+      "opensecrets": "N00004367",
+      "wikidata": "Q40628",
+      "lis": "S354",
+      "icpsr": "29940"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

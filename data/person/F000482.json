@@ -1,0 +1,30 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:F000482",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Julie Fedorchak",
+    "t": "rep",
+    "st": "ND",
+    "d": 0,
+    "pt": "R",
+    "b": {
+      "congress": "F000482",
+      "fec": [
+        "H4ND00061"
+      ],
+      "govtrack": "457006",
+      "opensecrets": "N00054800",
+      "wikidata": "Q37824664"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

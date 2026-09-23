@@ -1,0 +1,30 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:M001238",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Sarah McBride",
+    "t": "rep",
+    "st": "DE",
+    "d": 0,
+    "pt": "D",
+    "b": {
+      "congress": "M001238",
+      "fec": [
+        "H4DE00045"
+      ],
+      "govtrack": "456985",
+      "opensecrets": "N00052698",
+      "wikidata": "Q17011236"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

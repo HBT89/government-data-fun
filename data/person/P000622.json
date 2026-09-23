@@ -1,0 +1,29 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:P000622",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Jimmy Patronis",
+    "t": "rep",
+    "st": "FL",
+    "d": 1,
+    "pt": "R",
+    "b": {
+      "congress": "P000622",
+      "fec": [
+        "H6FL01390"
+      ],
+      "govtrack": "457034",
+      "wikidata": "Q6201036"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

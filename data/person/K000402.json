@@ -1,0 +1,30 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:K000402",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Timothy M. Kennedy",
+    "t": "rep",
+    "st": "NY",
+    "d": 26,
+    "pt": "D",
+    "b": {
+      "congress": "K000402",
+      "fec": [
+        "H4NY26078"
+      ],
+      "govtrack": "456957",
+      "opensecrets": "N00054366",
+      "wikidata": "Q7807373"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

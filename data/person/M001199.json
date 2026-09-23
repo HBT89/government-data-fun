@@ -1,0 +1,31 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:M001199",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Brian J. Mast",
+    "t": "rep",
+    "st": "FL",
+    "d": 21,
+    "pt": "R",
+    "b": {
+      "congress": "M001199",
+      "fec": [
+        "H6FL18097"
+      ],
+      "govtrack": "412698",
+      "opensecrets": "N00037269",
+      "wikidata": "Q27733854",
+      "icpsr": "21735"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

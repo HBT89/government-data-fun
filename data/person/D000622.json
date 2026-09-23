@@ -1,0 +1,33 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:D000622",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Tammy Duckworth",
+    "t": "sen",
+    "st": "IL",
+    "d": null,
+    "pt": "D",
+    "b": {
+      "congress": "D000622",
+      "fec": [
+        "H6IL06141",
+        "S6IL00292"
+      ],
+      "govtrack": "412533",
+      "opensecrets": "N00027860",
+      "wikidata": "Q3036410",
+      "lis": "S386",
+      "icpsr": "21325"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

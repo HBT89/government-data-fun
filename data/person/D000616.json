@@ -1,0 +1,31 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:D000616",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Scott DesJarlais",
+    "t": "rep",
+    "st": "TN",
+    "d": 4,
+    "pt": "R",
+    "b": {
+      "congress": "D000616",
+      "fec": [
+        "H0TN04195"
+      ],
+      "govtrack": "412477",
+      "opensecrets": "N00030957",
+      "wikidata": "Q2260839",
+      "icpsr": "21179"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

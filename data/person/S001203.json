@@ -1,0 +1,32 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:S001203",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Tina Smith",
+    "t": "sen",
+    "st": "MN",
+    "d": null,
+    "pt": "D",
+    "b": {
+      "congress": "S001203",
+      "fec": [
+        "S8MN00578"
+      ],
+      "govtrack": "412742",
+      "opensecrets": "N00042353",
+      "wikidata": "Q18631509",
+      "lis": "S394",
+      "icpsr": "41706"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

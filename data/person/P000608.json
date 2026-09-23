@@ -1,0 +1,186 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:P000608",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Scott H. Peters",
+    "t": "rep",
+    "st": "CA",
+    "d": 50,
+    "pt": "D",
+    "b": {
+      "congress": "P000608",
+      "fec": [
+        "H2CA52089"
+      ],
+      "govtrack": "412523",
+      "opensecrets": "N00033591",
+      "wikidata": "Q3791514",
+      "icpsr": "21315"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 9,
+    "ptr": 9
+  },
+  "filings": {
+    "h:20033815": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20033815"
+      },
+      "f": "p:P000608",
+      "fn": "Peters, Scott H.",
+      "inc": true,
+      "st": "CA",
+      "d": 50,
+      "y": 2026,
+      "dt": "1/19/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033815.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034010": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034010"
+      },
+      "f": "p:P000608",
+      "fn": "Peters, Scott H.",
+      "inc": true,
+      "st": "CA",
+      "d": 50,
+      "y": 2026,
+      "dt": "2/25/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034010.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034178": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034178"
+      },
+      "f": "p:P000608",
+      "fn": "Peters, Scott H.",
+      "inc": true,
+      "st": "CA",
+      "d": 50,
+      "y": 2026,
+      "dt": "3/18/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034178.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034342": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034342"
+      },
+      "f": "p:P000608",
+      "fn": "Peters, Scott H.",
+      "inc": true,
+      "st": "CA",
+      "d": 50,
+      "y": 2026,
+      "dt": "4/29/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034342.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034579": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034579"
+      },
+      "f": "p:P000608",
+      "fn": "Peters, Scott H.",
+      "inc": true,
+      "st": "CA",
+      "d": 50,
+      "y": 2026,
+      "dt": "5/18/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034579.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034784": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034784"
+      },
+      "f": "p:P000608",
+      "fn": "Peters, Scott H.",
+      "inc": true,
+      "st": "CA",
+      "d": 50,
+      "y": 2026,
+      "dt": "6/19/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034784.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034911": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034911"
+      },
+      "f": "p:P000608",
+      "fn": "Peters, Scott H.",
+      "inc": true,
+      "st": "CA",
+      "d": 50,
+      "y": 2026,
+      "dt": "7/10/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034911.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20035191": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20035191"
+      },
+      "f": "p:P000608",
+      "fn": "Peters, Scott H.",
+      "inc": true,
+      "st": "CA",
+      "d": 50,
+      "y": 2026,
+      "dt": "8/17/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035191.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20035434": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20035434"
+      },
+      "f": "p:P000608",
+      "fn": "Peters, Scott H.",
+      "inc": true,
+      "st": "CA",
+      "d": 50,
+      "y": 2026,
+      "dt": "9/21/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035434.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    }
+  },
+  "use_restriction": "Sourced from financial disclosure reports. Title 1 of the Ethics in Government Act of 1978, 5 U.S.C. app. 105(c), makes it unlawful to obtain or use such a report for an unlawful purpose, for a commercial purpose other than by news and communications media for dissemination to the general public, to establish any individual credit rating, or in the solicitation of money. Each person who obtains or uses these records is bound by that provision independently."
+}

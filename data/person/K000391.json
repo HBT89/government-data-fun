@@ -1,0 +1,32 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:K000391",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Raja Krishnamoorthi",
+    "t": "rep",
+    "st": "IL",
+    "d": 8,
+    "pt": "D",
+    "b": {
+      "congress": "K000391",
+      "fec": [
+        "H6IL08147",
+        "S6IL00482"
+      ],
+      "govtrack": "412701",
+      "opensecrets": "N00033240",
+      "wikidata": "Q7285471",
+      "icpsr": "21730"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

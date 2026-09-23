@@ -1,0 +1,49 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:T000488",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Shri Thanedar",
+    "t": "rep",
+    "st": "MI",
+    "d": 13,
+    "pt": "D",
+    "b": {
+      "congress": "T000488",
+      "fec": [
+        "H2MI13204"
+      ],
+      "govtrack": "456908",
+      "opensecrets": "N00049602",
+      "wikidata": "Q7503912"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 1,
+    "ptr": 1
+  },
+  "filings": {
+    "h:20033910": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20033910"
+      },
+      "f": "p:T000488",
+      "fn": "Thanedar, Shri",
+      "inc": true,
+      "st": "MI",
+      "d": 13,
+      "y": 2026,
+      "dt": "8/13/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033910.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    }
+  },
+  "use_restriction": "Sourced from financial disclosure reports. Title 1 of the Ethics in Government Act of 1978, 5 U.S.C. app. 105(c), makes it unlawful to obtain or use such a report for an unlawful purpose, for a commercial purpose other than by news and communications media for dissemination to the general public, to establish any individual credit rating, or in the solicitation of money. Each person who obtains or uses these records is bound by that provision independently."
+}

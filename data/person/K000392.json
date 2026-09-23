@@ -1,0 +1,31 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:K000392",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "David Kustoff",
+    "t": "rep",
+    "st": "TN",
+    "d": 8,
+    "pt": "R",
+    "b": {
+      "congress": "K000392",
+      "fec": [
+        "H2TN07103"
+      ],
+      "govtrack": "412724",
+      "opensecrets": "N00025445",
+      "wikidata": "Q26923148",
+      "icpsr": "21731"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

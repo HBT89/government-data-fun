@@ -1,0 +1,30 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:B000740",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Stephanie I. Bice",
+    "t": "rep",
+    "st": "OK",
+    "d": 5,
+    "pt": "R",
+    "b": {
+      "congress": "B000740",
+      "fec": [
+        "H0OK05205"
+      ],
+      "govtrack": "456841",
+      "opensecrets": "N00044579",
+      "wikidata": "Q60190894"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

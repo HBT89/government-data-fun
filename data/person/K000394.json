@@ -1,0 +1,33 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:K000394",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Andy Kim",
+    "t": "sen",
+    "st": "NJ",
+    "d": null,
+    "pt": "D",
+    "b": {
+      "congress": "K000394",
+      "fec": [
+        "H8NJ03206",
+        "S4NJ00466"
+      ],
+      "govtrack": "412797",
+      "opensecrets": "N00041370",
+      "wikidata": "Q55639180",
+      "lis": "S426",
+      "icpsr": "21937"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

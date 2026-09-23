@@ -1,0 +1,30 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:S001223",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Emilia Strong Sykes",
+    "t": "rep",
+    "st": "OH",
+    "d": 13,
+    "pt": "D",
+    "b": {
+      "congress": "S001223",
+      "fec": [
+        "H2OH13264"
+      ],
+      "govtrack": "456930",
+      "opensecrets": "N00050165",
+      "wikidata": "Q18637943"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

@@ -1,0 +1,67 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:L000590",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Susie Lee",
+    "t": "rep",
+    "st": "NV",
+    "d": 3,
+    "pt": "D",
+    "b": {
+      "congress": "L000590",
+      "fec": [
+        "H6NV04020"
+      ],
+      "govtrack": "412802",
+      "opensecrets": "N00037247",
+      "wikidata": "Q58333611",
+      "icpsr": "21938"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 2,
+    "ptr": 2
+  },
+  "filings": {
+    "h:20034552": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034552"
+      },
+      "f": "p:L000590",
+      "fn": "Lee, Susie",
+      "inc": true,
+      "st": "NV",
+      "d": 3,
+      "y": 2026,
+      "dt": "6/4/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034552.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034790": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034790"
+      },
+      "f": "p:L000590",
+      "fn": "Lee, Susie",
+      "inc": true,
+      "st": "NV",
+      "d": 3,
+      "y": 2026,
+      "dt": "7/8/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034790.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    }
+  },
+  "use_restriction": "Sourced from financial disclosure reports. Title 1 of the Ethics in Government Act of 1978, 5 U.S.C. app. 105(c), makes it unlawful to obtain or use such a report for an unlawful purpose, for a commercial purpose other than by news and communications media for dissemination to the general public, to establish any individual credit rating, or in the solicitation of money. Each person who obtains or uses these records is bound by that provision independently."
+}

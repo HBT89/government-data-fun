@@ -1,0 +1,168 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:J000309",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Jonathan L. Jackson",
+    "t": "rep",
+    "st": "IL",
+    "d": 1,
+    "pt": "D",
+    "b": {
+      "congress": "J000309",
+      "fec": [
+        "H2IL01349"
+      ],
+      "govtrack": "456899",
+      "opensecrets": "N00050105",
+      "wikidata": "Q6273473"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 8,
+    "ptr": 8
+  },
+  "filings": {
+    "h:20033739": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20033739"
+      },
+      "f": "p:J000309",
+      "fn": "Jackson, Jonathan",
+      "inc": true,
+      "st": "IL",
+      "d": 1,
+      "y": 2026,
+      "dt": "1/8/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033739.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20033929": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20033929"
+      },
+      "f": "p:J000309",
+      "fn": "Jackson, Jonathan",
+      "inc": true,
+      "st": "IL",
+      "d": 1,
+      "y": 2026,
+      "dt": "2/23/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033929.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034113": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034113"
+      },
+      "f": "p:J000309",
+      "fn": "Jackson, Jonathan",
+      "inc": true,
+      "st": "IL",
+      "d": 1,
+      "y": 2026,
+      "dt": "3/12/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034113.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034301": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034301"
+      },
+      "f": "p:J000309",
+      "fn": "Jackson, Jonathan",
+      "inc": true,
+      "st": "IL",
+      "d": 1,
+      "y": 2026,
+      "dt": "4/8/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034301.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034519": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034519"
+      },
+      "f": "p:J000309",
+      "fn": "Jackson, Jonathan",
+      "inc": true,
+      "st": "IL",
+      "d": 1,
+      "y": 2026,
+      "dt": "5/27/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034519.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034688": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034688"
+      },
+      "f": "p:J000309",
+      "fn": "Jackson, Jonathan",
+      "inc": true,
+      "st": "IL",
+      "d": 1,
+      "y": 2026,
+      "dt": "6/16/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034688.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034908": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034908"
+      },
+      "f": "p:J000309",
+      "fn": "Jackson, Jonathan",
+      "inc": true,
+      "st": "IL",
+      "d": 1,
+      "y": 2026,
+      "dt": "7/15/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034908.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20035370": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20035370"
+      },
+      "f": "p:J000309",
+      "fn": "Jackson, Jonathan",
+      "inc": true,
+      "st": "IL",
+      "d": 1,
+      "y": 2026,
+      "dt": "9/3/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035370.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    }
+  },
+  "use_restriction": "Sourced from financial disclosure reports. Title 1 of the Ethics in Government Act of 1978, 5 U.S.C. app. 105(c), makes it unlawful to obtain or use such a report for an unlawful purpose, for a commercial purpose other than by news and communications media for dissemination to the general public, to establish any individual credit rating, or in the solicitation of money. Each person who obtains or uses these records is bound by that provision independently."
+}

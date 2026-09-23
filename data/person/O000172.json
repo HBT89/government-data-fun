@@ -1,0 +1,31 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:O000172",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Alexandria Ocasio-Cortez",
+    "t": "rep",
+    "st": "NY",
+    "d": 14,
+    "pt": "D",
+    "b": {
+      "congress": "O000172",
+      "fec": [
+        "H8NY15148"
+      ],
+      "govtrack": "412804",
+      "opensecrets": "N00041162",
+      "wikidata": "Q55223040",
+      "icpsr": "21949"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

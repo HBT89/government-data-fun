@@ -1,0 +1,31 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:K000388",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Trent Kelly",
+    "t": "rep",
+    "st": "MS",
+    "d": 1,
+    "pt": "R",
+    "b": {
+      "congress": "K000388",
+      "fec": [
+        "H6MS01131"
+      ],
+      "govtrack": "412673",
+      "opensecrets": "N00037003",
+      "wikidata": "Q20204915",
+      "icpsr": "21561"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

@@ -1,0 +1,32 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:C001088",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Christopher A. Coons",
+    "t": "sen",
+    "st": "DE",
+    "d": null,
+    "pt": "D",
+    "b": {
+      "congress": "C001088",
+      "fec": [
+        "S0DE00092"
+      ],
+      "govtrack": "412390",
+      "opensecrets": "N00031820",
+      "wikidata": "Q923242",
+      "lis": "S337",
+      "icpsr": "40916"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

@@ -1,0 +1,204 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:H001082",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Kevin Hern",
+    "t": "rep",
+    "st": "OK",
+    "d": 1,
+    "pt": "R",
+    "b": {
+      "congress": "H001082",
+      "fec": [
+        "H8OK01157",
+        "S6OK04247"
+      ],
+      "govtrack": "412748",
+      "opensecrets": "N00040829",
+      "wikidata": "Q58333614",
+      "icpsr": "21760"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 10,
+    "ptr": 10
+  },
+  "filings": {
+    "h:20033829": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20033829"
+      },
+      "f": "p:H001082",
+      "fn": "Hern, Kevin",
+      "inc": true,
+      "st": "OK",
+      "d": 1,
+      "y": 2026,
+      "dt": "1/22/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033829.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034012": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034012"
+      },
+      "f": "p:H001082",
+      "fn": "Hern, Kevin",
+      "inc": true,
+      "st": "OK",
+      "d": 1,
+      "y": 2026,
+      "dt": "2/18/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034012.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034128": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034128"
+      },
+      "f": "p:H001082",
+      "fn": "Hern, Kevin",
+      "inc": true,
+      "st": "OK",
+      "d": 1,
+      "y": 2026,
+      "dt": "3/6/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034128.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034262": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034262"
+      },
+      "f": "p:H001082",
+      "fn": "Hern, Kevin",
+      "inc": true,
+      "st": "OK",
+      "d": 1,
+      "y": 2026,
+      "dt": "4/3/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034262.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034461": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034461"
+      },
+      "f": "p:H001082",
+      "fn": "Hern, Kevin",
+      "inc": true,
+      "st": "OK",
+      "d": 1,
+      "y": 2026,
+      "dt": "5/5/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034461.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034695": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034695"
+      },
+      "f": "p:H001082",
+      "fn": "Hern, Kevin",
+      "inc": true,
+      "st": "OK",
+      "d": 1,
+      "y": 2026,
+      "dt": "6/2/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034695.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20035013": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20035013"
+      },
+      "f": "p:H001082",
+      "fn": "Hern, Kevin",
+      "inc": true,
+      "st": "OK",
+      "d": 1,
+      "y": 2026,
+      "dt": "7/16/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035013.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20035134": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20035134"
+      },
+      "f": "p:H001082",
+      "fn": "Hern, Kevin",
+      "inc": true,
+      "st": "OK",
+      "d": 1,
+      "y": 2026,
+      "dt": "8/10/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035134.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20035196": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20035196"
+      },
+      "f": "p:H001082",
+      "fn": "Hern, Kevin",
+      "inc": true,
+      "st": "OK",
+      "d": 1,
+      "y": 2026,
+      "dt": "8/12/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035196.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20035326": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20035326"
+      },
+      "f": "p:H001082",
+      "fn": "Hern, Kevin",
+      "inc": true,
+      "st": "OK",
+      "d": 1,
+      "y": 2026,
+      "dt": "9/1/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035326.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    }
+  },
+  "use_restriction": "Sourced from financial disclosure reports. Title 1 of the Ethics in Government Act of 1978, 5 U.S.C. app. 105(c), makes it unlawful to obtain or use such a report for an unlawful purpose, for a commercial purpose other than by news and communications media for dissemination to the general public, to establish any individual credit rating, or in the solicitation of money. Each person who obtains or uses these records is bound by that provision independently."
+}

@@ -1,0 +1,30 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:F000481",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Shomari Figures",
+    "t": "rep",
+    "st": "AL",
+    "d": 2,
+    "pt": "D",
+    "b": {
+      "congress": "F000481",
+      "fec": [
+        "H4AL02170"
+      ],
+      "govtrack": "456971",
+      "opensecrets": "N00053909",
+      "wikidata": "Q129431158"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

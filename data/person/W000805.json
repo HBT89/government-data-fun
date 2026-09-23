@@ -1,0 +1,33 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:W000805",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Mark R. Warner",
+    "t": "sen",
+    "st": "VA",
+    "d": null,
+    "pt": "D",
+    "b": {
+      "congress": "W000805",
+      "fec": [
+        "S6VA00093",
+        "P80003023"
+      ],
+      "govtrack": "412321",
+      "opensecrets": "N00002097",
+      "wikidata": "Q453893",
+      "lis": "S327",
+      "icpsr": "40909"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

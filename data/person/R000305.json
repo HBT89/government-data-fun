@@ -1,0 +1,30 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:R000305",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Deborah K. Ross",
+    "t": "rep",
+    "st": "NC",
+    "d": 2,
+    "pt": "D",
+    "b": {
+      "congress": "R000305",
+      "fec": [
+        "H0NC02125"
+      ],
+      "govtrack": "456831",
+      "opensecrets": "N00038565",
+      "wikidata": "Q5248285"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

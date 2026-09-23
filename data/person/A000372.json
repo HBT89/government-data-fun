@@ -1,0 +1,169 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:A000372",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Rick W. Allen",
+    "t": "rep",
+    "st": "GA",
+    "d": 12,
+    "pt": "R",
+    "b": {
+      "congress": "A000372",
+      "fec": [
+        "H2GA12121"
+      ],
+      "govtrack": "412625",
+      "opensecrets": "N00033720",
+      "wikidata": "Q18683976",
+      "icpsr": "21516"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 8,
+    "ptr": 8
+  },
+  "filings": {
+    "h:20033751": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20033751"
+      },
+      "f": "p:A000372",
+      "fn": "Allen, Richard W.",
+      "inc": true,
+      "st": "GA",
+      "d": 12,
+      "y": 2026,
+      "dt": "1/15/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033751.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20033945": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20033945"
+      },
+      "f": "p:A000372",
+      "fn": "Allen, Richard W.",
+      "inc": true,
+      "st": "GA",
+      "d": 12,
+      "y": 2026,
+      "dt": "2/17/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033945.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034133": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034133"
+      },
+      "f": "p:A000372",
+      "fn": "Allen, Richard W.",
+      "inc": true,
+      "st": "GA",
+      "d": 12,
+      "y": 2026,
+      "dt": "3/11/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034133.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034315": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034315"
+      },
+      "f": "p:A000372",
+      "fn": "Allen, Richard W.",
+      "inc": true,
+      "st": "GA",
+      "d": 12,
+      "y": 2026,
+      "dt": "5/4/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034315.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034473": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034473"
+      },
+      "f": "p:A000372",
+      "fn": "Allen, Richard W.",
+      "inc": true,
+      "st": "GA",
+      "d": 12,
+      "y": 2026,
+      "dt": "6/5/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034473.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034740": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034740"
+      },
+      "f": "p:A000372",
+      "fn": "Allen, Richard W.",
+      "inc": true,
+      "st": "GA",
+      "d": 12,
+      "y": 2026,
+      "dt": "6/16/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034740.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034945": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034945"
+      },
+      "f": "p:A000372",
+      "fn": "Allen, Richard W.",
+      "inc": true,
+      "st": "GA",
+      "d": 12,
+      "y": 2026,
+      "dt": "7/15/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034945.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20035260": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20035260"
+      },
+      "f": "p:A000372",
+      "fn": "Allen, Richard W.",
+      "inc": true,
+      "st": "GA",
+      "d": 12,
+      "y": 2026,
+      "dt": "8/18/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035260.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    }
+  },
+  "use_restriction": "Sourced from financial disclosure reports. Title 1 of the Ethics in Government Act of 1978, 5 U.S.C. app. 105(c), makes it unlawful to obtain or use such a report for an unlawful purpose, for a commercial purpose other than by news and communications media for dissemination to the general public, to establish any individual credit rating, or in the solicitation of money. Each person who obtains or uses these records is bound by that provision independently."
+}

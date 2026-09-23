@@ -1,0 +1,33 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:B001303",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Lisa Blunt Rochester",
+    "t": "sen",
+    "st": "DE",
+    "d": null,
+    "pt": "D",
+    "b": {
+      "congress": "B001303",
+      "fec": [
+        "H6DE00206",
+        "S4DE00060"
+      ],
+      "govtrack": "412689",
+      "opensecrets": "N00038414",
+      "wikidata": "Q26899141",
+      "lis": "S430",
+      "icpsr": "21706"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

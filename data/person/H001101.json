@@ -1,0 +1,30 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:H001101",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Pat Harrigan",
+    "t": "rep",
+    "st": "NC",
+    "d": 10,
+    "pt": "R",
+    "b": {
+      "congress": "H001101",
+      "fec": [
+        "H2NC13243"
+      ],
+      "govtrack": "457003",
+      "opensecrets": "N00050144",
+      "wikidata": "Q131179069"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

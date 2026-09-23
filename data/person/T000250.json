@@ -1,0 +1,33 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:T000250",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "John Thune",
+    "t": "sen",
+    "st": "SD",
+    "d": null,
+    "pt": "R",
+    "b": {
+      "congress": "T000250",
+      "fec": [
+        "S2SD00068",
+        "H6SD00085"
+      ],
+      "govtrack": "400546",
+      "opensecrets": "N00004572",
+      "wikidata": "Q462981",
+      "lis": "S303",
+      "icpsr": "29754"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

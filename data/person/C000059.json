@@ -1,0 +1,31 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:C000059",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Ken Calvert",
+    "t": "rep",
+    "st": "CA",
+    "d": 41,
+    "pt": "R",
+    "b": {
+      "congress": "C000059",
+      "fec": [
+        "H2CA37023"
+      ],
+      "govtrack": "400057",
+      "opensecrets": "N00007099",
+      "wikidata": "Q538978",
+      "icpsr": "29323"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

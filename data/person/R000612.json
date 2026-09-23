@@ -1,0 +1,67 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:R000612",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "John W. Rose",
+    "t": "rep",
+    "st": "TN",
+    "d": 6,
+    "pt": "R",
+    "b": {
+      "congress": "R000612",
+      "fec": [
+        "H8TN06094"
+      ],
+      "govtrack": "412818",
+      "opensecrets": "N00041599",
+      "wikidata": "Q33044040",
+      "icpsr": "21959"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 2,
+    "ptr": 2
+  },
+  "filings": {
+    "h:20035444": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20035444"
+      },
+      "f": "p:R000612",
+      "fn": "Rose, John W.",
+      "inc": true,
+      "st": "TN",
+      "d": 6,
+      "y": 2026,
+      "dt": "9/12/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035444.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20035445": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20035445"
+      },
+      "f": "p:R000612",
+      "fn": "Rose, John W.",
+      "inc": true,
+      "st": "TN",
+      "d": 6,
+      "y": 2026,
+      "dt": "9/12/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035445.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    }
+  },
+  "use_restriction": "Sourced from financial disclosure reports. Title 1 of the Ethics in Government Act of 1978, 5 U.S.C. app. 105(c), makes it unlawful to obtain or use such a report for an unlawful purpose, for a commercial purpose other than by news and communications media for dissemination to the general public, to establish any individual credit rating, or in the solicitation of money. Each person who obtains or uses these records is bound by that provision independently."
+}

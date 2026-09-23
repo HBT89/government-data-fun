@@ -1,0 +1,33 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:S001194",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Brian Schatz",
+    "t": "sen",
+    "st": "HI",
+    "d": null,
+    "pt": "D",
+    "b": {
+      "congress": "S001194",
+      "fec": [
+        "S4HI00136",
+        "H6HI02244"
+      ],
+      "govtrack": "412507",
+      "opensecrets": "N00028138",
+      "wikidata": "Q1827902",
+      "lis": "S353",
+      "icpsr": "41112"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

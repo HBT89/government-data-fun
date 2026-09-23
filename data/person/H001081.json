@@ -1,0 +1,31 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:H001081",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Jahana Hayes",
+    "t": "rep",
+    "st": "CT",
+    "d": 5,
+    "pt": "D",
+    "b": {
+      "congress": "H001081",
+      "fec": [
+        "H8CT05245"
+      ],
+      "govtrack": "412763",
+      "opensecrets": "N00043421",
+      "wikidata": "Q24951316",
+      "icpsr": "21931"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

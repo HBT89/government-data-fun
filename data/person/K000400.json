@@ -1,0 +1,30 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:K000400",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Sydney Kamlager-Dove",
+    "t": "rep",
+    "st": "CA",
+    "d": 37,
+    "pt": "D",
+    "b": {
+      "congress": "K000400",
+      "fec": [
+        "H2CA37304"
+      ],
+      "govtrack": "456884",
+      "opensecrets": "N00049460",
+      "wikidata": "Q20177418"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

@@ -1,0 +1,33 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:D000618",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Steve Daines",
+    "t": "sen",
+    "st": "MT",
+    "d": null,
+    "pt": "R",
+    "b": {
+      "congress": "D000618",
+      "fec": [
+        "H2MT01060",
+        "S2MT00096"
+      ],
+      "govtrack": "412549",
+      "opensecrets": "N00033054",
+      "wikidata": "Q3200900",
+      "lis": "S375",
+      "icpsr": "21338"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

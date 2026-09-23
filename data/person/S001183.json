@@ -1,0 +1,32 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:S001183",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "David Schweikert",
+    "t": "rep",
+    "st": "AZ",
+    "d": 1,
+    "pt": "R",
+    "b": {
+      "congress": "S001183",
+      "fec": [
+        "H4AZ06045",
+        "H8AZ05097"
+      ],
+      "govtrack": "412399",
+      "opensecrets": "N00006460",
+      "wikidata": "Q1176561",
+      "icpsr": "21105"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

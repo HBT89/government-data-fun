@@ -1,0 +1,32 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:B001288",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Cory A. Booker",
+    "t": "sen",
+    "st": "NJ",
+    "d": null,
+    "pt": "D",
+    "b": {
+      "congress": "B001288",
+      "fec": [
+        "S4NJ00185"
+      ],
+      "govtrack": "412598",
+      "opensecrets": "N00035267",
+      "wikidata": "Q1135767",
+      "lis": "S370",
+      "icpsr": "41308"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

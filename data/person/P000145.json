@@ -1,0 +1,31 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:P000145",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Alex Padilla",
+    "t": "sen",
+    "st": "CA",
+    "d": null,
+    "pt": "D",
+    "b": {
+      "congress": "P000145",
+      "fec": [
+        "S2CA00955"
+      ],
+      "govtrack": "456856",
+      "opensecrets": "N00047888",
+      "wikidata": "Q4717593",
+      "lis": "S413"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

@@ -1,0 +1,30 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:D000230",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Donald G. Davis",
+    "t": "rep",
+    "st": "NC",
+    "d": 1,
+    "pt": "D",
+    "b": {
+      "congress": "D000230",
+      "fec": [
+        "H2NC02287"
+      ],
+      "govtrack": "456912",
+      "opensecrets": "N00049636",
+      "wikidata": "Q5294403"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

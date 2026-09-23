@@ -1,0 +1,31 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:B001300",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Nanette Diaz Barragán",
+    "t": "rep",
+    "st": "CA",
+    "d": 44,
+    "pt": "D",
+    "b": {
+      "congress": "B001300",
+      "fec": [
+        "H6CA44103"
+      ],
+      "govtrack": "412687",
+      "opensecrets": "N00037019",
+      "wikidata": "Q21662745",
+      "icpsr": "21703"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

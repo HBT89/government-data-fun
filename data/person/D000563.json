@@ -1,0 +1,33 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:D000563",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Richard J. Durbin",
+    "t": "sen",
+    "st": "IL",
+    "d": null,
+    "pt": "D",
+    "b": {
+      "congress": "D000563",
+      "fec": [
+        "S6IL00151",
+        "H2IL20026"
+      ],
+      "govtrack": "300038",
+      "opensecrets": "N00004981",
+      "wikidata": "Q434804",
+      "lis": "S253",
+      "icpsr": "15021"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

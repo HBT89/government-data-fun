@@ -1,0 +1,31 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:L000582",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Ted Lieu",
+    "t": "rep",
+    "st": "CA",
+    "d": 36,
+    "pt": "D",
+    "b": {
+      "congress": "L000582",
+      "fec": [
+        "H4CA33119"
+      ],
+      "govtrack": "412616",
+      "opensecrets": "N00035825",
+      "wikidata": "Q7693450",
+      "icpsr": "21507"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

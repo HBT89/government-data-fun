@@ -1,0 +1,31 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:H001066",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Steven Horsford",
+    "t": "rep",
+    "st": "NV",
+    "d": 4,
+    "pt": "D",
+    "b": {
+      "congress": "H001066",
+      "fec": [
+        "H2NV04011"
+      ],
+      "govtrack": "412559",
+      "opensecrets": "N00033638",
+      "wikidata": "Q3514907",
+      "icpsr": "21339"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

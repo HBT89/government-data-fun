@@ -1,0 +1,31 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:C000537",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "James E. Clyburn",
+    "t": "rep",
+    "st": "SC",
+    "d": 6,
+    "pt": "D",
+    "b": {
+      "congress": "C000537",
+      "fec": [
+        "H2SC02042"
+      ],
+      "govtrack": "400075",
+      "opensecrets": "N00002408",
+      "wikidata": "Q1289889",
+      "icpsr": "39301"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

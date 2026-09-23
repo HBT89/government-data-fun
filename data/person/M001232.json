@@ -1,0 +1,185 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:M001232",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "April McClain Delaney",
+    "t": "rep",
+    "st": "MD",
+    "d": 6,
+    "pt": "D",
+    "b": {
+      "congress": "M001232",
+      "fec": [
+        "H4MD06340"
+      ],
+      "govtrack": "456993",
+      "opensecrets": "N00053899",
+      "wikidata": "Q125935301"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 9,
+    "ptr": 9
+  },
+  "filings": {
+    "h:20033737": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20033737"
+      },
+      "f": "p:M001232",
+      "fn": "Delaney, April McClain",
+      "inc": true,
+      "st": "MD",
+      "d": 6,
+      "y": 2026,
+      "dt": "1/5/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033737.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20033921": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20033921"
+      },
+      "f": "p:M001232",
+      "fn": "Delaney, April McClain",
+      "inc": true,
+      "st": "MD",
+      "d": 6,
+      "y": 2026,
+      "dt": "2/2/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033921.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034159": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034159"
+      },
+      "f": "p:M001232",
+      "fn": "Delaney, April McClain",
+      "inc": true,
+      "st": "MD",
+      "d": 6,
+      "y": 2026,
+      "dt": "3/10/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034159.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034299": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034299"
+      },
+      "f": "p:M001232",
+      "fn": "Delaney, April McClain",
+      "inc": true,
+      "st": "MD",
+      "d": 6,
+      "y": 2026,
+      "dt": "4/6/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034299.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034487": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034487"
+      },
+      "f": "p:M001232",
+      "fn": "Delaney, April McClain",
+      "inc": true,
+      "st": "MD",
+      "d": 6,
+      "y": 2026,
+      "dt": "5/6/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034487.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034718": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034718"
+      },
+      "f": "p:M001232",
+      "fn": "Delaney, April McClain",
+      "inc": true,
+      "st": "MD",
+      "d": 6,
+      "y": 2026,
+      "dt": "6/5/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034718.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034932": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034932"
+      },
+      "f": "p:M001232",
+      "fn": "Delaney, April McClain",
+      "inc": true,
+      "st": "MD",
+      "d": 6,
+      "y": 2026,
+      "dt": "7/7/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034932.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20035118": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20035118"
+      },
+      "f": "p:M001232",
+      "fn": "Delaney, April McClain",
+      "inc": true,
+      "st": "MD",
+      "d": 6,
+      "y": 2026,
+      "dt": "8/3/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035118.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20035408": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20035408"
+      },
+      "f": "p:M001232",
+      "fn": "Delaney, April McClain",
+      "inc": true,
+      "st": "MD",
+      "d": 6,
+      "y": 2026,
+      "dt": "9/9/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035408.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    }
+  },
+  "use_restriction": "Sourced from financial disclosure reports. Title 1 of the Ethics in Government Act of 1978, 5 U.S.C. app. 105(c), makes it unlawful to obtain or use such a report for an unlawful purpose, for a commercial purpose other than by news and communications media for dissemination to the general public, to establish any individual credit rating, or in the solicitation of money. Each person who obtains or uses these records is bound by that provision independently."
+}

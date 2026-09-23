@@ -1,0 +1,287 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:T000490",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "David J. Taylor",
+    "t": "rep",
+    "st": "OH",
+    "d": 2,
+    "pt": "R",
+    "b": {
+      "congress": "T000490",
+      "fec": [
+        "H4OH02248"
+      ],
+      "govtrack": "457014",
+      "opensecrets": "N00054098",
+      "wikidata": "Q131123679"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 15,
+    "ptr": 15
+  },
+  "filings": {
+    "h:20033845": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20033845"
+      },
+      "f": "p:T000490",
+      "fn": "Taylor, David J.",
+      "inc": true,
+      "st": "OH",
+      "d": 2,
+      "y": 2026,
+      "dt": "1/21/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033845.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20033916": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20033916"
+      },
+      "f": "p:T000490",
+      "fn": "Taylor, David J.",
+      "inc": true,
+      "st": "OH",
+      "d": 2,
+      "y": 2026,
+      "dt": "2/2/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033916.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20033918": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20033918"
+      },
+      "f": "p:T000490",
+      "fn": "Taylor, David J.",
+      "inc": true,
+      "st": "OH",
+      "d": 2,
+      "y": 2026,
+      "dt": "2/2/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033918.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034036": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034036"
+      },
+      "f": "p:T000490",
+      "fn": "Taylor, David J.",
+      "inc": true,
+      "st": "OH",
+      "d": 2,
+      "y": 2026,
+      "dt": "2/20/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034036.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034138": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034138"
+      },
+      "f": "p:T000490",
+      "fn": "Taylor, David J.",
+      "inc": true,
+      "st": "OH",
+      "d": 2,
+      "y": 2026,
+      "dt": "3/6/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034138.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034207": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034207"
+      },
+      "f": "p:T000490",
+      "fn": "Taylor, David J.",
+      "inc": true,
+      "st": "OH",
+      "d": 2,
+      "y": 2026,
+      "dt": "3/20/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034207.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034280": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034280"
+      },
+      "f": "p:T000490",
+      "fn": "Taylor, David J.",
+      "inc": true,
+      "st": "OH",
+      "d": 2,
+      "y": 2026,
+      "dt": "4/2/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034280.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034489": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034489"
+      },
+      "f": "p:T000490",
+      "fn": "Taylor, David J.",
+      "inc": true,
+      "st": "OH",
+      "d": 2,
+      "y": 2026,
+      "dt": "5/7/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034489.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034650": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034650"
+      },
+      "f": "p:T000490",
+      "fn": "Taylor, David J.",
+      "inc": true,
+      "st": "OH",
+      "d": 2,
+      "y": 2026,
+      "dt": "5/28/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034650.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034780": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034780"
+      },
+      "f": "p:T000490",
+      "fn": "Taylor, David J.",
+      "inc": true,
+      "st": "OH",
+      "d": 2,
+      "y": 2026,
+      "dt": "6/12/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034780.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034897": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034897"
+      },
+      "f": "p:T000490",
+      "fn": "Taylor, David J.",
+      "inc": true,
+      "st": "OH",
+      "d": 2,
+      "y": 2026,
+      "dt": "7/1/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034897.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20035146": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20035146"
+      },
+      "f": "p:T000490",
+      "fn": "Taylor, David J.",
+      "inc": true,
+      "st": "OH",
+      "d": 2,
+      "y": 2026,
+      "dt": "8/6/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035146.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20035289": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20035289"
+      },
+      "f": "p:T000490",
+      "fn": "Taylor, David J.",
+      "inc": true,
+      "st": "OH",
+      "d": 2,
+      "y": 2026,
+      "dt": "8/20/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035289.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20035392": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20035392"
+      },
+      "f": "p:T000490",
+      "fn": "Taylor, David J.",
+      "inc": true,
+      "st": "OH",
+      "d": 2,
+      "y": 2026,
+      "dt": "9/5/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035392.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20035471": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20035471"
+      },
+      "f": "p:T000490",
+      "fn": "Taylor, David J.",
+      "inc": true,
+      "st": "OH",
+      "d": 2,
+      "y": 2026,
+      "dt": "9/17/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035471.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    }
+  },
+  "use_restriction": "Sourced from financial disclosure reports. Title 1 of the Ethics in Government Act of 1978, 5 U.S.C. app. 105(c), makes it unlawful to obtain or use such a report for an unlawful purpose, for a commercial purpose other than by news and communications media for dissemination to the general public, to establish any individual credit rating, or in the solicitation of money. Each person who obtains or uses these records is bound by that provision independently."
+}

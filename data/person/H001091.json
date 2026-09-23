@@ -1,0 +1,30 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:H001091",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Ashley Hinson",
+    "t": "rep",
+    "st": "IA",
+    "d": 2,
+    "pt": "R",
+    "b": {
+      "congress": "H001091",
+      "fec": [
+        "H0IA01174"
+      ],
+      "govtrack": "456816",
+      "opensecrets": "N00044521",
+      "wikidata": "Q60713905"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

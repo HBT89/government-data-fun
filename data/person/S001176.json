@@ -1,0 +1,31 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:S001176",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Steve Scalise",
+    "t": "rep",
+    "st": "LA",
+    "d": 1,
+    "pt": "R",
+    "b": {
+      "congress": "S001176",
+      "fec": [
+        "H0LA01087"
+      ],
+      "govtrack": "412261",
+      "opensecrets": "N00009660",
+      "wikidata": "Q1857141",
+      "icpsr": "20759"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

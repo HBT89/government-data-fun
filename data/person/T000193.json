@@ -1,0 +1,31 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:T000193",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Bennie G. Thompson",
+    "t": "rep",
+    "st": "MS",
+    "d": 2,
+    "pt": "D",
+    "b": {
+      "congress": "T000193",
+      "fec": [
+        "H4MS02068"
+      ],
+      "govtrack": "400402",
+      "opensecrets": "N00003288",
+      "wikidata": "Q817877",
+      "icpsr": "29368"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

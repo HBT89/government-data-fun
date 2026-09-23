@@ -1,0 +1,31 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:P000613",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Jimmy Panetta",
+    "t": "rep",
+    "st": "CA",
+    "d": 19,
+    "pt": "D",
+    "b": {
+      "congress": "P000613",
+      "fec": [
+        "H6CA20152"
+      ],
+      "govtrack": "412685",
+      "opensecrets": "N00038601",
+      "wikidata": "Q27733776",
+      "icpsr": "21740"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

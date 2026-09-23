@@ -1,0 +1,185 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:M001236",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Tim Moore",
+    "t": "rep",
+    "st": "NC",
+    "d": 14,
+    "pt": "R",
+    "b": {
+      "congress": "M001236",
+      "fec": [
+        "H4NC14015"
+      ],
+      "govtrack": "457005",
+      "opensecrets": "N00053948",
+      "wikidata": "Q7804002"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 9,
+    "ptr": 9
+  },
+  "filings": {
+    "h:20033746": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20033746"
+      },
+      "f": "p:M001236",
+      "fn": "Moore, Tim",
+      "inc": true,
+      "st": "NC",
+      "d": 14,
+      "y": 2026,
+      "dt": "1/7/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033746.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20033856": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20033856"
+      },
+      "f": "p:M001236",
+      "fn": "Moore, Tim",
+      "inc": true,
+      "st": "NC",
+      "d": 14,
+      "y": 2026,
+      "dt": "1/24/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033856.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034034": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034034"
+      },
+      "f": "p:M001236",
+      "fn": "Moore, Tim",
+      "inc": true,
+      "st": "NC",
+      "d": 14,
+      "y": 2026,
+      "dt": "2/20/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034034.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034217": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034217"
+      },
+      "f": "p:M001236",
+      "fn": "Moore, Tim",
+      "inc": true,
+      "st": "NC",
+      "d": 14,
+      "y": 2026,
+      "dt": "3/24/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034217.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034424": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034424"
+      },
+      "f": "p:M001236",
+      "fn": "Moore, Tim",
+      "inc": true,
+      "st": "NC",
+      "d": 14,
+      "y": 2026,
+      "dt": "4/28/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034424.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034587": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034587"
+      },
+      "f": "p:M001236",
+      "fn": "Moore, Tim",
+      "inc": true,
+      "st": "NC",
+      "d": 14,
+      "y": 2026,
+      "dt": "5/19/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034587.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034721": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034721"
+      },
+      "f": "p:M001236",
+      "fn": "Moore, Tim",
+      "inc": true,
+      "st": "NC",
+      "d": 14,
+      "y": 2026,
+      "dt": "6/5/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034721.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034952": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034952"
+      },
+      "f": "p:M001236",
+      "fn": "Moore, Tim",
+      "inc": true,
+      "st": "NC",
+      "d": 14,
+      "y": 2026,
+      "dt": "7/9/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034952.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20035291": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20035291"
+      },
+      "f": "p:M001236",
+      "fn": "Moore, Tim",
+      "inc": true,
+      "st": "NC",
+      "d": 14,
+      "y": 2026,
+      "dt": "8/20/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035291.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    }
+  },
+  "use_restriction": "Sourced from financial disclosure reports. Title 1 of the Ethics in Government Act of 1978, 5 U.S.C. app. 105(c), makes it unlawful to obtain or use such a report for an unlawful purpose, for a commercial purpose other than by news and communications media for dissemination to the general public, to establish any individual credit rating, or in the solicitation of money. Each person who obtains or uses these records is bound by that provision independently."
+}

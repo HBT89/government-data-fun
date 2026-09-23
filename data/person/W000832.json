@@ -1,0 +1,48 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:W000832",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Aisha Wahab",
+    "t": "rep",
+    "st": "CA",
+    "d": 14,
+    "pt": "D",
+    "b": {
+      "congress": "W000832",
+      "fec": [
+        "H0CA15213"
+      ],
+      "govtrack": "457046",
+      "wikidata": "Q115794283"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 1,
+    "ptr": 0
+  },
+  "filings": {
+    "h:9115881": {
+      "k": "candidate",
+      "ch": "house",
+      "b": {
+        "house_doc": "9115881"
+      },
+      "f": "p:W000832",
+      "fn": "Wahab, Dr. Aisha",
+      "inc": false,
+      "st": "CA",
+      "d": 14,
+      "y": 2026,
+      "dt": "5/15/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/financial-pdfs/2026/9115881.pdf",
+      "text": false,
+      "basis": "match:name+statedst"
+    }
+  },
+  "use_restriction": "Sourced from financial disclosure reports. Title 1 of the Ethics in Government Act of 1978, 5 U.S.C. app. 105(c), makes it unlawful to obtain or use such a report for an unlawful purpose, for a commercial purpose other than by news and communications media for dissemination to the general public, to establish any individual credit rating, or in the solicitation of money. Each person who obtains or uses these records is bound by that provision independently."
+}

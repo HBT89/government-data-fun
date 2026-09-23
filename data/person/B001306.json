@@ -1,0 +1,31 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:B001306",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Troy Balderson",
+    "t": "rep",
+    "st": "OH",
+    "d": 12,
+    "pt": "R",
+    "b": {
+      "congress": "B001306",
+      "fec": [
+        "H8OH12180"
+      ],
+      "govtrack": "412747",
+      "opensecrets": "N00042194",
+      "wikidata": "Q16194422",
+      "icpsr": "21759"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

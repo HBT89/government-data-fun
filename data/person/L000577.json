@@ -1,0 +1,32 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:L000577",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Mike Lee",
+    "t": "sen",
+    "st": "UT",
+    "d": null,
+    "pt": "R",
+    "b": {
+      "congress": "L000577",
+      "fec": [
+        "S0UT00165"
+      ],
+      "govtrack": "412495",
+      "opensecrets": "N00031696",
+      "wikidata": "Q627098",
+      "lis": "S346",
+      "icpsr": "41110"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

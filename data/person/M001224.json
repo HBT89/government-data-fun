@@ -1,0 +1,30 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:M001224",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Nathaniel Moran",
+    "t": "rep",
+    "st": "TX",
+    "d": 1,
+    "pt": "R",
+    "b": {
+      "congress": "M001224",
+      "fec": [
+        "H2TX01112"
+      ],
+      "govtrack": "456940",
+      "opensecrets": "N00049775",
+      "wikidata": "Q115137468"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

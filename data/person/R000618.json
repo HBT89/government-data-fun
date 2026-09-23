@@ -1,0 +1,31 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:R000618",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Pete Ricketts",
+    "t": "sen",
+    "st": "NE",
+    "d": null,
+    "pt": "R",
+    "b": {
+      "congress": "R000618",
+      "fec": [
+        "S6NE00129"
+      ],
+      "govtrack": "456952",
+      "opensecrets": "N00027695",
+      "wikidata": "Q6106781",
+      "lis": "S423"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

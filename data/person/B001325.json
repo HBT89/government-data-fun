@@ -1,0 +1,151 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:B001325",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Sheri Biggs",
+    "t": "rep",
+    "st": "SC",
+    "d": 3,
+    "pt": "R",
+    "b": {
+      "congress": "B001325",
+      "fec": [
+        "H4SC01313"
+      ],
+      "govtrack": "457020",
+      "opensecrets": "N00054222",
+      "wikidata": "Q130979821"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 7,
+    "ptr": 7
+  },
+  "filings": {
+    "h:20033800": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20033800"
+      },
+      "f": "p:B001325",
+      "fn": "Biggs, Sheri",
+      "inc": true,
+      "st": "SC",
+      "d": 3,
+      "y": 2026,
+      "dt": "1/14/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033800.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20033927": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20033927"
+      },
+      "f": "p:B001325",
+      "fn": "Biggs, Sheri",
+      "inc": true,
+      "st": "SC",
+      "d": 3,
+      "y": 2026,
+      "dt": "2/5/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033927.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034013": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034013"
+      },
+      "f": "p:B001325",
+      "fn": "Biggs, Sheri",
+      "inc": true,
+      "st": "SC",
+      "d": 3,
+      "y": 2026,
+      "dt": "2/17/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034013.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034195": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034195"
+      },
+      "f": "p:B001325",
+      "fn": "Biggs, Sheri",
+      "inc": true,
+      "st": "SC",
+      "d": 3,
+      "y": 2026,
+      "dt": "3/21/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034195.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034346": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034346"
+      },
+      "f": "p:B001325",
+      "fn": "Biggs, Sheri",
+      "inc": true,
+      "st": "SC",
+      "d": 3,
+      "y": 2026,
+      "dt": "4/16/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034346.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034496": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034496"
+      },
+      "f": "p:B001325",
+      "fn": "Biggs, Sheri",
+      "inc": true,
+      "st": "SC",
+      "d": 3,
+      "y": 2026,
+      "dt": "6/9/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034496.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20035007": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20035007"
+      },
+      "f": "p:B001325",
+      "fn": "Biggs, Sheri",
+      "inc": true,
+      "st": "SC",
+      "d": 3,
+      "y": 2026,
+      "dt": "7/27/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035007.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    }
+  },
+  "use_restriction": "Sourced from financial disclosure reports. Title 1 of the Ethics in Government Act of 1978, 5 U.S.C. app. 105(c), makes it unlawful to obtain or use such a report for an unlawful purpose, for a commercial purpose other than by news and communications media for dissemination to the general public, to establish any individual credit rating, or in the solicitation of money. Each person who obtains or uses these records is bound by that provision independently."
+}

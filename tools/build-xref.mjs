@@ -82,9 +82,21 @@ async function main() {
     xref,
   });
   await w(join(out, 'index', 'sources.json'), { v: 1, generated_at: now, sources: SOURCES });
+
+  // The manifest is shared. This stage owns the builds and xref blocks; the
+  // shard stage owns its own and may have run either side of this one. Carry
+  // over what this stage does not own, so the two cannot silently erase each
+  // other depending on the order they were run in.
+  let carried = {};
+  try {
+    const prev = JSON.parse(await readFile(join(out, 'manifest.json'), 'utf8'));
+    if (prev.shards) carried = { shards: prev.shards };
+  } catch { /* no manifest yet, nothing to carry */ }
+
   await w(join(out, 'manifest.json'), {
     v: 1, generated_at: now, builds,
     xref: { keys: Object.keys(xref).length, by_namespace: byNamespace, collisions: collisions.length },
+    ...carried,
   });
 
   process.stdout.write(

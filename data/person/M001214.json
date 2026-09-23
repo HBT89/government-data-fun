@@ -1,0 +1,30 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:M001214",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Frank J. Mrvan",
+    "t": "rep",
+    "st": "IN",
+    "d": 1,
+    "pt": "D",
+    "b": {
+      "congress": "M001214",
+      "fec": [
+        "H0IN01150"
+      ],
+      "govtrack": "456821",
+      "opensecrets": "N00045905",
+      "wikidata": "Q96077897"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

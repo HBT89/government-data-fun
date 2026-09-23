@@ -1,0 +1,33 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:C001095",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Tom Cotton",
+    "t": "sen",
+    "st": "AR",
+    "d": null,
+    "pt": "R",
+    "b": {
+      "congress": "C001095",
+      "fec": [
+        "H2AR04083",
+        "S4AR00103"
+      ],
+      "govtrack": "412508",
+      "opensecrets": "N00033363",
+      "wikidata": "Q3090307",
+      "lis": "S374",
+      "icpsr": "21301"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

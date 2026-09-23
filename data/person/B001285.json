@@ -1,0 +1,31 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:B001285",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Julia Brownley",
+    "t": "rep",
+    "st": "CA",
+    "d": 26,
+    "pt": "D",
+    "b": {
+      "congress": "B001285",
+      "fec": [
+        "H2CA00120"
+      ],
+      "govtrack": "412516",
+      "opensecrets": "N00034254",
+      "wikidata": "Q3577073",
+      "icpsr": "21308"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

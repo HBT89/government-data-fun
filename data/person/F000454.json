@@ -1,0 +1,32 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:F000454",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Bill Foster",
+    "t": "rep",
+    "st": "IL",
+    "d": 11,
+    "pt": "D",
+    "b": {
+      "congress": "F000454",
+      "fec": [
+        "H8IL14067",
+        "H2IL11124"
+      ],
+      "govtrack": "412257",
+      "opensecrets": "N00029139",
+      "wikidata": "Q2903389",
+      "icpsr": "20749"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

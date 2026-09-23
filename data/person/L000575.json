@@ -1,0 +1,33 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:L000575",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "James Lankford",
+    "t": "sen",
+    "st": "OK",
+    "d": null,
+    "pt": "R",
+    "b": {
+      "congress": "L000575",
+      "fec": [
+        "H0OK05114",
+        "S4OK00232"
+      ],
+      "govtrack": "412464",
+      "opensecrets": "N00031129",
+      "wikidata": "Q45940",
+      "lis": "S378",
+      "icpsr": "21166"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

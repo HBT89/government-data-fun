@@ -1,0 +1,84 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:S001201",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Thomas R. Suozzi",
+    "t": "rep",
+    "st": "NY",
+    "d": 3,
+    "pt": "D",
+    "b": {
+      "congress": "S001201",
+      "fec": [
+        "H6NY03247"
+      ],
+      "govtrack": "412717",
+      "opensecrets": "N00038742",
+      "wikidata": "Q7794276",
+      "icpsr": "21747"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 3,
+    "ptr": 3
+  },
+  "filings": {
+    "h:20034188": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034188"
+      },
+      "f": "p:S001201",
+      "fn": "Suozzi, Thomas",
+      "inc": true,
+      "st": "NY",
+      "d": 3,
+      "y": 2026,
+      "dt": "3/17/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034188.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034503": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034503"
+      },
+      "f": "p:S001201",
+      "fn": "Suozzi, Thomas",
+      "inc": true,
+      "st": "NY",
+      "d": 3,
+      "y": 2026,
+      "dt": "5/8/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034503.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034747": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034747"
+      },
+      "f": "p:S001201",
+      "fn": "Suozzi, Thomas",
+      "inc": true,
+      "st": "NY",
+      "d": 3,
+      "y": 2026,
+      "dt": "6/9/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034747.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    }
+  },
+  "use_restriction": "Sourced from financial disclosure reports. Title 1 of the Ethics in Government Act of 1978, 5 U.S.C. app. 105(c), makes it unlawful to obtain or use such a report for an unlawful purpose, for a commercial purpose other than by news and communications media for dissemination to the general public, to establish any individual credit rating, or in the solicitation of money. Each person who obtains or uses these records is bound by that provision independently."
+}

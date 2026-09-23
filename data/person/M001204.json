@@ -1,0 +1,118 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:M001204",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Daniel Meuser",
+    "t": "rep",
+    "st": "PA",
+    "d": 9,
+    "pt": "R",
+    "b": {
+      "congress": "M001204",
+      "fec": [
+        "H8PA10147"
+      ],
+      "govtrack": "412811",
+      "opensecrets": "N00029416",
+      "wikidata": "Q5214012",
+      "icpsr": "21945"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 5,
+    "ptr": 5
+  },
+  "filings": {
+    "h:20034016": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034016"
+      },
+      "f": "p:M001204",
+      "fn": "Meuser, Daniel",
+      "inc": true,
+      "st": "PA",
+      "d": 9,
+      "y": 2026,
+      "dt": "2/17/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034016.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034158": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034158"
+      },
+      "f": "p:M001204",
+      "fn": "Meuser, Daniel",
+      "inc": true,
+      "st": "PA",
+      "d": 9,
+      "y": 2026,
+      "dt": "4/3/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034158.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034359": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034359"
+      },
+      "f": "p:M001204",
+      "fn": "Meuser, Daniel",
+      "inc": true,
+      "st": "PA",
+      "d": 9,
+      "y": 2026,
+      "dt": "4/21/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034359.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034547": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034547"
+      },
+      "f": "p:M001204",
+      "fn": "Meuser, Daniel",
+      "inc": true,
+      "st": "PA",
+      "d": 9,
+      "y": 2026,
+      "dt": "5/21/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034547.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034774": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034774"
+      },
+      "f": "p:M001204",
+      "fn": "Meuser, Daniel",
+      "inc": true,
+      "st": "PA",
+      "d": 9,
+      "y": 2026,
+      "dt": "7/2/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034774.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    }
+  },
+  "use_restriction": "Sourced from financial disclosure reports. Title 1 of the Ethics in Government Act of 1978, 5 U.S.C. app. 105(c), makes it unlawful to obtain or use such a report for an unlawful purpose, for a commercial purpose other than by news and communications media for dissemination to the general public, to establish any individual credit rating, or in the solicitation of money. Each person who obtains or uses these records is bound by that provision independently."
+}

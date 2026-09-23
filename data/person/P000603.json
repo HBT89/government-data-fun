@@ -1,0 +1,32 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:P000603",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Rand Paul",
+    "t": "sen",
+    "st": "KY",
+    "d": null,
+    "pt": "R",
+    "b": {
+      "congress": "P000603",
+      "fec": [
+        "S0KY00156"
+      ],
+      "govtrack": "412492",
+      "opensecrets": "N00030836",
+      "wikidata": "Q463557",
+      "lis": "S348",
+      "icpsr": "41104"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

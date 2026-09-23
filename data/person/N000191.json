@@ -1,0 +1,31 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:N000191",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Joe Neguse",
+    "t": "rep",
+    "st": "CO",
+    "d": 2,
+    "pt": "D",
+    "b": {
+      "congress": "N000191",
+      "fec": [
+        "H8CO02160"
+      ],
+      "govtrack": "412761",
+      "opensecrets": "N00041080",
+      "wikidata": "Q57242006",
+      "icpsr": "21948"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

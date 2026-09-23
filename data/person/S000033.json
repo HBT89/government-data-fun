@@ -1,0 +1,33 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:S000033",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Bernard Sanders",
+    "t": "sen",
+    "st": "VT",
+    "d": null,
+    "pt": "I",
+    "b": {
+      "congress": "S000033",
+      "fec": [
+        "H8VT01016",
+        "S4VT00033"
+      ],
+      "govtrack": "400357",
+      "opensecrets": "N00000528",
+      "wikidata": "Q359442",
+      "lis": "S313",
+      "icpsr": "29147"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

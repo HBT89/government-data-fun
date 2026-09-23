@@ -1,0 +1,117 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:W000829",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Tony Wied",
+    "t": "rep",
+    "st": "WI",
+    "d": 8,
+    "pt": "R",
+    "b": {
+      "congress": "W000829",
+      "fec": [
+        "H4WI08119"
+      ],
+      "govtrack": "456963",
+      "opensecrets": "N00055013",
+      "wikidata": "Q131033476"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 5,
+    "ptr": 5
+  },
+  "filings": {
+    "h:8221360": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "8221360"
+      },
+      "f": "p:W000829",
+      "fn": "Wied, Tony",
+      "inc": false,
+      "st": "WI",
+      "d": 8,
+      "y": 2026,
+      "dt": "3/9/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/8221360.pdf",
+      "text": false,
+      "basis": "match:name+statedst"
+    },
+    "h:9115816": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "9115816"
+      },
+      "f": "p:W000829",
+      "fn": "Wied, Tony",
+      "inc": false,
+      "st": "WI",
+      "d": 8,
+      "y": 2026,
+      "dt": "5/5/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/9115816.pdf",
+      "text": false,
+      "basis": "match:name+statedst"
+    },
+    "h:9116260": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "9116260"
+      },
+      "f": "p:W000829",
+      "fn": "Wied, Tony",
+      "inc": false,
+      "st": "WI",
+      "d": 8,
+      "y": 2026,
+      "dt": "7/24/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/9116260.pdf",
+      "text": false,
+      "basis": "match:name+statedst"
+    },
+    "h:9116308": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "9116308"
+      },
+      "f": "p:W000829",
+      "fn": "Wied, Tony",
+      "inc": false,
+      "st": "WI",
+      "d": 8,
+      "y": 2026,
+      "dt": "8/18/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/9116308.pdf",
+      "text": false,
+      "basis": "match:name+statedst"
+    },
+    "h:9116326": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "9116326"
+      },
+      "f": "p:W000829",
+      "fn": "Wied, Tony",
+      "inc": false,
+      "st": "WI",
+      "d": 8,
+      "y": 2026,
+      "dt": "9/2/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/9116326.pdf",
+      "text": false,
+      "basis": "match:name+statedst"
+    }
+  },
+  "use_restriction": "Sourced from financial disclosure reports. Title 1 of the Ethics in Government Act of 1978, 5 U.S.C. app. 105(c), makes it unlawful to obtain or use such a report for an unlawful purpose, for a commercial purpose other than by news and communications media for dissemination to the general public, to establish any individual credit rating, or in the solicitation of money. Each person who obtains or uses these records is bound by that provision independently."
+}

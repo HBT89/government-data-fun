@@ -1,0 +1,31 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:C001117",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Sean Casten",
+    "t": "rep",
+    "st": "IL",
+    "d": 6,
+    "pt": "D",
+    "b": {
+      "congress": "C001117",
+      "fec": [
+        "H8IL06139"
+      ],
+      "govtrack": "412775",
+      "opensecrets": "N00041338",
+      "wikidata": "Q55386655",
+      "icpsr": "21906"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

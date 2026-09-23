@@ -1,0 +1,30 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:E000301",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Sarah Elfreth",
+    "t": "rep",
+    "st": "MD",
+    "d": 3,
+    "pt": "D",
+    "b": {
+      "congress": "E000301",
+      "fec": [
+        "H4MD03156"
+      ],
+      "govtrack": "456992",
+      "opensecrets": "N00053710",
+      "wikidata": "Q61970401"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

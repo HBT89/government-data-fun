@@ -1,0 +1,32 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:K000383",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Angus S. King, Jr.",
+    "t": "sen",
+    "st": "ME",
+    "d": null,
+    "pt": "I",
+    "b": {
+      "congress": "K000383",
+      "fec": [
+        "S2ME00109"
+      ],
+      "govtrack": "412545",
+      "opensecrets": "N00034580",
+      "wikidata": "Q544464",
+      "lis": "S363",
+      "icpsr": "41300"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

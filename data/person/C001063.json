@@ -1,0 +1,31 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:C001063",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Henry Cuellar",
+    "t": "rep",
+    "st": "TX",
+    "d": 28,
+    "pt": "D",
+    "b": {
+      "congress": "C001063",
+      "fec": [
+        "H2TX23082"
+      ],
+      "govtrack": "400657",
+      "opensecrets": "N00024978",
+      "wikidata": "Q539562",
+      "icpsr": "20533"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

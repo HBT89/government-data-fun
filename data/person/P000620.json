@@ -1,0 +1,30 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:P000620",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Brittany Pettersen",
+    "t": "rep",
+    "st": "CO",
+    "d": 7,
+    "pt": "D",
+    "b": {
+      "congress": "P000620",
+      "fec": [
+        "H8CO07045"
+      ],
+      "govtrack": "456886",
+      "opensecrets": "N00040878",
+      "wikidata": "Q16734469"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

@@ -1,0 +1,118 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:F000459",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Charles J. \"Chuck\" Fleischmann",
+    "t": "rep",
+    "st": "TN",
+    "d": 3,
+    "pt": "R",
+    "b": {
+      "congress": "F000459",
+      "fec": [
+        "H0TN03254"
+      ],
+      "govtrack": "412476",
+      "opensecrets": "N00030815",
+      "wikidata": "Q521959",
+      "icpsr": "21178"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 5,
+    "ptr": 5
+  },
+  "filings": {
+    "h:8221321": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "8221321"
+      },
+      "f": "p:F000459",
+      "fn": "Fleischmann, Charles J. \"Chuck\"",
+      "inc": true,
+      "st": "TN",
+      "d": 3,
+      "y": 2026,
+      "dt": "2/9/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/8221321.pdf",
+      "text": false,
+      "basis": "match:name+statedst"
+    },
+    "h:9115704": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "9115704"
+      },
+      "f": "p:F000459",
+      "fn": "Fleischmann, Charles J. \"Chuck\"",
+      "inc": true,
+      "st": "TN",
+      "d": 3,
+      "y": 2026,
+      "dt": "3/20/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/9115704.pdf",
+      "text": false,
+      "basis": "match:name+statedst"
+    },
+    "h:9115821": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "9115821"
+      },
+      "f": "p:F000459",
+      "fn": "Fleischmann, Charles J. \"Chuck\"",
+      "inc": true,
+      "st": "TN",
+      "d": 3,
+      "y": 2026,
+      "dt": "5/12/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/9115821.pdf",
+      "text": false,
+      "basis": "match:name+statedst"
+    },
+    "h:9116212": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "9116212"
+      },
+      "f": "p:F000459",
+      "fn": "Fleischmann, Charles J. \"Chuck\"",
+      "inc": true,
+      "st": "TN",
+      "d": 3,
+      "y": 2026,
+      "dt": "7/8/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/9116212.pdf",
+      "text": false,
+      "basis": "match:name+statedst"
+    },
+    "h:9116290": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "9116290"
+      },
+      "f": "p:F000459",
+      "fn": "Fleischmann, Charles J. \"Chuck\"",
+      "inc": true,
+      "st": "TN",
+      "d": 3,
+      "y": 2026,
+      "dt": "8/12/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/9116290.pdf",
+      "text": false,
+      "basis": "match:name+statedst"
+    }
+  },
+  "use_restriction": "Sourced from financial disclosure reports. Title 1 of the Ethics in Government Act of 1978, 5 U.S.C. app. 105(c), makes it unlawful to obtain or use such a report for an unlawful purpose, for a commercial purpose other than by news and communications media for dissemination to the general public, to establish any individual credit rating, or in the solicitation of money. Each person who obtains or uses these records is bound by that provision independently."
+}

@@ -1,0 +1,187 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:C001123",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Gilbert Ray Cisneros, Jr.",
+    "t": "rep",
+    "st": "CA",
+    "d": 31,
+    "pt": "D",
+    "b": {
+      "congress": "C001123",
+      "fec": [
+        "H8CA39174",
+        "H4CA31170"
+      ],
+      "govtrack": "412757",
+      "opensecrets": "N00041464",
+      "wikidata": "Q54958760",
+      "icpsr": "21907"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 9,
+    "ptr": 9
+  },
+  "filings": {
+    "h:20033762": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20033762"
+      },
+      "f": "p:C001123",
+      "fn": "Cisneros, Gilbert",
+      "inc": true,
+      "st": "CA",
+      "d": 31,
+      "y": 2026,
+      "dt": "1/12/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033762.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20033983": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20033983"
+      },
+      "f": "p:C001123",
+      "fn": "Cisneros, Gilbert",
+      "inc": true,
+      "st": "CA",
+      "d": 31,
+      "y": 2026,
+      "dt": "2/13/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033983.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034144": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034144"
+      },
+      "f": "p:C001123",
+      "fn": "Cisneros, Gilbert",
+      "inc": true,
+      "st": "CA",
+      "d": 31,
+      "y": 2026,
+      "dt": "3/9/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034144.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034285": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034285"
+      },
+      "f": "p:C001123",
+      "fn": "Cisneros, Gilbert",
+      "inc": true,
+      "st": "CA",
+      "d": 31,
+      "y": 2026,
+      "dt": "4/7/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034285.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034500": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034500"
+      },
+      "f": "p:C001123",
+      "fn": "Cisneros, Gilbert",
+      "inc": true,
+      "st": "CA",
+      "d": 31,
+      "y": 2026,
+      "dt": "5/8/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034500.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034713": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034713"
+      },
+      "f": "p:C001123",
+      "fn": "Cisneros, Gilbert",
+      "inc": true,
+      "st": "CA",
+      "d": 31,
+      "y": 2026,
+      "dt": "6/8/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034713.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034906": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034906"
+      },
+      "f": "p:C001123",
+      "fn": "Cisneros, Gilbert",
+      "inc": true,
+      "st": "CA",
+      "d": 31,
+      "y": 2026,
+      "dt": "7/2/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034906.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20035190": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20035190"
+      },
+      "f": "p:C001123",
+      "fn": "Cisneros, Gilbert",
+      "inc": true,
+      "st": "CA",
+      "d": 31,
+      "y": 2026,
+      "dt": "9/4/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035190.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20035390": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20035390"
+      },
+      "f": "p:C001123",
+      "fn": "Cisneros, Gilbert",
+      "inc": true,
+      "st": "CA",
+      "d": 31,
+      "y": 2026,
+      "dt": "9/10/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035390.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    }
+  },
+  "use_restriction": "Sourced from financial disclosure reports. Title 1 of the Ethics in Government Act of 1978, 5 U.S.C. app. 105(c), makes it unlawful to obtain or use such a report for an unlawful purpose, for a commercial purpose other than by news and communications media for dissemination to the general public, to establish any individual credit rating, or in the solicitation of money. Each person who obtains or uses these records is bound by that provision independently."
+}

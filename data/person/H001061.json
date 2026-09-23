@@ -1,0 +1,32 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:H001061",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "John Hoeven",
+    "t": "sen",
+    "st": "ND",
+    "d": null,
+    "pt": "R",
+    "b": {
+      "congress": "H001061",
+      "fec": [
+        "S0ND00093"
+      ],
+      "govtrack": "412494",
+      "opensecrets": "N00031688",
+      "wikidata": "Q374762",
+      "lis": "S344",
+      "icpsr": "41107"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

@@ -1,0 +1,31 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:W000821",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Bruce Westerman",
+    "t": "rep",
+    "st": "AR",
+    "d": 4,
+    "pt": "R",
+    "b": {
+      "congress": "W000821",
+      "fec": [
+        "H4AR04048"
+      ],
+      "govtrack": "412610",
+      "opensecrets": "N00035527",
+      "wikidata": "Q16197421",
+      "icpsr": "21563"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

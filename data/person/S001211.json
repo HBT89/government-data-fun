@@ -1,0 +1,67 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:S001211",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Greg Stanton",
+    "t": "rep",
+    "st": "AZ",
+    "d": 4,
+    "pt": "D",
+    "b": {
+      "congress": "S001211",
+      "fec": [
+        "H8AZ09040"
+      ],
+      "govtrack": "412753",
+      "opensecrets": "N00041750",
+      "wikidata": "Q5606289",
+      "icpsr": "21968"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 2,
+    "ptr": 2
+  },
+  "filings": {
+    "h:20034499": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034499"
+      },
+      "f": "p:S001211",
+      "fn": "Stanton, Greg",
+      "inc": true,
+      "st": "AZ",
+      "d": 4,
+      "y": 2026,
+      "dt": "5/7/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034499.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034717": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034717"
+      },
+      "f": "p:S001211",
+      "fn": "Stanton, Greg",
+      "inc": true,
+      "st": "AZ",
+      "d": 4,
+      "y": 2026,
+      "dt": "6/26/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034717.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    }
+  },
+  "use_restriction": "Sourced from financial disclosure reports. Title 1 of the Ethics in Government Act of 1978, 5 U.S.C. app. 105(c), makes it unlawful to obtain or use such a report for an unlawful purpose, for a commercial purpose other than by news and communications media for dissemination to the general public, to establish any individual credit rating, or in the solicitation of money. Each person who obtains or uses these records is bound by that provision independently."
+}

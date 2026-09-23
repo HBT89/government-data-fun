@@ -1,0 +1,270 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:M001234",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Kelly Morrison",
+    "t": "rep",
+    "st": "MN",
+    "d": 3,
+    "pt": "D",
+    "b": {
+      "congress": "M001234",
+      "fec": [
+        "H4MN03118"
+      ],
+      "govtrack": "456996",
+      "opensecrets": "N00053930",
+      "wikidata": "Q58416636"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 14,
+    "ptr": 14
+  },
+  "filings": {
+    "h:20033830": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20033830"
+      },
+      "f": "p:M001234",
+      "fn": "Morrison, Kelly Louise",
+      "inc": true,
+      "st": "MN",
+      "d": 3,
+      "y": 2026,
+      "dt": "1/20/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033830.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20033928": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20033928"
+      },
+      "f": "p:M001234",
+      "fn": "Morrison, Kelly Louise",
+      "inc": true,
+      "st": "MN",
+      "d": 3,
+      "y": 2026,
+      "dt": "2/4/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033928.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20033989": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20033989"
+      },
+      "f": "p:M001234",
+      "fn": "Morrison, Kelly Louise",
+      "inc": true,
+      "st": "MN",
+      "d": 3,
+      "y": 2026,
+      "dt": "2/12/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033989.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034056": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034056"
+      },
+      "f": "p:M001234",
+      "fn": "Morrison, Kelly Louise",
+      "inc": true,
+      "st": "MN",
+      "d": 3,
+      "y": 2026,
+      "dt": "2/25/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034056.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034082": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034082"
+      },
+      "f": "p:M001234",
+      "fn": "Morrison, Kelly Louise",
+      "inc": true,
+      "st": "MN",
+      "d": 3,
+      "y": 2026,
+      "dt": "3/2/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034082.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034102": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034102"
+      },
+      "f": "p:M001234",
+      "fn": "Morrison, Kelly Louise",
+      "inc": true,
+      "st": "MN",
+      "d": 3,
+      "y": 2026,
+      "dt": "3/3/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034102.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034123": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034123"
+      },
+      "f": "p:M001234",
+      "fn": "Morrison, Kelly Louise",
+      "inc": true,
+      "st": "MN",
+      "d": 3,
+      "y": 2026,
+      "dt": "3/5/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034123.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034156": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034156"
+      },
+      "f": "p:M001234",
+      "fn": "Morrison, Kelly Louise",
+      "inc": true,
+      "st": "MN",
+      "d": 3,
+      "y": 2026,
+      "dt": "3/10/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034156.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034213": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034213"
+      },
+      "f": "p:M001234",
+      "fn": "Morrison, Kelly Louise",
+      "inc": true,
+      "st": "MN",
+      "d": 3,
+      "y": 2026,
+      "dt": "4/2/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034213.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034300": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034300"
+      },
+      "f": "p:M001234",
+      "fn": "Morrison, Kelly Louise",
+      "inc": true,
+      "st": "MN",
+      "d": 3,
+      "y": 2026,
+      "dt": "5/5/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034300.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034520": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034520"
+      },
+      "f": "p:M001234",
+      "fn": "Morrison, Kelly Louise",
+      "inc": true,
+      "st": "MN",
+      "d": 3,
+      "y": 2026,
+      "dt": "5/21/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034520.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034806": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034806"
+      },
+      "f": "p:M001234",
+      "fn": "Morrison, Kelly Louise",
+      "inc": true,
+      "st": "MN",
+      "d": 3,
+      "y": 2026,
+      "dt": "7/9/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034806.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034972": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034972"
+      },
+      "f": "p:M001234",
+      "fn": "Morrison, Kelly Louise",
+      "inc": true,
+      "st": "MN",
+      "d": 3,
+      "y": 2026,
+      "dt": "7/30/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034972.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20035244": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20035244"
+      },
+      "f": "p:M001234",
+      "fn": "Morrison, Kelly Louise",
+      "inc": true,
+      "st": "MN",
+      "d": 3,
+      "y": 2026,
+      "dt": "8/25/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035244.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    }
+  },
+  "use_restriction": "Sourced from financial disclosure reports. Title 1 of the Ethics in Government Act of 1978, 5 U.S.C. app. 105(c), makes it unlawful to obtain or use such a report for an unlawful purpose, for a commercial purpose other than by news and communications media for dissemination to the general public, to establish any individual credit rating, or in the solicitation of money. Each person who obtains or uses these records is bound by that provision independently."
+}

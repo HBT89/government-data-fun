@@ -1,0 +1,31 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:F000479",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "John Fetterman",
+    "t": "sen",
+    "st": "PA",
+    "d": null,
+    "pt": "D",
+    "b": {
+      "congress": "F000479",
+      "fec": [
+        "S6PA00274"
+      ],
+      "govtrack": "456877",
+      "opensecrets": "N00038201",
+      "wikidata": "Q3181500",
+      "lis": "S418"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

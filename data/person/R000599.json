@@ -1,0 +1,31 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:R000599",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Raul Ruiz",
+    "t": "rep",
+    "st": "CA",
+    "d": 25,
+    "pt": "D",
+    "b": {
+      "congress": "R000599",
+      "fec": [
+        "H2CA36439"
+      ],
+      "govtrack": "412519",
+      "opensecrets": "N00033510",
+      "wikidata": "Q3701994",
+      "icpsr": "21311"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

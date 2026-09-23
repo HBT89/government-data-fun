@@ -1,0 +1,31 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:L000593",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Mike Levin",
+    "t": "rep",
+    "st": "CA",
+    "d": 49,
+    "pt": "D",
+    "b": {
+      "congress": "L000593",
+      "fec": [
+        "H8CA49058"
+      ],
+      "govtrack": "412760",
+      "opensecrets": "N00040667",
+      "wikidata": "Q55424854",
+      "icpsr": "21939"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

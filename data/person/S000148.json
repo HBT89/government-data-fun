@@ -1,0 +1,33 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:S000148",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Charles E. Schumer",
+    "t": "sen",
+    "st": "NY",
+    "d": null,
+    "pt": "D",
+    "b": {
+      "congress": "S000148",
+      "fec": [
+        "S8NY00082",
+        "H0NY16010"
+      ],
+      "govtrack": "300087",
+      "opensecrets": "N00001093",
+      "wikidata": "Q380900",
+      "lis": "S270",
+      "icpsr": "14858"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

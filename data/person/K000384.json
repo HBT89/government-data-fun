@@ -1,0 +1,32 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:K000384",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Tim Kaine",
+    "t": "sen",
+    "st": "VA",
+    "d": null,
+    "pt": "D",
+    "b": {
+      "congress": "K000384",
+      "fec": [
+        "S2VA00142"
+      ],
+      "govtrack": "412582",
+      "opensecrets": "N00033177",
+      "wikidata": "Q359888",
+      "lis": "S362",
+      "icpsr": "41305"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

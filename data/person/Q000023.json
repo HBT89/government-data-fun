@@ -1,0 +1,31 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:Q000023",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Mike Quigley",
+    "t": "rep",
+    "st": "IL",
+    "d": 5,
+    "pt": "D",
+    "b": {
+      "congress": "Q000023",
+      "fec": [
+        "H0IL05096"
+      ],
+      "govtrack": "412331",
+      "opensecrets": "N00030581",
+      "wikidata": "Q465767",
+      "icpsr": "20954"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

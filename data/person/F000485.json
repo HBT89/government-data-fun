@@ -1,0 +1,65 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:F000485",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Clay Fuller",
+    "t": "rep",
+    "st": "GA",
+    "d": 14,
+    "pt": "R",
+    "b": {
+      "congress": "F000485",
+      "fec": [
+        "H0GA14030"
+      ],
+      "govtrack": "457041",
+      "wikidata": "Q138355765"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 2,
+    "ptr": 0
+  },
+  "filings": {
+    "h:10076097": {
+      "k": "candidate",
+      "ch": "house",
+      "b": {
+        "house_doc": "10076097"
+      },
+      "f": "p:F000485",
+      "fn": "Fuller, Clay",
+      "inc": true,
+      "st": "GA",
+      "d": 14,
+      "y": 2026,
+      "dt": "4/28/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/financial-pdfs/2026/10076097.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:10078339": {
+      "k": "other",
+      "ch": "house",
+      "b": {
+        "house_doc": "10078339"
+      },
+      "f": "p:F000485",
+      "fn": "Fuller, Clay",
+      "inc": true,
+      "st": "GA",
+      "d": 14,
+      "y": 2026,
+      "dt": "5/19/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/financial-pdfs/2026/10078339.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    }
+  },
+  "use_restriction": "Sourced from financial disclosure reports. Title 1 of the Ethics in Government Act of 1978, 5 U.S.C. app. 105(c), makes it unlawful to obtain or use such a report for an unlawful purpose, for a commercial purpose other than by news and communications media for dissemination to the general public, to establish any individual credit rating, or in the solicitation of money. Each person who obtains or uses these records is bound by that provision independently."
+}

@@ -1,0 +1,135 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:B001292",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Donald S. Beyer, Jr.",
+    "t": "rep",
+    "st": "VA",
+    "d": 8,
+    "pt": "D",
+    "b": {
+      "congress": "B001292",
+      "fec": [
+        "H4VA08224"
+      ],
+      "govtrack": "412657",
+      "opensecrets": "N00036018",
+      "wikidata": "Q3036086",
+      "icpsr": "21554"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 6,
+    "ptr": 6
+  },
+  "filings": {
+    "h:20033714": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20033714"
+      },
+      "f": "p:B001292",
+      "fn": "Beyer, Donald Sternoff",
+      "inc": true,
+      "st": "VA",
+      "d": 8,
+      "y": 2026,
+      "dt": "1/2/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033714.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20033903": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20033903"
+      },
+      "f": "p:B001292",
+      "fn": "Beyer, Donald Sternoff",
+      "inc": true,
+      "st": "VA",
+      "d": 8,
+      "y": 2026,
+      "dt": "1/31/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033903.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034085": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034085"
+      },
+      "f": "p:B001292",
+      "fn": "Beyer, Donald Sternoff",
+      "inc": true,
+      "st": "VA",
+      "d": 8,
+      "y": 2026,
+      "dt": "3/1/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034085.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034891": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034891"
+      },
+      "f": "p:B001292",
+      "fn": "Beyer, Donald Sternoff",
+      "inc": true,
+      "st": "VA",
+      "d": 8,
+      "y": 2026,
+      "dt": "7/1/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034891.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20035106": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20035106"
+      },
+      "f": "p:B001292",
+      "fn": "Beyer, Donald Sternoff",
+      "inc": true,
+      "st": "VA",
+      "d": 8,
+      "y": 2026,
+      "dt": "8/1/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035106.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20035349": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20035349"
+      },
+      "f": "p:B001292",
+      "fn": "Beyer, Donald Sternoff",
+      "inc": true,
+      "st": "VA",
+      "d": 8,
+      "y": 2026,
+      "dt": "9/1/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035349.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    }
+  },
+  "use_restriction": "Sourced from financial disclosure reports. Title 1 of the Ethics in Government Act of 1978, 5 U.S.C. app. 105(c), makes it unlawful to obtain or use such a report for an unlawful purpose, for a commercial purpose other than by news and communications media for dissemination to the general public, to establish any individual credit rating, or in the solicitation of money. Each person who obtains or uses these records is bound by that provision independently."
+}

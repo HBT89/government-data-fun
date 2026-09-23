@@ -1,0 +1,32 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:T000463",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Michael R. Turner",
+    "t": "rep",
+    "st": "OH",
+    "d": 10,
+    "pt": "R",
+    "b": {
+      "congress": "T000463",
+      "fec": [
+        "H2OH03067",
+        "H2OH03091"
+      ],
+      "govtrack": "400411",
+      "opensecrets": "N00025175",
+      "wikidata": "Q505722",
+      "icpsr": "20342"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

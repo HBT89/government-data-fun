@@ -1,0 +1,31 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:C001091",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Joaquin Castro",
+    "t": "rep",
+    "st": "TX",
+    "d": 20,
+    "pt": "D",
+    "b": {
+      "congress": "C001091",
+      "fec": [
+        "H2TX35011"
+      ],
+      "govtrack": "412576",
+      "opensecrets": "N00033316",
+      "wikidata": "Q1167934",
+      "icpsr": "21362"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

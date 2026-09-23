@@ -1,0 +1,152 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:K000375",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "William R. Keating",
+    "t": "rep",
+    "st": "MA",
+    "d": 9,
+    "pt": "D",
+    "b": {
+      "congress": "K000375",
+      "fec": [
+        "H0MA10082"
+      ],
+      "govtrack": "412435",
+      "opensecrets": "N00031933",
+      "wikidata": "Q775412",
+      "icpsr": "21140"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 7,
+    "ptr": 7
+  },
+  "filings": {
+    "h:20033946": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20033946"
+      },
+      "f": "p:K000375",
+      "fn": "Keating, William R.",
+      "inc": true,
+      "st": "MA",
+      "d": 9,
+      "y": 2026,
+      "dt": "2/6/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033946.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034068": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034068"
+      },
+      "f": "p:K000375",
+      "fn": "Keating, William R.",
+      "inc": true,
+      "st": "MA",
+      "d": 9,
+      "y": 2026,
+      "dt": "2/26/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034068.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034177": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034177"
+      },
+      "f": "p:K000375",
+      "fn": "Keating, William R.",
+      "inc": true,
+      "st": "MA",
+      "d": 9,
+      "y": 2026,
+      "dt": "3/16/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034177.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034307": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034307"
+      },
+      "f": "p:K000375",
+      "fn": "Keating, William R.",
+      "inc": true,
+      "st": "MA",
+      "d": 9,
+      "y": 2026,
+      "dt": "4/13/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034307.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034417": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034417"
+      },
+      "f": "p:K000375",
+      "fn": "Keating, William R.",
+      "inc": true,
+      "st": "MA",
+      "d": 9,
+      "y": 2026,
+      "dt": "5/18/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034417.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034898": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034898"
+      },
+      "f": "p:K000375",
+      "fn": "Keating, William R.",
+      "inc": true,
+      "st": "MA",
+      "d": 9,
+      "y": 2026,
+      "dt": "8/13/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034898.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20035293": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20035293"
+      },
+      "f": "p:K000375",
+      "fn": "Keating, William R.",
+      "inc": true,
+      "st": "MA",
+      "d": 9,
+      "y": 2026,
+      "dt": "8/25/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035293.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    }
+  },
+  "use_restriction": "Sourced from financial disclosure reports. Title 1 of the Ethics in Government Act of 1978, 5 U.S.C. app. 105(c), makes it unlawful to obtain or use such a report for an unlawful purpose, for a commercial purpose other than by news and communications media for dissemination to the general public, to establish any individual credit rating, or in the solicitation of money. Each person who obtains or uses these records is bound by that provision independently."
+}

@@ -1,0 +1,30 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:S001221",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Hillary J. Scholten",
+    "t": "rep",
+    "st": "MI",
+    "d": 3,
+    "pt": "D",
+    "b": {
+      "congress": "S001221",
+      "fec": [
+        "H0MI03316"
+      ],
+      "govtrack": "456906",
+      "opensecrets": "N00044885",
+      "wikidata": "Q115137368"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

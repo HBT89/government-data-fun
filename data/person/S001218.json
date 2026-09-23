@@ -1,0 +1,30 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:S001218",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Melanie A. Stansbury",
+    "t": "rep",
+    "st": "NM",
+    "d": 1,
+    "pt": "D",
+    "b": {
+      "congress": "S001218",
+      "fec": [
+        "H2NM01144"
+      ],
+      "govtrack": "456861",
+      "opensecrets": "N00047871",
+      "wikidata": "Q96184996"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

@@ -1,0 +1,67 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:T000460",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Mike Thompson",
+    "t": "rep",
+    "st": "CA",
+    "d": 4,
+    "pt": "D",
+    "b": {
+      "congress": "T000460",
+      "fec": [
+        "H8CA01109"
+      ],
+      "govtrack": "400403",
+      "opensecrets": "N00007419",
+      "wikidata": "Q1323196",
+      "icpsr": "29901"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 2,
+    "ptr": 0
+  },
+  "filings": {
+    "h:10075612": {
+      "k": "candidate",
+      "ch": "house",
+      "b": {
+        "house_doc": "10075612"
+      },
+      "f": "p:T000460",
+      "fn": "Thompson, Larry",
+      "inc": false,
+      "st": "CA",
+      "d": 32,
+      "y": 2026,
+      "dt": "8/10/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/financial-pdfs/2026/10075612.pdf",
+      "text": true,
+      "basis": "match:name+state"
+    },
+    "h:30027290": {
+      "k": "extension",
+      "ch": "house",
+      "b": {
+        "house_doc": "30027290"
+      },
+      "f": "p:T000460",
+      "fn": "Thompson, Larry",
+      "inc": false,
+      "st": "CA",
+      "d": 32,
+      "y": 2026,
+      "dt": "5/6/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/financial-pdfs/2026/30027290.pdf",
+      "text": null,
+      "basis": "match:name+state"
+    }
+  },
+  "use_restriction": "Sourced from financial disclosure reports. Title 1 of the Ethics in Government Act of 1978, 5 U.S.C. app. 105(c), makes it unlawful to obtain or use such a report for an unlawful purpose, for a commercial purpose other than by news and communications media for dissemination to the general public, to establish any individual credit rating, or in the solicitation of money. Each person who obtains or uses these records is bound by that provision independently."
+}

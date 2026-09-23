@@ -1,0 +1,31 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:R000575",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Mike Rogers",
+    "t": "rep",
+    "st": "AL",
+    "d": 3,
+    "pt": "R",
+    "b": {
+      "congress": "R000575",
+      "fec": [
+        "H2AL03032"
+      ],
+      "govtrack": "400341",
+      "opensecrets": "N00024759",
+      "wikidata": "Q693238",
+      "icpsr": "20301"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

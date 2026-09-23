@@ -1,0 +1,30 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:L000599",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Michael Lawler",
+    "t": "rep",
+    "st": "NY",
+    "d": 17,
+    "pt": "R",
+    "b": {
+      "congress": "L000599",
+      "fec": [
+        "H2NY17162"
+      ],
+      "govtrack": "456924",
+      "opensecrets": "N00051208",
+      "wikidata": "Q105179052"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

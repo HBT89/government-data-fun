@@ -1,0 +1,32 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:T000476",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Thom Tillis",
+    "t": "sen",
+    "st": "NC",
+    "d": null,
+    "pt": "R",
+    "b": {
+      "congress": "T000476",
+      "fec": [
+        "S4NC00162"
+      ],
+      "govtrack": "412668",
+      "opensecrets": "N00035492",
+      "wikidata": "Q7786750",
+      "lis": "S384",
+      "icpsr": "41504"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

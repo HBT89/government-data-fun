@@ -1,0 +1,33 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:W000437",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Roger F. Wicker",
+    "t": "sen",
+    "st": "MS",
+    "d": null,
+    "pt": "R",
+    "b": {
+      "congress": "W000437",
+      "fec": [
+        "H4MS01078",
+        "S8MS00196"
+      ],
+      "govtrack": "400432",
+      "opensecrets": "N00003280",
+      "wikidata": "Q390491",
+      "lis": "S318",
+      "icpsr": "29534"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

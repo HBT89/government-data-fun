@@ -1,0 +1,134 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:M001222",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Max L. Miller",
+    "t": "rep",
+    "st": "OH",
+    "d": 7,
+    "pt": "R",
+    "b": {
+      "congress": "M001222",
+      "fec": [
+        "H2OH16051"
+      ],
+      "govtrack": "456929",
+      "opensecrets": "N00048277",
+      "wikidata": "Q106522145"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 6,
+    "ptr": 6
+  },
+  "filings": {
+    "h:20033881": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20033881"
+      },
+      "f": "p:M001222",
+      "fn": "Miller, Max",
+      "inc": true,
+      "st": "OH",
+      "d": 7,
+      "y": 2026,
+      "dt": "1/29/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033881.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034247": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034247"
+      },
+      "f": "p:M001222",
+      "fn": "Miller, Max",
+      "inc": true,
+      "st": "OH",
+      "d": 7,
+      "y": 2026,
+      "dt": "3/30/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034247.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034419": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034419"
+      },
+      "f": "p:M001222",
+      "fn": "Miller, Max",
+      "inc": true,
+      "st": "OH",
+      "d": 7,
+      "y": 2026,
+      "dt": "4/28/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034419.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034651": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034651"
+      },
+      "f": "p:M001222",
+      "fn": "Miller, Max",
+      "inc": true,
+      "st": "OH",
+      "d": 7,
+      "y": 2026,
+      "dt": "5/29/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034651.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034869": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034869"
+      },
+      "f": "p:M001222",
+      "fn": "Miller, Max",
+      "inc": true,
+      "st": "OH",
+      "d": 7,
+      "y": 2026,
+      "dt": "7/1/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034869.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20035075": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20035075"
+      },
+      "f": "p:M001222",
+      "fn": "Miller, Max",
+      "inc": true,
+      "st": "OH",
+      "d": 7,
+      "y": 2026,
+      "dt": "7/26/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035075.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    }
+  },
+  "use_restriction": "Sourced from financial disclosure reports. Title 1 of the Ethics in Government Act of 1978, 5 U.S.C. app. 105(c), makes it unlawful to obtain or use such a report for an unlawful purpose, for a commercial purpose other than by news and communications media for dissemination to the general public, to establish any individual credit rating, or in the solicitation of money. Each person who obtains or uses these records is bound by that provision independently."
+}

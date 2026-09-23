@@ -1,0 +1,30 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:S001226",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Andrea Salinas",
+    "t": "rep",
+    "st": "OR",
+    "d": 6,
+    "pt": "D",
+    "b": {
+      "congress": "S001226",
+      "fec": [
+        "H2OR06066"
+      ],
+      "govtrack": "456934",
+      "opensecrets": "N00049738",
+      "wikidata": "Q39791512"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

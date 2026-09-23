@@ -1,0 +1,84 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:W000812",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Ann Wagner",
+    "t": "rep",
+    "st": "MO",
+    "d": 2,
+    "pt": "R",
+    "b": {
+      "congress": "W000812",
+      "fec": [
+        "H2MO02102"
+      ],
+      "govtrack": "412548",
+      "opensecrets": "N00033106",
+      "wikidata": "Q3917251",
+      "icpsr": "21337"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 3,
+    "ptr": 3
+  },
+  "filings": {
+    "h:20033718": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20033718"
+      },
+      "f": "p:W000812",
+      "fn": "Wagner, Ann",
+      "inc": true,
+      "st": "MO",
+      "d": 2,
+      "y": 2026,
+      "dt": "1/2/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033718.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034462": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034462"
+      },
+      "f": "p:W000812",
+      "fn": "Wagner, Ann",
+      "inc": true,
+      "st": "MO",
+      "d": 2,
+      "y": 2026,
+      "dt": "5/4/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034462.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034915": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034915"
+      },
+      "f": "p:W000812",
+      "fn": "Wagner, Ann",
+      "inc": true,
+      "st": "MO",
+      "d": 2,
+      "y": 2026,
+      "dt": "7/2/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034915.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    }
+  },
+  "use_restriction": "Sourced from financial disclosure reports. Title 1 of the Ethics in Government Act of 1978, 5 U.S.C. app. 105(c), makes it unlawful to obtain or use such a report for an unlawful purpose, for a commercial purpose other than by news and communications media for dissemination to the general public, to establish any individual credit rating, or in the solicitation of money. Each person who obtains or uses these records is bound by that provision independently."
+}

@@ -1,0 +1,84 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:E000296",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Dwight Evans",
+    "t": "rep",
+    "st": "PA",
+    "d": 3,
+    "pt": "D",
+    "b": {
+      "congress": "E000296",
+      "fec": [
+        "H6PA02171"
+      ],
+      "govtrack": "412677",
+      "opensecrets": "N00038450",
+      "wikidata": "Q5318148",
+      "icpsr": "21566"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 3,
+    "ptr": 3
+  },
+  "filings": {
+    "h:20034379": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034379"
+      },
+      "f": "p:E000296",
+      "fn": "Evans, Dwight",
+      "inc": true,
+      "st": "PA",
+      "d": 3,
+      "y": 2026,
+      "dt": "4/20/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034379.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034556": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034556"
+      },
+      "f": "p:E000296",
+      "fn": "Evans, Dwight",
+      "inc": true,
+      "st": "PA",
+      "d": 3,
+      "y": 2026,
+      "dt": "5/15/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034556.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034851": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034851"
+      },
+      "f": "p:E000296",
+      "fn": "Evans, Dwight",
+      "inc": true,
+      "st": "PA",
+      "d": 3,
+      "y": 2026,
+      "dt": "6/24/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034851.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    }
+  },
+  "use_restriction": "Sourced from financial disclosure reports. Title 1 of the Ethics in Government Act of 1978, 5 U.S.C. app. 105(c), makes it unlawful to obtain or use such a report for an unlawful purpose, for a commercial purpose other than by news and communications media for dissemination to the general public, to establish any individual credit rating, or in the solicitation of money. Each person who obtains or uses these records is bound by that provision independently."
+}

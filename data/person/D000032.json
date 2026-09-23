@@ -1,0 +1,168 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:D000032",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Byron Donalds",
+    "t": "rep",
+    "st": "FL",
+    "d": 19,
+    "pt": "R",
+    "b": {
+      "congress": "D000032",
+      "fec": [
+        "H2FL14186"
+      ],
+      "govtrack": "456808",
+      "opensecrets": "N00034016",
+      "wikidata": "Q59726216"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 8,
+    "ptr": 8
+  },
+  "filings": {
+    "h:20033747": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20033747"
+      },
+      "f": "p:D000032",
+      "fn": "Donalds, Byron",
+      "inc": true,
+      "st": "FL",
+      "d": 19,
+      "y": 2026,
+      "dt": "1/7/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033747.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20033780": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20033780"
+      },
+      "f": "p:D000032",
+      "fn": "Donalds, Byron",
+      "inc": true,
+      "st": "FL",
+      "d": 19,
+      "y": 2026,
+      "dt": "1/9/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033780.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20033981": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20033981"
+      },
+      "f": "p:D000032",
+      "fn": "Donalds, Byron",
+      "inc": true,
+      "st": "FL",
+      "d": 19,
+      "y": 2026,
+      "dt": "2/12/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033981.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034134": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034134"
+      },
+      "f": "p:D000032",
+      "fn": "Donalds, Byron",
+      "inc": true,
+      "st": "FL",
+      "d": 19,
+      "y": 2026,
+      "dt": "3/6/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034134.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034297": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034297"
+      },
+      "f": "p:D000032",
+      "fn": "Donalds, Byron",
+      "inc": true,
+      "st": "FL",
+      "d": 19,
+      "y": 2026,
+      "dt": "4/8/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034297.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034478": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034478"
+      },
+      "f": "p:D000032",
+      "fn": "Donalds, Byron",
+      "inc": true,
+      "st": "FL",
+      "d": 19,
+      "y": 2026,
+      "dt": "5/13/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034478.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034968": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034968"
+      },
+      "f": "p:D000032",
+      "fn": "Donalds, Byron",
+      "inc": true,
+      "st": "FL",
+      "d": 19,
+      "y": 2026,
+      "dt": "7/15/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034968.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20035420": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20035420"
+      },
+      "f": "p:D000032",
+      "fn": "Donalds, Byron",
+      "inc": true,
+      "st": "FL",
+      "d": 19,
+      "y": 2026,
+      "dt": "9/15/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035420.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    }
+  },
+  "use_restriction": "Sourced from financial disclosure reports. Title 1 of the Ethics in Government Act of 1978, 5 U.S.C. app. 105(c), makes it unlawful to obtain or use such a report for an unlawful purpose, for a commercial purpose other than by news and communications media for dissemination to the general public, to establish any individual credit rating, or in the solicitation of money. Each person who obtains or uses these records is bound by that provision independently."
+}

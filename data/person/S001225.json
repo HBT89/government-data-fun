@@ -1,0 +1,30 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:S001225",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Eric Sorensen",
+    "t": "rep",
+    "st": "IL",
+    "d": 17,
+    "pt": "D",
+    "b": {
+      "congress": "S001225",
+      "fec": [
+        "H2IL17147"
+      ],
+      "govtrack": "456902",
+      "opensecrets": "N00049558",
+      "wikidata": "Q115182513"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

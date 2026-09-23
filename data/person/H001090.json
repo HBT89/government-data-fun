@@ -1,0 +1,31 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:H001090",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Josh Harder",
+    "t": "rep",
+    "st": "CA",
+    "d": 9,
+    "pt": "D",
+    "b": {
+      "congress": "H001090",
+      "fec": [
+        "H8CA10126"
+      ],
+      "govtrack": "412754",
+      "opensecrets": "N00040853",
+      "wikidata": "Q58494468",
+      "icpsr": "21930"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

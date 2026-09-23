@@ -1,0 +1,30 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:M001216",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Cory Mills",
+    "t": "rep",
+    "st": "FL",
+    "d": 7,
+    "pt": "R",
+    "b": {
+      "congress": "M001216",
+      "fec": [
+        "H2FL07156"
+      ],
+      "govtrack": "456889",
+      "opensecrets": "N00048179",
+      "wikidata": "Q115137377"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

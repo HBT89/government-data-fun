@@ -1,0 +1,219 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:H001086",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Diana Harshbarger",
+    "t": "rep",
+    "st": "TN",
+    "d": 1,
+    "pt": "R",
+    "b": {
+      "congress": "H001086",
+      "fec": [
+        "H0TN01118"
+      ],
+      "govtrack": "456844",
+      "opensecrets": "N00046688",
+      "wikidata": "Q101197341"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 11,
+    "ptr": 11
+  },
+  "filings": {
+    "h:9115809": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "9115809"
+      },
+      "f": "p:H001086",
+      "fn": "Harshbarger, Diana",
+      "inc": true,
+      "st": "TN",
+      "d": 1,
+      "y": 2026,
+      "dt": "5/6/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/9115809.pdf",
+      "text": false,
+      "basis": "match:name+statedst"
+    },
+    "h:9115811": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "9115811"
+      },
+      "f": "p:H001086",
+      "fn": "Harshbarger, Diana",
+      "inc": true,
+      "st": "TN",
+      "d": 1,
+      "y": 2026,
+      "dt": "5/6/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/9115811.pdf",
+      "text": false,
+      "basis": "match:name+statedst"
+    },
+    "h:9115812": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "9115812"
+      },
+      "f": "p:H001086",
+      "fn": "Harshbarger, Diana",
+      "inc": true,
+      "st": "TN",
+      "d": 1,
+      "y": 2026,
+      "dt": "5/6/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/9115812.pdf",
+      "text": false,
+      "basis": "match:name+statedst"
+    },
+    "h:9115813": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "9115813"
+      },
+      "f": "p:H001086",
+      "fn": "Harshbarger, Diana",
+      "inc": true,
+      "st": "TN",
+      "d": 1,
+      "y": 2026,
+      "dt": "5/6/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/9115813.pdf",
+      "text": false,
+      "basis": "match:name+statedst"
+    },
+    "h:9115814": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "9115814"
+      },
+      "f": "p:H001086",
+      "fn": "Harshbarger, Diana",
+      "inc": true,
+      "st": "TN",
+      "d": 1,
+      "y": 2026,
+      "dt": "5/6/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/9115814.pdf",
+      "text": false,
+      "basis": "match:name+statedst"
+    },
+    "h:9115815": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "9115815"
+      },
+      "f": "p:H001086",
+      "fn": "Harshbarger, Diana",
+      "inc": true,
+      "st": "TN",
+      "d": 1,
+      "y": 2026,
+      "dt": "5/6/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/9115815.pdf",
+      "text": false,
+      "basis": "match:name+statedst"
+    },
+    "h:9115901": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "9115901"
+      },
+      "f": "p:H001086",
+      "fn": "Harshbarger, Diana",
+      "inc": true,
+      "st": "TN",
+      "d": 1,
+      "y": 2026,
+      "dt": "6/4/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/9115901.pdf",
+      "text": false,
+      "basis": "match:name+statedst"
+    },
+    "h:9116256": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "9116256"
+      },
+      "f": "p:H001086",
+      "fn": "Harshbarger, Diana",
+      "inc": true,
+      "st": "TN",
+      "d": 1,
+      "y": 2026,
+      "dt": "8/3/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/9116256.pdf",
+      "text": false,
+      "basis": "match:name+statedst"
+    },
+    "h:9116257": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "9116257"
+      },
+      "f": "p:H001086",
+      "fn": "Harshbarger, Diana",
+      "inc": true,
+      "st": "TN",
+      "d": 1,
+      "y": 2026,
+      "dt": "8/3/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/9116257.pdf",
+      "text": false,
+      "basis": "match:name+statedst"
+    },
+    "h:9116258": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "9116258"
+      },
+      "f": "p:H001086",
+      "fn": "Harshbarger, Diana",
+      "inc": true,
+      "st": "TN",
+      "d": 1,
+      "y": 2026,
+      "dt": "8/3/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/9116258.pdf",
+      "text": false,
+      "basis": "match:name+statedst"
+    },
+    "h:9116331": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "9116331"
+      },
+      "f": "p:H001086",
+      "fn": "Harshbarger, Diana",
+      "inc": true,
+      "st": "TN",
+      "d": 1,
+      "y": 2026,
+      "dt": "9/11/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/9116331.pdf",
+      "text": false,
+      "basis": "match:name+statedst"
+    }
+  },
+  "use_restriction": "Sourced from financial disclosure reports. Title 1 of the Ethics in Government Act of 1978, 5 U.S.C. app. 105(c), makes it unlawful to obtain or use such a report for an unlawful purpose, for a commercial purpose other than by news and communications media for dissemination to the general public, to establish any individual credit rating, or in the solicitation of money. Each person who obtains or uses these records is bound by that provision independently."
+}

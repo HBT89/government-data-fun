@@ -1,0 +1,84 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:L000560",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Rick Larsen",
+    "t": "rep",
+    "st": "WA",
+    "d": 2,
+    "pt": "D",
+    "b": {
+      "congress": "L000560",
+      "fec": [
+        "H0WA02080"
+      ],
+      "govtrack": "400232",
+      "opensecrets": "N00009759",
+      "wikidata": "Q503529",
+      "icpsr": "20145"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 3,
+    "ptr": 3
+  },
+  "filings": {
+    "h:20033814": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20033814"
+      },
+      "f": "p:L000560",
+      "fn": "Larsen, Rick",
+      "inc": true,
+      "st": "WA",
+      "d": 2,
+      "y": 2026,
+      "dt": "1/14/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033814.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034351": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034351"
+      },
+      "f": "p:L000560",
+      "fn": "Larsen, Rick",
+      "inc": true,
+      "st": "WA",
+      "d": 2,
+      "y": 2026,
+      "dt": "4/15/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034351.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034977": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034977"
+      },
+      "f": "p:L000560",
+      "fn": "Larsen, Rick",
+      "inc": true,
+      "st": "WA",
+      "d": 2,
+      "y": 2026,
+      "dt": "7/12/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034977.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    }
+  },
+  "use_restriction": "Sourced from financial disclosure reports. Title 1 of the Ethics in Government Act of 1978, 5 U.S.C. app. 105(c), makes it unlawful to obtain or use such a report for an unlawful purpose, for a commercial purpose other than by news and communications media for dissemination to the general public, to establish any individual credit rating, or in the solicitation of money. Each person who obtains or uses these records is bound by that provision independently."
+}

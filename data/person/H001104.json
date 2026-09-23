@@ -1,0 +1,30 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:H001104",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Jon Husted",
+    "t": "sen",
+    "st": "OH",
+    "d": null,
+    "pt": "R",
+    "b": {
+      "congress": "H001104",
+      "fec": [
+        "S6OH00304"
+      ],
+      "govtrack": "457032",
+      "wikidata": "Q6270269",
+      "lis": "S438"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

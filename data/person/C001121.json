@@ -1,0 +1,31 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:C001121",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Jason Crow",
+    "t": "rep",
+    "st": "CO",
+    "d": 6,
+    "pt": "D",
+    "b": {
+      "congress": "C001121",
+      "fec": [
+        "H8CO06229"
+      ],
+      "govtrack": "412762",
+      "opensecrets": "N00040876",
+      "wikidata": "Q58323071",
+      "icpsr": "21912"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

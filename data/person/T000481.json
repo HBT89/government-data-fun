@@ -1,0 +1,31 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:T000481",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Rashida Tlaib",
+    "t": "rep",
+    "st": "MI",
+    "d": 12,
+    "pt": "D",
+    "b": {
+      "congress": "T000481",
+      "fec": [
+        "H8MI13250"
+      ],
+      "govtrack": "412787",
+      "opensecrets": "N00042649",
+      "wikidata": "Q7294939",
+      "icpsr": "21975"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

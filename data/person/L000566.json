@@ -1,0 +1,101 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:L000566",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Robert E. Latta",
+    "t": "rep",
+    "st": "OH",
+    "d": 5,
+    "pt": "R",
+    "b": {
+      "congress": "L000566",
+      "fec": [
+        "H8OH05036"
+      ],
+      "govtrack": "412256",
+      "opensecrets": "N00012233",
+      "wikidata": "Q888061",
+      "icpsr": "20755"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 4,
+    "ptr": 4
+  },
+  "filings": {
+    "h:20033857": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20033857"
+      },
+      "f": "p:L000566",
+      "fn": "Latta, Robert E.",
+      "inc": true,
+      "st": "OH",
+      "d": 5,
+      "y": 2026,
+      "dt": "1/23/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033857.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034401": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034401"
+      },
+      "f": "p:L000566",
+      "fn": "Latta, Robert E.",
+      "inc": true,
+      "st": "OH",
+      "d": 5,
+      "y": 2026,
+      "dt": "4/24/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034401.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034726": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034726"
+      },
+      "f": "p:L000566",
+      "fn": "Latta, Robert E.",
+      "inc": true,
+      "st": "OH",
+      "d": 5,
+      "y": 2026,
+      "dt": "6/5/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034726.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20035065": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20035065"
+      },
+      "f": "p:L000566",
+      "fn": "Latta, Robert E.",
+      "inc": true,
+      "st": "OH",
+      "d": 5,
+      "y": 2026,
+      "dt": "7/24/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035065.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    }
+  },
+  "use_restriction": "Sourced from financial disclosure reports. Title 1 of the Ethics in Government Act of 1978, 5 U.S.C. app. 105(c), makes it unlawful to obtain or use such a report for an unlawful purpose, for a commercial purpose other than by news and communications media for dissemination to the general public, to establish any individual credit rating, or in the solicitation of money. Each person who obtains or uses these records is bound by that provision independently."
+}

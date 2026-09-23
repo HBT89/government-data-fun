@@ -1,0 +1,30 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:W000830",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "George Whitesides",
+    "t": "rep",
+    "st": "CA",
+    "d": 27,
+    "pt": "D",
+    "b": {
+      "congress": "W000830",
+      "fec": [
+        "H4CA27111"
+      ],
+      "govtrack": "456977",
+      "opensecrets": "N00052205",
+      "wikidata": "Q3511804"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

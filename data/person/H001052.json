@@ -1,0 +1,31 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:H001052",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Andy Harris",
+    "t": "rep",
+    "st": "MD",
+    "d": 1,
+    "pt": "R",
+    "b": {
+      "congress": "H001052",
+      "fec": [
+        "H8MD01094"
+      ],
+      "govtrack": "412434",
+      "opensecrets": "N00029147",
+      "wikidata": "Q506639",
+      "icpsr": "21139"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 0,
+    "ptr": 0
+  },
+  "filings": {}
+}

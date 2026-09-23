@@ -1,0 +1,220 @@
+{
+  "v": 1,
+  "kind": "person-shard",
+  "tier": "public",
+  "generated_at": "2026-09-23T18:21:22.520Z",
+  "ref": "p:C001068",
+  "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
+  "person": {
+    "n": "Steve Cohen",
+    "t": "rep",
+    "st": "TN",
+    "d": 9,
+    "pt": "D",
+    "b": {
+      "congress": "C001068",
+      "fec": [
+        "H6TN09068"
+      ],
+      "govtrack": "412236",
+      "opensecrets": "N00003225",
+      "wikidata": "Q512330",
+      "icpsr": "20748"
+    },
+    "basis": "authority:congress-legislators"
+  },
+  "counts": {
+    "filings": 11,
+    "ptr": 11
+  },
+  "filings": {
+    "h:20033754": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20033754"
+      },
+      "f": "p:C001068",
+      "fn": "Cohen, Steve",
+      "inc": true,
+      "st": "TN",
+      "d": 9,
+      "y": 2026,
+      "dt": "1/14/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033754.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20033813": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20033813"
+      },
+      "f": "p:C001068",
+      "fn": "Cohen, Steve",
+      "inc": true,
+      "st": "TN",
+      "d": 9,
+      "y": 2026,
+      "dt": "1/26/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033813.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20033889": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20033889"
+      },
+      "f": "p:C001068",
+      "fn": "Cohen, Steve",
+      "inc": true,
+      "st": "TN",
+      "d": 9,
+      "y": 2026,
+      "dt": "2/9/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033889.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034119": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034119"
+      },
+      "f": "p:C001068",
+      "fn": "Cohen, Steve",
+      "inc": true,
+      "st": "TN",
+      "d": 9,
+      "y": 2026,
+      "dt": "3/5/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034119.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034167": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034167"
+      },
+      "f": "p:C001068",
+      "fn": "Cohen, Steve",
+      "inc": true,
+      "st": "TN",
+      "d": 9,
+      "y": 2026,
+      "dt": "3/26/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034167.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034368": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034368"
+      },
+      "f": "p:C001068",
+      "fn": "Cohen, Steve",
+      "inc": true,
+      "st": "TN",
+      "d": 9,
+      "y": 2026,
+      "dt": "4/28/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034368.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034452": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034452"
+      },
+      "f": "p:C001068",
+      "fn": "Cohen, Steve",
+      "inc": true,
+      "st": "TN",
+      "d": 9,
+      "y": 2026,
+      "dt": "5/15/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034452.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034589": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034589"
+      },
+      "f": "p:C001068",
+      "fn": "Cohen, Steve",
+      "inc": true,
+      "st": "TN",
+      "d": 9,
+      "y": 2026,
+      "dt": "5/20/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034589.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20034796": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20034796"
+      },
+      "f": "p:C001068",
+      "fn": "Cohen, Steve",
+      "inc": true,
+      "st": "TN",
+      "d": 9,
+      "y": 2026,
+      "dt": "6/17/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034796.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20035235": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20035235"
+      },
+      "f": "p:C001068",
+      "fn": "Cohen, Steve",
+      "inc": true,
+      "st": "TN",
+      "d": 9,
+      "y": 2026,
+      "dt": "8/17/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035235.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    },
+    "h:20035350": {
+      "k": "ptr",
+      "ch": "house",
+      "b": {
+        "house_doc": "20035350"
+      },
+      "f": "p:C001068",
+      "fn": "Cohen, Steve",
+      "inc": true,
+      "st": "TN",
+      "d": 9,
+      "y": 2026,
+      "dt": "9/1/2026",
+      "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035350.pdf",
+      "text": true,
+      "basis": "match:name+statedst"
+    }
+  },
+  "use_restriction": "Sourced from financial disclosure reports. Title 1 of the Ethics in Government Act of 1978, 5 U.S.C. app. 105(c), makes it unlawful to obtain or use such a report for an unlawful purpose, for a commercial purpose other than by news and communications media for dissemination to the general public, to establish any individual credit rating, or in the solicitation of money. Each person who obtains or uses these records is bound by that provision independently."
+}
