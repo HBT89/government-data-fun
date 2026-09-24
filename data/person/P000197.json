@@ -2,7 +2,6 @@
   "v": 1,
   "kind": "person-shard",
   "tier": "public",
-  "generated_at": "2026-09-23T18:21:22.520Z",
   "ref": "p:P000197",
   "note": "One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.",
   "person": {

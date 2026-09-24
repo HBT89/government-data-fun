@@ -59,11 +59,15 @@ async function main() {
     const n = Object.keys(mine).length;
     if (n) withFilings++;
 
+    // No generated_at on the shard itself. These are committed artifacts that
+    // get regenerated, and a per-shard timestamp rewrites all 539 on every
+    // refresh: the diff then says a rebuild happened instead of saying what
+    // changed. manifest.json carries the build time for the set; a shard
+    // changes only when its own data does.
     const doc = {
       v: 1,
       kind: 'person-shard',
       tier: 'public',
-      generated_at: generatedAt,
       ref,
       note: 'One person and the disclosure documents they filed. Document metadata only: it records that a filing exists and where the PDF is, never its contents.',
       person,
