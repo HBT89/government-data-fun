@@ -64,6 +64,87 @@ function json(body, status, origin) {
   });
 }
 
+// ---- Cross-reference index -------------------------------------------------
+// Served in front of the Pages origin, which stays canonical: Pages holds the
+// committed artifact, this route only fronts it for caching and to put the
+// index on the same origin as the rest of the API.
+//
+// Set XREF_ORIGIN in wrangler.toml to point at a different publisher. The
+// default is the Pages site this repository deploys.
+const XREF_ORIGIN_DEFAULT = 'https://hbt89.github.io/government-data-fun/data';
+
+// The index is a regenerated artifact, not a live feed. A long edge cache with
+// revalidation is right for it: a consumer dereferencing 500 shards should hit
+// the edge, and a refresh lands within the hour.
+const XREF_CACHE_SECONDS = 3600;
+
+// The index is public, addressable data, so it answers any origin rather than
+// the pinned list the proxy routes use. That is the point of publishing it.
+const XREF_CORS = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'GET, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type, Accept',
+  'Access-Control-Max-Age': '86400',
+};
+
+async function handleXref(request, url, env) {
+  const origin = (env && env.XREF_ORIGIN) || XREF_ORIGIN_DEFAULT;
+
+  // Everything after /xref/ is a path within the published index. Reject
+  // anything that is not a plain relative path: this route forwards to a fixed
+  // origin, so a traversal segment must never be able to walk out of it.
+  // A backslash is normalised to a forward slash by the URL parser, so
+  // "/xref/\evil" arrives as "/xref//evil" and would forward a double-slash
+  // path. It cannot leave the origin, but the index is addressed by exact
+  // path and there is one spelling of each: anything else is refused rather
+  // than quietly rewritten.
+  const rel = url.pathname.replace(/^\/xref\/?/, '');
+  if (rel && (rel.startsWith('/') || rel.includes('//') || rel.endsWith('/'))) {
+    return new Response(JSON.stringify({ error: 'bad path' }), {
+      status: 400, headers: { 'Content-Type': 'application/json', ...XREF_CORS },
+    });
+  }
+  if (rel && !/^[A-Za-z0-9._\/-]+$/.test(rel)) {
+    return new Response(JSON.stringify({ error: 'bad path' }), {
+      status: 400, headers: { 'Content-Type': 'application/json', ...XREF_CORS },
+    });
+  }
+  if (rel.split('/').some((seg) => seg === '..')) {
+    return new Response(JSON.stringify({ error: 'bad path' }), {
+      status: 400, headers: { 'Content-Type': 'application/json', ...XREF_CORS },
+    });
+  }
+
+  // Bare /xref is the manifest: what was built, from what, when.
+  const target = `${origin}/${rel || 'manifest.json'}`;
+
+  const cache = caches.default;
+  const cacheKey = new Request(target, { method: 'GET' });
+  let res = await cache.match(cacheKey);
+  let hit = true;
+
+  if (!res) {
+    hit = false;
+    const upstream = await fetch(target, { headers: { 'Accept': 'application/json' } });
+    if (!upstream.ok) {
+      return new Response(JSON.stringify({ error: 'not in the index', path: rel, status: upstream.status }), {
+        status: upstream.status === 404 ? 404 : 502,
+        headers: { 'Content-Type': 'application/json', ...XREF_CORS },
+      });
+    }
+    res = new Response(upstream.body, upstream);
+    res.headers.set('Cache-Control', `public, max-age=${XREF_CACHE_SECONDS}`);
+    res.headers.set('Content-Type', 'application/json; charset=utf-8');
+    await cache.put(cacheKey, res.clone());
+  }
+
+  const out = new Response(res.body, res);
+  for (const [k, v] of Object.entries(XREF_CORS)) out.headers.set(k, v);
+  out.headers.set('X-Xref-Cache', hit ? 'hit' : 'miss');
+  out.headers.set('X-Xref-Origin', origin);
+  return out;
+}
+
 // Free-mode LLM via Cloudflare Workers AI. No user key; this is the reliable
 // replacement for HuggingFace serverless. Llama 3.3 70B supports tool calling.
 const FREE_AI_MODEL = '@cf/meta/llama-3.3-70b-instruct-fp8-fast';
@@ -111,7 +192,7 @@ export default {
     }
 
     if (url.pathname === '/' || url.pathname === '/health') {
-      return json({ ok: true, upstreams: Object.keys(UPSTREAMS), freeAI: !!(env && env.AI), dataApi: '/api/v1' }, 200, allowOrigin);
+      return json({ ok: true, upstreams: Object.keys(UPSTREAMS), freeAI: !!(env && env.AI), dataApi: '/api/v1', xref: '/xref' }, 200, allowOrigin);
     }
 
     // Normalized data API (v1) — public, machine-readable, edge-cached.
@@ -123,6 +204,15 @@ export default {
     // Cross-reference "DB" layer — named tables joining multiple agencies.
     if (url.pathname === '/api/db' || url.pathname.startsWith('/api/db/')) {
       return handleDbApi(request, url, env);
+    }
+
+    // Cross-reference index, fronted from the Pages origin. Public data, so it
+    // carries its own CORS rather than the pinned proxy list.
+    if (url.pathname === '/xref' || url.pathname.startsWith('/xref/')) {
+      if (request.method !== 'GET') {
+        return json({ error: 'method not allowed' }, 405, allowOrigin);
+      }
+      return handleXref(request, url, env);
     }
 
     if (url.pathname === '/ai/chat' && request.method === 'POST') {

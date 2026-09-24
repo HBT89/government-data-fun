@@ -29,6 +29,55 @@ jobs:
           DATE="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
           sed -i "s|</head>|<meta name=\"build-sha\" content=\"$SHA\"><meta name=\"build-date\" content=\"$DATE\"></head>|" _site/index.html
 
+      - name: Stage the cross-reference index
+        run: |
+          # The index is committed, so there is nothing to build: it is copied
+          # verbatim under the same path it has in the repository. That keeps
+          # the published URL the same shape as the raw branch URL consumers
+          # already hold, so only the origin changes.
+          #
+          # This is what makes the index addressable at all. Until now it was
+          # reachable only as a raw GitHub URL pinned to a branch, which stops
+          # resolving the moment that branch merges.
+          cp -r data _site/data
+          touch _site/.nojekyll
+
+      - name: Verify the published index
+        run: |
+          set -euo pipefail
+          # A deploy that silently drops a file consumers dereference is worse
+          # than a failed one, so check the entry points exist and parse before
+          # anything is published.
+          for f in index/xref.json index/sources.json manifest.json \
+                   entities/person.json entities/org.json entities/filing.json; do
+            test -s "_site/data/$f" || { echo "missing or empty: data/$f" >&2; exit 1; }
+            python3 -c "import json,sys; json.load(open(sys.argv[1]))" "_site/data/$f"
+          done
+
+          shards=$(find _site/data/person -name '*.json' | wc -l)
+          test "$shards" -gt 0 || { echo "no person shards staged" >&2; exit 1; }
+
+          # Every shard the manifest claims must actually be there, and a ref
+          # picked out of the xref must dereference to one. This is the whole
+          # contract: resolve an id, fetch exactly one known file.
+          python3 - <<'PY'
+          import json, pathlib, sys
+          site = pathlib.Path("_site/data")
+          manifest = json.loads((site / "manifest.json").read_text())
+          claimed = manifest.get("shards", {}).get("person", {}).get("entities")
+          found = len(list((site / "person").glob("*.json")))
+          if claimed is not None and claimed != found:
+              sys.exit(f"manifest claims {claimed} person shards, staged {found}")
+
+          xref = json.loads((site / "index" / "xref.json").read_text())["xref"]
+          sample = next(k for k, v in xref.items() if v.startswith("p:"))
+          ref = xref[sample]
+          target = site / "person" / f"{ref.split(':', 1)[1]}.json"
+          if not target.is_file():
+              sys.exit(f"{sample} -> {ref} does not dereference to {target}")
+          print(f"ok: {found} shards, {sample} -> {ref} resolves")
+          PY
+
       - uses: actions/configure-pages@v5
 
       - uses: actions/upload-pages-artifact@v3

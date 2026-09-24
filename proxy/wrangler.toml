@@ -10,3 +10,9 @@ workers_dev = true
 # Free allocation: 10,000 Neurons/day, included on the free Workers plan.
 [ai]
 binding = "AI"
+
+# Cross-reference index origin, fronted by the /xref route. Pages stays the
+# canonical publisher; this Worker only caches it and puts the index on the
+# same origin as the rest of the API. Override to front a different publisher.
+[vars]
+XREF_ORIGIN = "https://hbt89.github.io/government-data-fun/data"

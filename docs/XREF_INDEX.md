@@ -293,6 +293,56 @@ company_tickers.json.
 
 23,374 reverse-lookup keys across 10 namespaces, no collisions.
 
+## Serving
+
+Until now the index was reachable only as a raw GitHub URL pinned to a branch.
+That address stops resolving the moment the branch merges, which makes it the
+wrong thing for a consumer to depend on.
+
+**GitHub Pages is the canonical origin.** `deploy-pages.yml` copies `data/`
+into the site verbatim on every push to `main`, under the same path it has in
+the repository, so only the origin changes:
+
+```
+https://hbt89.github.io/government-data-fun/data/
+  index/xref.json
+  index/sources.json
+  entities/person.json
+  person/<bioguide>.json
+  manifest.json
+```
+
+That is the value for Verity's `VITE_XREF_BASE_URL`. Pages sends
+`Access-Control-Allow-Origin: *` and `Content-Type: application/json`, and
+gzips on the wire, so no runtime is needed to serve a committed artifact.
+
+The workflow verifies before it publishes: every entry point must exist and
+parse, the shard count must match what `manifest.json` claims, and a key taken
+from `xref.json` must dereference to a shard that is actually staged. A deploy
+that silently drops a file a consumer dereferences is worse than one that
+fails, so it fails.
+
+**The Worker route fronts it.** `/xref/*` on the proxy Worker serves the same
+files from the Pages origin with a one-hour edge cache, and puts the index on
+the same origin as `/api/v1`. Pages stays canonical; this is a cache, not a
+second publisher.
+
+```
+GET /xref                      -> manifest.json
+GET /xref/index/xref.json      -> the reverse lookup
+GET /xref/person/A000379.json  -> one shard
+```
+
+It answers any origin, since the index is public addressable data rather than
+one of the pinned proxy routes, and reports `X-Xref-Cache: hit|miss`. The
+origin is `XREF_ORIGIN` in `wrangler.toml`. The route forwards to a fixed
+origin and refuses anything that is not a canonical relative path, so no
+request can reach outside it; `node proxy/test-xref-route.mjs` covers that
+against a stubbed runtime, with no wrangler and no network.
+
+Pages must be enabled for the repository once, in Settings, source
+"GitHub Actions". The Worker route needs nothing beyond the existing deploy.
+
 ## Tiers
 
 The index is split in two, and the line is between addressable and queryable.
