@@ -164,6 +164,7 @@ async function main() {
   const match = buildMatcher(people);
 
   const entities = {};
+  const duplicates = [];
   const stats = { byYear: {}, byKind: {}, matched: 0, unmatched: 0, byBasis: {}, textTrue: 0, textFalse: 0, textUnknown: 0, textByKind: {} };
   const unmatchedSample = [];
 
@@ -192,7 +193,17 @@ async function main() {
       const tk = (stats.textByKind[kind] ||= { text: 0, scan: 0, unknown: 0 });
       tk[text === true ? 'text' : text === false ? 'scan' : 'unknown']++;
 
-      entities[`h:${r.docId}`] = {
+      // Document ids are the key, and nothing upstream guarantees they are
+      // unique across years. A repeat would overwrite the earlier filing and
+      // the build would report a total that quietly excluded it. The xref
+      // stage fails on a collision between namespaces; this is the same
+      // problem within one, so it is treated the same way.
+      const ref = `h:${r.docId}`;
+      if (entities[ref]) {
+        duplicates.push({ ref, kept: entities[ref].y, also: Number(r.year) || null });
+        continue;
+      }
+      entities[ref] = {
         k: kind,
         ch: 'house',
         b: { house_doc: String(r.docId) },
@@ -207,6 +218,14 @@ async function main() {
         basis: hit ? hit.basis : 'unmatched',
       };
     }
+  }
+
+  if (duplicates.length) {
+    process.stderr.write(`\n${duplicates.length} duplicate document ids across ${years.join(', ')}, first 10:\n`);
+    for (const d of duplicates.slice(0, 10)) {
+      process.stderr.write(`  ${d.ref} kept from ${d.kept}, also seen in ${d.also}\n`);
+    }
+    throw new Error('duplicate document ids: the key is not unique across these years');
   }
 
   const doc = {

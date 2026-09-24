@@ -224,6 +224,22 @@ The shard stage is a reprojection of the entity files and reads nothing
 upstream, so it can run any time after the entity builders. It folds its own
 summary into `manifest.json` when that file already exists.
 
+### More than one year
+
+`--years 2026,2025,2024` fetches each annual index and merges them. Two things
+to expect before trusting the result:
+
+Document ids are the entity key, and nothing upstream promises they are unique
+across years. A repeat would overwrite the earlier filing and leave a total
+that quietly excluded it, so the build refuses and names the ids instead. The
+xref stage already fails on a collision between namespaces; this is the same
+problem inside one. The 2026 index is clean: 1,684 ids, 1,684 distinct.
+
+The text-layer rule was established by sampling the 2026 index and holds for
+it. Earlier years may use id shapes it does not recognise, which return `null`
+rather than a guess, so expect the unclassified count to grow until those
+shapes are sampled too.
+
 No dependencies, Node 18+. Re-run to refresh.
 
 The xref stage fails the build on a collision, meaning one foreign identifier
