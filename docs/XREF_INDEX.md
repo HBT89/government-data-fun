@@ -378,7 +378,7 @@ location. It defaults to `$CURATED_OUT`, then `./curated`, which is gitignored
 here:
 
 ```
-CURATED_OUT=../government-data-fun-curated python tools/build_curated_transactions.py
+CURATED_OUT=../govdata-curated python tools/build_curated_transactions.py
 ```
 
 The curated build writes a `README.md` next to its output when one is not
@@ -386,10 +386,13 @@ already there, carrying the use restriction and the meaning of each symbol
 basis, so the private repository describes itself rather than depending on
 someone remembering to write it down. An existing README is left alone.
 
-The private repository has to be created by hand: the GitHub App this project
-authenticates with can read and write repository contents but cannot create
-repositories, so `government-data-fun-curated` does not exist yet. Once it
-does, pointing `CURATED_OUT` at a clone is the whole wiring.
+The private repository is `HBT89/govdata-curated`. It carries that README and
+a `.gitignore` for `.cache/`, which is where the builder downloads the raw
+filing PDFs: those are the source documents rather than the curated output,
+re-fetchable from the Clerk, and they do not belong in the repository.
+
+Nothing in the public index links to it, and nothing in the public build reads
+from it. The only connection is `CURATED_OUT`.
 
 ### Use restriction
 
