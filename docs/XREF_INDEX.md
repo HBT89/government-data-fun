@@ -358,7 +358,22 @@ person to holdings. That is original selection and arrangement over public facts
 and it is a separate product.
 
 The builders take `--out`, so the curated stage can be pointed at a private
-location.
+location. It defaults to `$CURATED_OUT`, then `./curated`, which is gitignored
+here:
+
+```
+CURATED_OUT=../government-data-fun-curated python tools/build_curated_transactions.py
+```
+
+The curated build writes a `README.md` next to its output when one is not
+already there, carrying the use restriction and the meaning of each symbol
+basis, so the private repository describes itself rather than depending on
+someone remembering to write it down. An existing README is left alone.
+
+The private repository has to be created by hand: the GitHub App this project
+authenticates with can read and write repository contents but cannot create
+repositories, so `government-data-fun-curated` does not exist yet. Once it
+does, pointing `CURATED_OUT` at a clone is the whole wiring.
 
 ### Use restriction
 
