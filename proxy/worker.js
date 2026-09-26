@@ -26,6 +26,22 @@ const UPSTREAMS = {
   fema:        'https://www.fema.gov',              // OpenFEMA datasets, no key
   ecfr:        'https://www.ecfr.gov',              // electronic CFR, no key
   fbi:         'https://api.usa.gov',                // FBI Crime Data Explorer — needs data.gov key
+
+  // Hosts the Flask backend fetches but the Worker had no route to, so the
+  // browser could not reach them through the proxy at all. This table is the
+  // CORS host list, not the agency list: adding a host makes it reachable, it
+  // does not give the normalized data API an implementation for it. That list
+  // is REGISTRY in api.js, and tools/test-agency-parity.mjs is what tracks it.
+  census:      'https://api.census.gov',             // ACS — no key for modest pulls
+  fda:         'https://api.fda.gov',                // openFDA — recalls, adverse events
+  fdic:        'https://banks.data.fdic.gov',         // BankFind
+  fec:         'https://api.open.fec.gov',            // campaign finance — needs data.gov key
+  nasa:        'https://api.nasa.gov',                // APOD and friends — DEMO_KEY works
+  nist:        'https://services.nvd.nist.gov',       // National Vulnerability Database
+  noaa:        'https://api.weather.gov',             // weather.gov — requires a UA
+  treasury:    'https://api.fiscaldata.treasury.gov', // Fiscal Data
+  usgs:        'https://earthquake.usgs.gov',         // earthquake catalog
+  usgs_water:  'https://waterservices.usgs.gov',      // water services, separate host
 };
 
 // Browser-like User-Agent. Several upstreams (LOC, EPA) are behind Cloudflare or

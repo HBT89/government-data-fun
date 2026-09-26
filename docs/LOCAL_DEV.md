@@ -107,33 +107,60 @@ upstreams the cross-reference index resolves people through.
 
 ## Two implementations, different coverage
 
-The Flask app and the Cloudflare Worker each carry their own agency list, and
-they have drifted apart. The README's "21 agencies" describes the Flask app,
-not what is deployed.
+There are three lists in this repository and only two of them are about agency
+coverage. Comparing the wrong pair is easy and gives a flattering number:
+
+| List | What it is |
+|---|---|
+| `AGENCY_REGISTRY` in `webapp/app.py` | Python modules, one per agency |
+| `REGISTRY` in `proxy/api.js` | the normalized data API, one per agency |
+| `UPSTREAMS` in `proxy/worker.js` | a CORS host allowlist, **not** an agency list |
+
+`UPSTREAMS` carries several hosts for a single agency and hosts for agencies
+with no implementation at all, so counting it overstates coverage. Real
+coverage is `AGENCY_REGISTRY` against `REGISTRY`:
 
 | | Count |
 |---|---|
 | Flask (`webapp/app.py`) | 21 |
-| Worker (`proxy/worker.js`) | 18, from 20 upstream host entries |
-| In both | 12 |
+| Data API (`proxy/api.js`) | 14 |
+| In both | 10 |
 
-In both: `bls`, `doj`, `dot`, `epa`, `fcc`, `ftc`, `loc`, `nara`, `nih`, `sam`, `sec`, `usaspending`.
+In both: `census`, `fda`, `fdic`, `fec`, `nasa`, `nih`, `nist`, `treasury`,
+`usaspending`, `usgs`.
 
-**Flask only** (9) -- served by the local backend, no Worker route, so
-the deployed front end cannot reach them through the proxy:
+**Flask only** (11) -- a Python module exists, the data API has no
+implementation, so the deployed front end cannot get normalized data for them:
 
-`census`, `fda`, `fdic`, `fec`, `nasa`, `nist`, `noaa`, `treasury`, `usgs`.
+`bls`, `doj`, `dot`, `epa`, `fcc`, `ftc`, `loc`, `nara`, `noaa`, `sam`, `sec`.
 
-**Worker only** (6) -- proxied for the deployed front end, no Python
-module, so the local backend cannot serve them:
+**Data API only** (4) -- implemented in the Worker, no Python module, so the
+local backend cannot serve them:
 
-`congress`, `ecfr`, `fbi`, `fedreg`, `fema`, `regulations`.
+`congress`, `fbi`, `fedreg`, `fema`.
 
 Neither list is a superset of the other, so neither deployment has every data
-point the project describes. Which list is authoritative is an open decision,
-not an oversight to patch: reconciling them means either porting nine Python
-modules to the Worker, adding six modules to Flask, or declaring one of the two
-the product and retiring the other.
+point the project describes. Full parity is 25 agencies: 11 data API
+implementations and 4 Python modules.
 
-The cross-reference index sidesteps this entirely. It reads SEC directly rather
-than through the proxy, so it depends on neither list.
+The README's "21 agencies" describes the Flask app rather than what is
+deployed.
+
+### Keeping them honest
+
+```
+node tools/test-agency-parity.mjs
+```
+
+It parses both lists and fails when the split changes, naming what moved.
+Adding an agency to one side then becomes a decision -- implement it on the
+other, or record the gap in `EXPECTED` deliberately -- rather than a drift
+nobody notices.
+
+Separately, `UPSTREAMS` now carries every host the Python modules fetch, so
+anything the browser needs is at least reachable through the proxy. That is a
+routing fix, not coverage: a host being reachable does not give the data API
+an implementation for it.
+
+The cross-reference index depends on neither list. It reads SEC directly
+rather than through the proxy.
