@@ -145,6 +145,132 @@ async function handleXref(request, url, env) {
   return out;
 }
 
+// ---- Curated tier ----------------------------------------------------------
+// Parsed filing contents, served to named consumers only. Unlike /xref, this
+// is NOT public: the curated tier is the contents of financial disclosure
+// reports, and 5 U.S.C. app. 105(c) binds each person who obtains or uses one.
+// The public/curated split is the whole point of the architecture, so this
+// route authenticates and the other does not.
+//
+// Reads from the private curated repository through the GitHub contents API.
+// No Cloudflare KV or R2 binding is needed, and the curated data never has to
+// be copied into a public artifact to be served.
+//
+// Secrets, set with `wrangler secret put`, never in wrangler.toml:
+//   CURATED_TOKEN   the bearer token a consumer presents
+//   GITHUB_TOKEN    a read-only PAT for the private curated repository
+// Vars, in wrangler.toml:
+//   CURATED_REPO            owner/name of the curated repository
+//   CURATED_ALLOWED_ORIGINS comma-separated origins allowed to send the token
+const CURATED_REPO_DEFAULT = 'HBT89/govdata-curated';
+
+// Compares in time independent of how much of the token matched. A plain ===
+// returns on the first differing byte, which leaks the prefix to anyone who
+// can measure it.
+function tokensMatch(a, b) {
+  if (typeof a !== 'string' || typeof b !== 'string') return false;
+  const ea = new TextEncoder().encode(a);
+  const eb = new TextEncoder().encode(b);
+  // Length is not secret, but bail without comparing to avoid indexing past
+  // the end of the shorter array.
+  if (ea.length !== eb.length) return false;
+  let diff = 0;
+  for (let i = 0; i < ea.length; i++) diff |= ea[i] ^ eb[i];
+  return diff === 0;
+}
+
+// An authenticated endpoint cannot answer "*": a browser refuses a credentialed
+// request against a wildcard, and echoing an arbitrary Origin would let any
+// site read the response using a victim's token. Only configured origins.
+function curatedCors(env, origin) {
+  const allowed = String((env && env.CURATED_ALLOWED_ORIGINS) || '')
+    .split(',').map((s) => s.trim()).filter(Boolean);
+  const h = {
+    'Access-Control-Allow-Methods': 'GET, OPTIONS',
+    'Access-Control-Allow-Headers': 'Authorization, Content-Type, Accept',
+    'Access-Control-Max-Age': '86400',
+    'Vary': 'Origin',
+  };
+  if (origin && allowed.includes(origin)) {
+    h['Access-Control-Allow-Origin'] = origin;
+    h['Access-Control-Allow-Credentials'] = 'true';
+  }
+  return h;
+}
+
+function curatedError(env, origin, status, error, extra = {}) {
+  return new Response(JSON.stringify({ error, ...extra }), {
+    status,
+    headers: {
+      'Content-Type': 'application/json; charset=utf-8',
+      // Never let an authenticated answer, or the refusal of one, sit in a
+      // shared cache keyed only by URL.
+      'Cache-Control': 'private, no-store',
+      ...curatedCors(env, origin),
+    },
+  });
+}
+
+async function handleCurated(request, url, env, origin) {
+  const expected = env && env.CURATED_TOKEN;
+  if (!expected) {
+    // Fail closed. An unset secret must not mean an open endpoint.
+    return curatedError(env, origin, 503, 'curated access is not configured');
+  }
+
+  const auth = request.headers.get('Authorization') || '';
+  const presented = auth.startsWith('Bearer ') ? auth.slice(7).trim() : '';
+  if (!tokensMatch(presented, expected)) {
+    return curatedError(env, origin, 401, 'unauthorized', {
+      hint: 'send Authorization: Bearer <token>',
+    });
+  }
+
+  const rel = url.pathname.replace(/^\/curated\/?/, '');
+  if (rel && (rel.startsWith('/') || rel.includes('//') || rel.endsWith('/')
+              || !/^[A-Za-z0-9._\/-]+$/.test(rel) || rel.split('/').includes('..'))) {
+    return curatedError(env, origin, 400, 'bad path');
+  }
+  const path = rel || 'transactions.json';
+
+  const repo = (env && env.CURATED_REPO) || CURATED_REPO_DEFAULT;
+  const ghToken = env && env.GITHUB_TOKEN;
+  if (!ghToken) return curatedError(env, origin, 503, 'curated source is not configured');
+
+  const upstream = await fetch(
+    `https://api.github.com/repos/${repo}/contents/${path}`,
+    {
+      headers: {
+        'Authorization': `Bearer ${ghToken}`,
+        'Accept': 'application/vnd.github.raw',
+        'User-Agent': 'OpenGovDash-XrefIndex',
+        'X-GitHub-Api-Version': '2022-11-28',
+      },
+    },
+  );
+
+  if (upstream.status === 404) {
+    return curatedError(env, origin, 404, 'not in the curated tier', { path });
+  }
+  if (!upstream.ok) {
+    // Do not pass a GitHub status or body through: it describes the private
+    // repository and the Worker's own credential, not the caller's request.
+    return curatedError(env, origin, 502, 'curated source unavailable');
+  }
+
+  const out = new Response(upstream.body, {
+    status: 200,
+    headers: {
+      'Content-Type': 'application/json; charset=utf-8',
+      'Cache-Control': 'private, no-store',
+      // Travels with the data, as it does on every other artifact of this tier.
+      'X-Use-Restriction': '5 USC app 105(c); see the curated repository README',
+      ...curatedCors(env, origin),
+    },
+  });
+  return out;
+}
+
 // Free-mode LLM via Cloudflare Workers AI. No user key; this is the reliable
 // replacement for HuggingFace serverless. Llama 3.3 70B supports tool calling.
 const FREE_AI_MODEL = '@cf/meta/llama-3.3-70b-instruct-fp8-fast';
@@ -188,11 +314,16 @@ export default {
     const allowOrigin = pickAllowOrigin(origin);
 
     if (request.method === 'OPTIONS') {
+      // The curated route has its own origin rules, so its preflight cannot be
+      // answered with the proxy's permissive ones.
+      if (url.pathname === '/curated' || url.pathname.startsWith('/curated/')) {
+        return new Response(null, { status: 204, headers: curatedCors(env, origin) });
+      }
       return new Response(null, { status: 204, headers: corsHeaders(allowOrigin) });
     }
 
     if (url.pathname === '/' || url.pathname === '/health') {
-      return json({ ok: true, upstreams: Object.keys(UPSTREAMS), freeAI: !!(env && env.AI), dataApi: '/api/v1', xref: '/xref' }, 200, allowOrigin);
+      return json({ ok: true, upstreams: Object.keys(UPSTREAMS), freeAI: !!(env && env.AI), dataApi: '/api/v1', xref: '/xref', curated: '/curated (authenticated)' }, 200, allowOrigin);
     }
 
     // Normalized data API (v1) — public, machine-readable, edge-cached.
@@ -213,6 +344,15 @@ export default {
         return json({ error: 'method not allowed' }, 405, allowOrigin);
       }
       return handleXref(request, url, env);
+    }
+
+    // Curated tier. Authenticated, never cached in a shared cache, and its
+    // CORS is limited to configured origins rather than answering anyone.
+    if (url.pathname === '/curated' || url.pathname.startsWith('/curated/')) {
+      if (request.method !== 'GET') {
+        return curatedError(env, origin, 405, 'method not allowed');
+      }
+      return handleCurated(request, url, env, origin);
     }
 
     if (url.pathname === '/ai/chat' && request.method === 'POST') {
