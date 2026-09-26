@@ -22,9 +22,12 @@
 import { readFile } from 'node:fs/promises';
 
 const EXPECTED = {
-  both: ['census', 'fda', 'fdic', 'fec', 'nasa', 'nih', 'nist', 'treasury', 'usaspending', 'usgs'],
+  both: ['census', 'congress', 'fbi', 'fda', 'fdic', 'fec', 'fedreg', 'fema',
+         'nasa', 'nih', 'nist', 'treasury', 'usaspending', 'usgs'],
+  // Still one-sided: a Python module exists, the data API has no
+  // implementation. Closing these is the other half of parity.
   flaskOnly: ['bls', 'doj', 'dot', 'epa', 'fcc', 'ftc', 'loc', 'nara', 'noaa', 'sam', 'sec'],
-  apiOnly: ['congress', 'fbi', 'fedreg', 'fema'],
+  apiOnly: [],
 };
 
 const sorted = (a) => [...a].sort();

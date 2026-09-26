@@ -122,26 +122,34 @@ coverage is `AGENCY_REGISTRY` against `REGISTRY`:
 
 | | Count |
 |---|---|
-| Flask (`webapp/app.py`) | 21 |
+| Flask (`webapp/app.py`) | 25 |
 | Data API (`proxy/api.js`) | 14 |
-| In both | 10 |
+| In both | 14 |
 
-In both: `census`, `fda`, `fdic`, `fec`, `nasa`, `nih`, `nist`, `treasury`,
-`usaspending`, `usgs`.
+**Data API only: none.** `congress`, `fbi`, `fedreg` and `fema` were
+implemented in the Worker with no Python module, so the local backend could
+not serve them. They have been ported, and Flask is now a superset: everything
+the data API implements, the local backend serves.
 
 **Flask only** (11) -- a Python module exists, the data API has no
 implementation, so the deployed front end cannot get normalized data for them:
 
 `bls`, `doj`, `dot`, `epa`, `fcc`, `ftc`, `loc`, `nara`, `noaa`, `sam`, `sec`.
 
-**Data API only** (4) -- implemented in the Worker, no Python module, so the
-local backend cannot serve them:
+That is the remaining half of parity: 11 data API implementations. Until they
+land, the local backend has every data point and the deployed front end does
+not.
 
-`congress`, `fbi`, `fedreg`, `fema`.
+The ported modules are tested for what can be checked without reaching a
+government API -- the date arithmetic, the response reshaping, the
+missing-key path, and the contract `app.py` dispatches against:
 
-Neither list is a superset of the other, so neither deployment has every data
-point the project describes. Full parity is 25 agencies: 11 data API
-implementations and 4 Python modules.
+```
+python webapp/api/agency_modules/test_ported_modules.py
+```
+
+The live calls themselves are not covered, so their first real run is the
+first proof the upstream shapes are right.
 
 The README's "21 agencies" describes the Flask app rather than what is
 deployed.

@@ -32,6 +32,12 @@ AGENCY_REGISTRY = {
     'loc': 'api.agency_modules.loc',
     'nara': 'api.agency_modules.nara',
     'dot': 'api.agency_modules.dot',
+    # Ported from the Worker's normalized data API so both
+    # implementations cover the same agencies.
+    'congress': 'api.agency_modules.congress',
+    'fbi': 'api.agency_modules.fbi',
+    'fedreg': 'api.agency_modules.fedreg',
+    'fema': 'api.agency_modules.fema',
 }
 
 # Cache loaded modules
