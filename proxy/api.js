@@ -78,6 +78,14 @@ const UPSTREAM_HEADERS = {
   'Accept': 'application/json',
 };
 
+// EDGAR refuses any request whose User-Agent carries no contact address, so it
+// cannot use UPSTREAM_HEADERS. Same address the index builders declare; see
+// docs/XREF_INDEX.md.
+const EDGAR_HEADERS = {
+  'User-Agent': 'OpenGovDash XrefIndex/1.0 (contact@opengov.dev)',
+  'Accept': 'application/json',
+};
+
 // ===========================================================================
 // REGISTRY  — one entry per agency; each subsection has build() + parse().
 //   build(ctx) -> { url, method?, body?, headers? }   ctx = {q, limit, from, to, apiKey}
@@ -512,9 +520,386 @@ const REGISTRY = {
       },
     },
   },
+
+  // =========================================================================
+  // Ported from the Flask backend (webapp/api/agency_modules/*.py), which
+  // implemented these eleven while the data API did not. Same upstreams, same
+  // endpoints; the output is reshaped into this file's normal form.
+  // tools/test-agency-parity.mjs fails if the two lists drift apart again.
+  // =========================================================================
+
+  // ----- SEC EDGAR full-text search (no key, but a contact UA is required) ---
+  sec: {
+    label: 'Securities and Exchange Commission (EDGAR)',
+    attribution: 'U.S. Securities and Exchange Commission (public domain)',
+    subsections: {
+      filings: {
+        desc: 'Recent filings by form type; q is the form, e.g. 8-K, 10-K, 13F-HR',
+        build: ({ q, limit }) => {
+          const form = (q || '').trim() || '8-K';
+          const p = new URLSearchParams({ q: `"${form}"`, forms: form, from: '0', size: String(limit) });
+          return { url: `https://efts.sec.gov/LATEST/search-index?${p}`, headers: EDGAR_HEADERS };
+        },
+        parse: (d, { q }) => edgarHits(d, (q || '').trim() || '8-K'),
+      },
+      company_search: {
+        desc: 'Filings mentioning a company name or CIK',
+        requiresQuery: true,
+        build: ({ q, limit }) => {
+          const p = new URLSearchParams({ q: `"${q}"`, from: '0', size: String(limit) });
+          return { url: `https://efts.sec.gov/LATEST/search-index?${p}`, headers: EDGAR_HEADERS };
+        },
+        parse: (d) => edgarHits(d, ''),
+      },
+    },
+  },
+
+  // ----- Bureau of Labor Statistics (no key for v2 at low volume) -----------
+  // The only POST upstream here: the series list travels in a JSON body.
+  bls: {
+    label: 'Bureau of Labor Statistics',
+    attribution: 'U.S. Bureau of Labor Statistics (public domain)',
+    subsections: {
+      unemployment: blsSub('LNS14000000', 'Unemployment Rate'),
+      cpi: blsSub('CUUR0000SA0', 'Consumer Price Index (All Urban)'),
+      employment: blsSub('CES0000000001', 'Total Nonfarm Employment'),
+      avg_hourly_earnings: blsSub('CES0500000003', 'Average Hourly Earnings'),
+    },
+  },
+
+  // ----- Department of Justice (no key) ------------------------------------
+  doj: {
+    label: 'Department of Justice',
+    attribution: 'U.S. Department of Justice (public domain)',
+    subsections: {
+      press_releases: drupalSub('https://www.justice.gov/api/v1', 'press_releases', 'DOJ press releases'),
+      blog_posts: drupalSub('https://www.justice.gov/api/v1', 'blog_posts', 'DOJ blog posts'),
+      speeches: drupalSub('https://www.justice.gov/api/v1', 'speeches', 'DOJ speeches'),
+      news: drupalSub('https://www.justice.gov/api/v1', 'news', 'DOJ news'),
+    },
+  },
+
+  // ----- Federal Trade Commission (no key) ---------------------------------
+  ftc: {
+    label: 'Federal Trade Commission',
+    attribution: 'U.S. Federal Trade Commission (public domain)',
+    subsections: {
+      press_releases: drupalSub('https://www.ftc.gov/api/v1', 'press_releases', 'FTC press releases'),
+      cases: drupalSub('https://www.ftc.gov/api/v1', 'cases', 'FTC enforcement cases'),
+    },
+  },
+
+  // ----- NHTSA, standing in for DOT (no key) -------------------------------
+  dot: {
+    label: 'Department of Transportation (NHTSA)',
+    attribution: 'National Highway Traffic Safety Administration (public domain)',
+    subsections: {
+      recalls: {
+        desc: 'Vehicle safety recalls for a year; q is the year, default last year',
+        build: ({ q }) => {
+          const year = /^\d{4}$/.test(String(q || '').trim())
+            ? String(q).trim()
+            : String(new Date().getFullYear() - 1);
+          return { url: `https://api.nhtsa.gov/recalls/recallsByYear?year=${year}` };
+        },
+        parse: (d) => (d.results || []).map((r) => ({
+          title: [r.Manufacturer, r.Subject].filter(Boolean).join(' — ') || 'Recall',
+          description: cut(r.Summary || ''),
+          date: r.ReportReceivedDate || '',
+          link: 'https://www.nhtsa.gov/recalls',
+          component: r.Component || '',
+          units_affected: r.PotentialNumberofUnitsAffected || '',
+        })),
+      },
+      complaints: {
+        desc: 'Safety complaints for a vehicle; q is "make model", e.g. "toyota camry"',
+        build: ({ q }) => {
+          const [make = 'toyota', model = 'camry'] = String(q || '').trim().split(/\s+/);
+          const p = new URLSearchParams({ make, model });
+          return { url: `https://api.nhtsa.gov/complaints?${p}` };
+        },
+        parse: (d) => (d.results || []).map((r) => ({
+          title: [r.make, r.model, r.modelYear && `(${r.modelYear})`].filter(Boolean).join(' '),
+          description: cut(r.summary || ''),
+          date: r.dateOfIncident || '',
+          link: 'https://www.nhtsa.gov/complaints',
+        })),
+      },
+    },
+  },
+
+  // ----- EPA Envirofacts (no key) ------------------------------------------
+  epa: {
+    label: 'Environmental Protection Agency (Envirofacts)',
+    attribution: 'U.S. Environmental Protection Agency (public domain)',
+    subsections: {
+      water_systems: {
+        desc: 'Public water systems',
+        build: ({ limit }) => ({ url: efservice('WATER_SYSTEM', limit) }),
+        parse: (rows) => asArray(rows).map((r) => ({
+          title: r.PWS_NAME || r.WATER_SYSTEM_NAME || 'Unknown system',
+          description: [r.STATE_CODE && `State: ${r.STATE_CODE}`,
+            r.POPULATION_SERVED_COUNT && `Population served: ${num(Number(r.POPULATION_SERVED_COUNT))}`]
+            .filter(Boolean).join(' · '),
+          date: r.LAST_REPORTED_DATE || '',
+          link: 'https://echo.epa.gov/',
+          state: r.STATE_CODE || '',
+        })),
+      },
+      facilities: {
+        desc: 'Permitted discharge facilities',
+        build: ({ limit }) => ({ url: efservice('PCS_PERMIT_FACILITY', limit) }),
+        parse: (rows) => asArray(rows).map((r) => ({
+          title: r.FACILITY_NAME || 'Unknown facility',
+          description: [r.NPDES && `Permit: ${r.NPDES}`, r.CITY, r.STATE_CODE].filter(Boolean).join(' · '),
+          date: '',
+          link: r.NPDES ? `https://echo.epa.gov/detailed-facility-report?fid=${r.NPDES}` : 'https://echo.epa.gov/',
+          permit: r.NPDES || '', state: r.STATE_CODE || '',
+        })),
+      },
+      toxic_releases: {
+        desc: 'Toxic Release Inventory facilities',
+        build: ({ limit }) => ({ url: efservice('TRI_FACILITY', limit) }),
+        parse: (rows) => asArray(rows).map((r) => ({
+          title: r.FACILITY_NAME || 'Unknown facility',
+          description: [r.PRIMARY_SIC && `Industry: ${r.PRIMARY_SIC}`,
+            [r.CITY_NAME, r.STATE_ABBR].filter(Boolean).join(', ')].filter(Boolean).join(' · '),
+          date: r.REPORTING_YEAR ? `${r.REPORTING_YEAR}-12-31` : '',
+          link: 'https://enviro.epa.gov/triexplorer/',
+          reporting_year: r.REPORTING_YEAR || '',
+        })),
+      },
+    },
+  },
+
+  // ----- FCC open data, Socrata (no key) -----------------------------------
+  fcc: {
+    label: 'Federal Communications Commission',
+    attribution: 'U.S. Federal Communications Commission (public domain)',
+    subsections: {
+      broadband: {
+        desc: 'Broadband deployment filings',
+        build: ({ limit }) => ({ url: socrata('i5zz-k6uu', limit) }),
+        parse: (rows) => asArray(rows).map((r) => ({
+          title: r.applicant_name || r.entity_name || 'Unknown',
+          description: [r.service && `Service: ${r.service}`, r.state && `State: ${r.state}`].filter(Boolean).join(' · '),
+          date: r.date || r.filing_date || '',
+          link: 'https://broadbandmap.fcc.gov/',
+          state: r.state || '',
+        })),
+      },
+      spectrum: {
+        desc: 'Spectrum licence grants',
+        build: ({ limit }) => ({ url: socrata('9k46-wbcq', limit) }),
+        parse: (rows) => asArray(rows).map((r) => ({
+          title: r.licensee_name || r.entity_name || 'Unknown licensee',
+          description: [r.callsign && `Callsign: ${r.callsign}`,
+            r.frequency_assigned && `Frequency: ${r.frequency_assigned}`,
+            r.radio_service_desc].filter(Boolean).join(' · '),
+          date: r.grant_date || '',
+          link: 'https://wireless2.fcc.gov/UlsApp/UlsSearch/searchLicense.jsp',
+          callsign: r.callsign || '',
+        })),
+      },
+      complaints: {
+        desc: 'Consumer complaints, newest first',
+        build: ({ limit }) => ({ url: `${socrata('3xyp-aqkj', limit)}&$order=date_of_issue%20DESC` }),
+        parse: (rows) => asArray(rows).map((r) => ({
+          title: r.issue || r.type_of_issue || 'Complaint',
+          description: [r.method && `Method: ${r.method}`, r.status && `Status: ${r.status}`].filter(Boolean).join(' · '),
+          date: r.date_of_issue || '',
+          link: 'https://consumercomplaints.fcc.gov/',
+        })),
+      },
+    },
+  },
+
+  // ----- Library of Congress (no key) --------------------------------------
+  loc: {
+    label: 'Library of Congress',
+    attribution: 'Library of Congress',
+    subsections: {
+      collections: {
+        desc: 'Search the digital collections',
+        build: ({ q, limit }) => {
+          const p = new URLSearchParams({ q: q || 'government', fo: 'json', c: String(limit) });
+          return { url: `https://www.loc.gov/search/?${p}` };
+        },
+        parse: (d) => (d.results || []).map((r) => {
+          // description is sometimes a string and sometimes an array of them.
+          const desc = Array.isArray(r.description) ? r.description[0] : r.description;
+          return {
+            title: r.title || cut(desc, 120) || '(untitled)',
+            description: cut(desc || ''),
+            date: r.date || '',
+            link: r.url || r.id || 'https://www.loc.gov/',
+          };
+        }),
+      },
+    },
+  },
+
+  // ----- National Archives catalog (no key) --------------------------------
+  nara: {
+    label: 'National Archives and Records Administration',
+    attribution: 'U.S. National Archives and Records Administration (public domain)',
+    subsections: {
+      records: {
+        desc: 'Search archival records',
+        build: ({ q, limit }) => {
+          const p = new URLSearchParams({ q: q || 'federal records', limit: String(limit) });
+          return { url: `https://catalog.archives.gov/api/v2/records/search?${p}` };
+        },
+        parse: (d) => (((d.body || {}).hits || {}).hits || []).map((h) => {
+          const src = h._source || {};
+          const start = ((src.inclusiveDates || {}).inclusiveStartDate || {}).year;
+          return {
+            title: src.title || '(untitled)',
+            description: cut(src.scopeAndContentNote || ''),
+            date: start ? String(start) : '',
+            link: h._id ? `https://catalog.archives.gov/id/${h._id}` : 'https://catalog.archives.gov/',
+            naid: h._id || '',
+          };
+        }),
+      },
+    },
+  },
+
+  // ----- National Weather Service, standing in for NOAA (no key) -----------
+  noaa: {
+    label: 'National Oceanic and Atmospheric Administration (NWS)',
+    attribution: 'NOAA / National Weather Service (public domain)',
+    subsections: {
+      alerts: {
+        desc: 'Active weather alerts nationwide',
+        build: () => ({ url: 'https://api.weather.gov/alerts/active' }),
+        parse: (d) => (d.features || []).map((f) => {
+          const p = f.properties || {};
+          return {
+            title: p.headline || p.event || 'Weather alert',
+            description: cut(p.description || ''),
+            date: p.onset || p.effective || '',
+            link: p.uri || 'https://alerts.weather.gov/',
+            severity: p.severity || '', event: p.event || '', area: p.areaDesc || '',
+          };
+        }),
+      },
+    },
+  },
+
+  // ----- SAM.gov contract opportunities (needs the caller's own key) -------
+  sam: {
+    label: 'SAM.gov',
+    attribution: 'U.S. General Services Administration',
+    keyRequired: 'datagov',
+    subsections: {
+      opportunities: {
+        desc: 'Federal contract opportunities, most recent year',
+        build: ({ q, limit, from, to, apiKey }) => {
+          // SAM wants MM/DD/YYYY and rejects a range wider than a year.
+          const fmtDate = (d) => `${String(d.getMonth() + 1).padStart(2, '0')}/${String(d.getDate()).padStart(2, '0')}/${d.getFullYear()}`;
+          const end = to ? new Date(to) : new Date();
+          const begin = from ? new Date(from) : new Date(end.getTime() - 364 * 864e5);
+          const p = new URLSearchParams({
+            limit: String(limit), api_key: apiKey,
+            postedFrom: fmtDate(begin), postedTo: fmtDate(end),
+          });
+          if (q) p.set('title', q);
+          return { url: `https://api.sam.gov/opportunities/v2/search?${p}` };
+        },
+        parse: (d) => (d.opportunitiesData || []).map((o) => ({
+          title: o.title || '(untitled)',
+          description: cut(o.description || ''),
+          date: o.postedDate || '',
+          link: o.uiLink || (o.noticeId ? `https://sam.gov/opp/${o.noticeId}` : 'https://sam.gov/'),
+          notice_type: o.type || '', department: o.department || '', naics: o.naicsCode || '',
+        })),
+      },
+    },
+  },
 };
 
 // ---- factory helpers for repetitive subsections ---------------------------
+
+// Envirofacts and Socrata both address a table or resource plus a row count.
+const efservice = (table, limit) => `https://data.epa.gov/efservice/${table}/ROWS/0:${limit}/JSON`;
+const socrata = (resource, limit) => `https://opendata.fcc.gov/resource/${resource}.json?$limit=${limit}`;
+
+// Several upstreams answer with a bare array rather than an envelope, and
+// answer with an object when they fail. Treat anything else as no rows.
+function asArray(v) { return Array.isArray(v) ? v : []; }
+
+// EDGAR full-text search: hits.hits[]._source.
+function edgarHits(d, form) {
+  return (((d.hits || {}).hits) || []).map((h) => {
+    const src = h._source || {};
+    const name = (src.display_names && src.display_names[0]) || src.entity_name || '(unknown filer)';
+    return {
+      title: name,
+      description: cut([form && `${form} filing`, src.file_description].filter(Boolean).join(' — ')),
+      date: src.file_date || '',
+      link: src.entity_id
+        ? `https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=${src.entity_id}&type=${encodeURIComponent(form || '')}`
+        : 'https://www.sec.gov/edgar/search/',
+      form_type: src.form_type || form || '',
+      cik: src.entity_id || '',
+    };
+  });
+}
+
+// BLS v2 takes the series list as a JSON body, so these are the only POSTs.
+function blsSub(seriesId, seriesName) {
+  return {
+    desc: `${seriesName}, monthly`,
+    build: ({ from, to }) => {
+      const thisYear = new Date().getFullYear();
+      const startYear = from ? from.slice(0, 4) : String(thisYear - 3);
+      const endYear = to ? to.slice(0, 4) : String(thisYear);
+      return {
+        url: 'https://api.bls.gov/publicAPI/v2/timeseries/data/',
+        method: 'POST',
+        body: { seriesid: [seriesId], startyear: startYear, endyear: endYear },
+      };
+    },
+    parse: (d) => {
+      const series = (((d.Results || {}).series) || [])[0] || {};
+      return (series.data || []).map((x) => ({
+        title: `${seriesName}: ${x.value ?? ''}`,
+        description: `Period ${x.periodName || ''} ${x.year || ''}`.trim(),
+        // period is Mnn for a month; M13 is the annual average, which has no
+        // month of its own, so it is dated to the end of its year.
+        date: blsDate(x.year, x.period),
+        link: 'https://www.bls.gov/data/',
+        value: x.value ?? '', year: x.year || '', period: x.periodName || '',
+      }));
+    },
+  };
+}
+
+function blsDate(year, period) {
+  if (!year) return '';
+  const m = /^M(\d{2})$/.exec(String(period || ''));
+  if (!m || m[1] === '13') return `${year}-12-31`;
+  return `${year}-${m[1]}-01`;
+}
+
+// justice.gov and ftc.gov both expose the same Drupal-shaped JSON endpoints.
+function drupalSub(base, endpoint, desc) {
+  return {
+    desc,
+    build: ({ limit }) => ({ url: `${base}/${endpoint}.json?pagesize=${limit}` }),
+    parse: (d) => {
+      // Either {results: [...]} or a bare array, depending on the endpoint.
+      const rows = Array.isArray(d) ? d : asArray(d.results);
+      return rows.map((r) => ({
+        title: r.title || r.headline || '(untitled)',
+        description: cut(r.body || r.description || r.summary || ''),
+        date: r.date || r.created || r.published || '',
+        link: r.url || r.path || base,
+      }));
+    },
+  };
+}
 function recallSub(path) {
   return {
     desc: `openFDA ${path.split('/')[0]} recalls`,
@@ -596,6 +981,10 @@ async function runQuery(agencyId, subId, ctx) {
 
   const spec = sub.build(ctx);
   const init = { headers: { ...UPSTREAM_HEADERS } };
+  // A subsection may need headers of its own. SEC is the reason this exists:
+  // EDGAR rejects any request whose User-Agent carries no contact address, so
+  // the generic browser UA above is not enough.
+  if (spec.headers) Object.assign(init.headers, spec.headers);
   if (spec.method === 'POST') {
     init.method = 'POST';
     init.headers['Content-Type'] = 'application/json';

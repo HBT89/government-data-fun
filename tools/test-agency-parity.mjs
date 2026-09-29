@@ -21,12 +21,13 @@
 
 import { readFile } from 'node:fs/promises';
 
+// Full parity: every agency is implemented on both sides. Keep it that way --
+// an entry appearing in only one list is what this check exists to catch.
 const EXPECTED = {
-  both: ['census', 'congress', 'fbi', 'fda', 'fdic', 'fec', 'fedreg', 'fema',
-         'nasa', 'nih', 'nist', 'treasury', 'usaspending', 'usgs'],
-  // Still one-sided: a Python module exists, the data API has no
-  // implementation. Closing these is the other half of parity.
-  flaskOnly: ['bls', 'doj', 'dot', 'epa', 'fcc', 'ftc', 'loc', 'nara', 'noaa', 'sam', 'sec'],
+  both: ['bls', 'census', 'congress', 'doj', 'dot', 'epa', 'fbi', 'fcc', 'fda',
+         'fdic', 'fec', 'fedreg', 'fema', 'ftc', 'loc', 'nara', 'nasa', 'nih',
+         'nist', 'noaa', 'sam', 'sec', 'treasury', 'usaspending', 'usgs'],
+  flaskOnly: [],
   apiOnly: [],
 };
 

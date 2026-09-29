@@ -123,36 +123,23 @@ coverage is `AGENCY_REGISTRY` against `REGISTRY`:
 | | Count |
 |---|---|
 | Flask (`webapp/app.py`) | 25 |
-| Data API (`proxy/api.js`) | 14 |
-| In both | 14 |
+| Data API (`proxy/api.js`) | 25 |
+| In both | 25 |
 
-**Data API only: none.** `congress`, `fbi`, `fedreg` and `fema` were
-implemented in the Worker with no Python module, so the local backend could
-not serve them. They have been ported, and Flask is now a superset: everything
-the data API implements, the local backend serves.
+**Full parity.** Every agency is implemented on both sides, so the local
+backend and the deployed front end cover the same ground. Four were ported
+into Flask (`congress`, `fbi`, `fedreg`, `fema`) and eleven into the data API
+(`bls`, `doj`, `dot`, `epa`, `fcc`, `ftc`, `loc`, `nara`, `noaa`, `sam`,
+`sec`), in both directions from the implementation that already existed rather
+than written fresh against the docs.
 
-**Flask only** (11) -- a Python module exists, the data API has no
-implementation, so the deployed front end cannot get normalized data for them:
+The README's "21 agencies" is now the understatement rather than the
+overstatement: there are 25.
 
-`bls`, `doj`, `dot`, `epa`, `fcc`, `ftc`, `loc`, `nara`, `noaa`, `sam`, `sec`.
-
-That is the remaining half of parity: 11 data API implementations. Until they
-land, the local backend has every data point and the deployed front end does
-not.
-
-The ported modules are tested for what can be checked without reaching a
-government API -- the date arithmetic, the response reshaping, the
-missing-key path, and the contract `app.py` dispatches against:
-
-```
-python webapp/api/agency_modules/test_ported_modules.py
-```
-
-The live calls themselves are not covered, so their first real run is the
-first proof the upstream shapes are right.
-
-The README's "21 agencies" describes the Flask app rather than what is
-deployed.
+One gap inside an agency rather than between them: NOAA's two-step forecast
+(resolve a point, then fetch its forecast URL) exists only in Flask. The data
+API serves active alerts, which is a single call. Adding it means generalising
+the two-step path that currently exists only for PubMed.
 
 ### Keeping them honest
 
