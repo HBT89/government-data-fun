@@ -15,7 +15,7 @@ token.
 ## Public index
 
 ```
-VITE_XREF_BASE_URL=https://hbt89.github.io/government-data-fun/data
+VITE_XREF_BASE_URL=https://selvidge.tech/government-data-fun/data
 ```
 
 or through the Worker, same files with an edge cache in front:

@@ -15,7 +15,7 @@ binding = "AI"
 # canonical publisher; this Worker only caches it and puts the index on the
 # same origin as the rest of the API. Override to front a different publisher.
 [vars]
-XREF_ORIGIN = "https://hbt89.github.io/government-data-fun/data"
+XREF_ORIGIN = "https://selvidge.tech/government-data-fun/data"
 
 # Curated tier, served by /curated to named consumers only. These are vars, not
 # secrets: they name where the data is and who may send a token, neither of

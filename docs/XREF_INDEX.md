@@ -320,7 +320,7 @@ into the site verbatim on every push to `main`, under the same path it has in
 the repository, so only the origin changes:
 
 ```
-https://hbt89.github.io/government-data-fun/data/
+https://selvidge.tech/government-data-fun/data/
   index/xref.json
   index/sources.json
   entities/person.json
@@ -328,7 +328,9 @@ https://hbt89.github.io/government-data-fun/data/
   manifest.json
 ```
 
-That is the value for Verity's `VITE_XREF_BASE_URL`. Pages sends
+That is the value for Verity's `VITE_XREF_BASE_URL`. The site is published on
+the project's custom domain rather than the `github.io` address; that is what
+the Pages deployment reports and where the app is already served from. Pages sends
 `Access-Control-Allow-Origin: *` and `Content-Type: application/json`, and
 gzips on the wire, so no runtime is needed to serve a committed artifact.
 

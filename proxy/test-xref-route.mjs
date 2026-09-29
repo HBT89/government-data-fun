@@ -54,7 +54,7 @@ check('second request is served from cache', fetched.length === before && r.head
 // "/xref/../x" to "/x" before the route matches, so those 404 as an unknown
 // path rather than reaching the handler at all; what matters either way is
 // that nothing outside the index origin is ever fetched.
-const ORIGIN = 'https://hbt89.github.io/government-data-fun/data/';
+const ORIGIN = 'https://selvidge.tech/government-data-fun/data/';
 for (const bad of ['/xref/../secrets', '/xref/a/../../etc/passwd', '/xref/foo%2e%2e/bar', '/xref/a b', '/xref/\\evil']) {
   const n = fetched.length;
   const rr = await get(bad);

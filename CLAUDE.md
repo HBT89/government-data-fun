@@ -114,8 +114,9 @@ are scans. Do not read it as a PTR backlog.
 
 ## Current state
 
-Work sits on `claude/gracious-gates-hccven`, 19 commits ahead of `main`.
-**Nothing is deployed**: both workflows fire on push to `main` only.
+Merged to `main` and **deployed**. Pages, Worker, secret scan and CodeQL all
+green on `38cf7a2`. Both deploy workflows fire on push to `main` only, so any
+later change needs to land there to reach production.
 
 Built and tested:
 
@@ -126,12 +127,24 @@ Built and tested:
   pre-publish verification.
 - 25 agencies on both implementations.
 
+**The published index lives on the custom domain, not `github.io`:**
+
+```
+https://selvidge.tech/government-data-fun/data
+```
+
+That is what the Pages deployment itself reports and where the app is already
+served. Everything was originally configured against
+`hbt89.github.io/government-data-fun`, which was wrong; do not reintroduce it.
+
 Pending, needing the owner:
 
-1. Merge to `main`; enable Pages (Settings → Pages → source *GitHub Actions*).
-2. `wrangler secret put CURATED_TOKEN` and `GITHUB_TOKEN`; add the consumer
-   origin to `CURATED_ALLOWED_ORIGINS`.
-3. Allowlist the 61 hosts, then rebuild.
+1. `wrangler secret put CURATED_TOKEN` and `GITHUB_TOKEN`; add the consumer
+   origin to `CURATED_ALLOWED_ORIGINS`. Until then `/curated` answers 503.
+2. Allowlist the 61 hosts, then rebuild.
+3. Pages reported its environment URL as `http://`, which suggests *Enforce
+   HTTPS* is unchecked. A browser consumer on https cannot fetch an http
+   origin, so this needs confirming in Settings → Pages.
 
 Pending, needing network:
 

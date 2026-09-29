@@ -86,8 +86,11 @@ function json(body, status, origin) {
 // index on the same origin as the rest of the API.
 //
 // Set XREF_ORIGIN in wrangler.toml to point at a different publisher. The
-// default is the Pages site this repository deploys.
-const XREF_ORIGIN_DEFAULT = 'https://hbt89.github.io/government-data-fun/data';
+// default is the Pages site this repository deploys, which serves on the
+// project's custom domain rather than the github.io address -- that is the URL
+// the Pages deployment itself reports, and the one the app is already served
+// from.
+const XREF_ORIGIN_DEFAULT = 'https://selvidge.tech/government-data-fun/data';
 
 // The index is a regenerated artifact, not a live feed. A long edge cache with
 // revalidation is right for it: a consumer dereferencing 500 shards should hit
